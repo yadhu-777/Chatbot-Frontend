@@ -1,0 +1,54 @@
+
+import { GoogleLogin } from "@react-oauth/google";
+
+import { useNavigate } from "react-router-dom";
+import Mycontext from "../../Context"
+
+
+import { useContext } from "react";
+export default function Login(){
+const navigate = useNavigate();
+const{setAlert,setAuthreturn,setId} = useContext(Mycontext);
+  return(
+<GoogleLogin
+   onSuccess={(credentialResponse) => {
+           const token = credentialResponse.credential;
+            
+          
+             if(token){
+             fetch("http://localhost:3000/vauth",{
+              method:"POST",
+             headers:{
+              "Content-Type":"application/json"
+            },
+            credentials: "include",
+            body:JSON.stringify({
+              tknId:token
+            })
+
+             })
+             .then((res)=>res.json())
+             .then((data)=>{
+              console.log("loginIg",data.thrid)
+            setId(data.email)
+              setAuthreturn(true)
+             })
+             .catch((err)=>console.log(err))
+              
+              
+             setAlert(true);
+
+  navigate("/");
+  setTimeout(()=>{
+    setAlert(false)
+  },2000)
+
+             }
+      }}
+      onError={() => {
+        console.log("Login Failed");
+      }}
+
+/>
+  )
+}

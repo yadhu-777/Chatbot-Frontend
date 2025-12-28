@@ -1,0 +1,274 @@
+.outerOption {
+  width: 20%;
+  height: 100vh;
+
+  border: 2px solid black;
+}
+body {
+  margin: 0rem;
+
+  overflow-y: hidden;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: radial-gradient(circle at top, #2b2d77 0%, #0d0e23 70%);
+  overflow-x: hidden;
+  color: white;
+}
+
+.outerBody {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-top: 10rem;
+}
+.outerHero {
+  width: 100%;
+  display: flex;
+}
+.head {
+  height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  display: flex;
+  background-color: #2b2d77;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.authOptions button {
+  border: 2px white solid;
+  margin-right: 1.6rem;
+}
+
+.body {
+  margin-top: 2rem;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  color: white;
+}
+
+.body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.body::-webkit-scrollbar-thumb {
+  background: #3168b5;
+  border-radius: 10px;
+}
+
+.User {
+  width: max-content;
+  max-width: 40%;
+  height: auto;
+  background-color: #777891;
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 15px;
+  margin-left: 30%;
+  margin-top: 2.6rem;
+}
+.Chatbot {
+  width: 60%;
+  height: auto;
+
+  margin-right: 10%;
+  padding: 0.5rem;
+  margin-top: 2.6rem;
+}
+.lists {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.innerOption p {
+  border: 2px solid white;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  align-items: center;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+}
+
+.newChat {
+  height: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  padding: 2rem;
+  align-items: center;
+  box-sizing: border-box;
+}
+.newChat p {
+  margin: 0rem !important;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.innerOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 75vh;
+  overflow-y: auto;
+}
+
+.innerOption::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 8px;
+}
+
+.innerOption::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.innerOption::-webkit-scrollbar-thumb {
+  background: #3168b5; /* color of the scroll thumb */
+  border-radius: 8px;
+}
+.innerOption * {
+  color: white;
+}
+.inputbox {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 21rem;
+}
+.inputboxdown {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 3rem;
+}
+.inputbox input {
+  width: 45%;
+  height: 2rem;
+  border-radius: 19px;
+  padding: 0.4rem;
+  margin-right: 1rem;
+}
+.inputboxdown input {
+  width: 45%;
+  height: 2rem;
+  border-radius: 19px;
+  padding: 0.4rem;
+  margin-right: 1rem;
+}
+#heads {
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 4em;
+  margin: 0%;
+}
+#addchat {
+  margin-top: 4rem;
+}
+.authOuter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.authInner {
+  position: relative;
+  width: 35%;
+  background-color: black;
+  height: 70vh;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+  opacity: 1;
+}
+.button {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.4rem;
+  z-index: 998;
+}
+
+.logout {
+  width: 100%;
+  height: 16vh;
+  display: flex;
+  flex-direction: column;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 100%;
+  height: 4rem;
+}
+.loaders {
+  margin-right: 44rem;
+  margin-top: 4rem;
+  width: 7%;
+}
+#emg {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.outerPayment{
+  background-color: rgb(14, 2, 2);
+  opacity: 0.9;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.innerPayment{
+  width: 50%;
+  height: 70vh;
+  opacity: 1;
+  z-index: 1000;
+  background-color: rgb(13, 136, 101);
+  border-radius: 2rem;
+}
