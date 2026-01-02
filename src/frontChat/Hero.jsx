@@ -24,7 +24,7 @@ export default function Hero(){
     return(
 
 <div className="outerHero">
-<Payment/>
+
 <Options/>
 <Body/>
 

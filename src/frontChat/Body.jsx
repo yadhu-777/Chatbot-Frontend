@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react"
-
+import Allert2 from "./OnlineAlert";
 import Mycontext from "../../Context"
    import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -13,9 +13,22 @@ import Button from '@mui/material/Button';
 import AuthPage from "./Auth";
 import { jwtDecode } from "jwt-decode";
 import Payment from "./Payment";
+
 export default function Body(){
 
+const [online,setOnline] = useState(false);
+const[offline,setOffline] = useState(false);
+function handleOnline(){
+setOffline(false)
+}
+function handleOffline(){
+ setOffline(true)
+}
 
+useEffect(()=>{
+  window.addEventListener("online",handleOnline);
+    window.addEventListener("offline",handleOffline);
+},[]);
 
 
  const chatEndRef = useRef(null); 
@@ -27,7 +40,7 @@ export default function Body(){
         const location = useLocation();
 const { data } = location.state|| "" ;
 const[recId,setRecId] = useState(null);
-const[paymet,setPayment] = useState(false);
+
     const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,setImg,id,setId,nulll} = useContext(Mycontext);
   
   useEffect(() => {
@@ -170,9 +183,7 @@ setClose(true);
 }
 
 
-function handlePayment(){
-setPayment(true)
-}
+
 
 
    
@@ -183,10 +194,10 @@ setPayment(true)
       
 <div className="outerBody">
 {alert && <Allert/> }
-
+{offline && <h2>kslskssssssssssssss</h2>}
 <div className="head">
 <h2>Chat with Ai</h2>
-<Button onClick={handlePayment} sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
+<Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
 <div className="authOptions">
  {
   ttoken===undefined &&
