@@ -29,7 +29,7 @@ export default function Options(){
 
 
     useEffect(()=>{
-        fetch("http://localhost:3000/threads",{
+        fetch("https://chatbot-backend-0k0q.onrender.com/threads",{
             method:"POST",
            headers:{
              "Content-Type":"application/json"
@@ -54,7 +54,7 @@ navigate("/",{state:{data}});
 
 function handledelete(idval){
  
-  fetch("http://localhost:3000/delThread",{
+  fetch("https://chatbot-backend-0k0q.onrender.com/delThread",{
             method:"DELETE",
            headers:{ "Content-Type":"application/json"},
 body:JSON.stringify({

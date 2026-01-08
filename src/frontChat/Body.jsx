@@ -69,7 +69,7 @@ useEffect(()=>{
       setConvo(null);
   
     setId(null)
-       fetch("http://localhost:3000/fetchChat",{
+       fetch("https://chatbot-backend-0k0q.onrender.com/fetchChat",{
             method:"POST",
             headers:{
               "Content-Type":"application/json"
@@ -137,7 +137,7 @@ return;
       
     }]
 )
-        fetch("http://localhost:3000/config",{
+        fetch("https://chatbot-backend-0k0q.onrender.com/config",{
             method:"POST",
             headers:{
               "Content-Type":"application/json"
