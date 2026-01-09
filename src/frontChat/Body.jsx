@@ -48,7 +48,7 @@ const[recId,setRecId] = useState(null);
       chatEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
       token = Cookies.get("auth");
-  }, [Convo]);
+  }, [Convo,authreturn]);
      
     
   useEffect(()=>{
@@ -59,7 +59,7 @@ if(token){
     setId(decoded.email);
    
 }
-},[token,Convo])
+},[token,Convo,authreturn])
 
     token = Cookies.get("auth");
 
