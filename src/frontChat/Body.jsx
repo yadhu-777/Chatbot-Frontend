@@ -51,8 +51,8 @@ const[recId,setRecId] = useState(null);
   }, [Convo,authreturn]);
      
     
-  useEffect(()=>{
-  token = Cookies.get("auth");
+  useEffect(async()=>{
+  token = await Cookies.get("auth");
   console.log("token",token)
 if(token){
   const decoded = jwtDecode(token);
