@@ -42,16 +42,18 @@ const { data } = location.state|| "" ;
 const[recId,setRecId] = useState(null);
 
     const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,setImg,id,setId,nulll} = useContext(Mycontext);
-  
+       let token = Cookies.get("auth");
   useEffect(() => {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
+      token = Cookies.get("auth");
   }, [Convo]);
-      let token = Cookies.get("auth");
-
+     
+    
   useEffect(()=>{
-
+  token = Cookies.get("auth");
+  console.log("token",token)
 if(token){
   const decoded = jwtDecode(token);
     setId(decoded.email);
@@ -200,7 +202,7 @@ setClose(true);
 <Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
 <div className="authOptions">
  {
- token &&
+ token ===undefined &&
   <>
    <button onClick={()=>handleauth()} style={{borderRadius:"15px",padding:"0.5rem",width:"6rem",backgroundColor:"black",color:"white"}} >login</button>
 
