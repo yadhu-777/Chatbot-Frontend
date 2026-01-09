@@ -200,7 +200,7 @@ setClose(true);
 <Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
 <div className="authOptions">
  {
-  ttoken && token ===undefined &&
+ token ===undefined &&
   <>
    <button onClick={()=>handleauth()} style={{borderRadius:"15px",padding:"0.5rem",width:"6rem",backgroundColor:"black",color:"white"}} >login</button>
 
