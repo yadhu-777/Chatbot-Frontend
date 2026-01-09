@@ -48,7 +48,7 @@ const[recId,setRecId] = useState(null);
       chatEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [Convo]);
-      const token = Cookies.get("auth");
+      let token = Cookies.get("auth");
 
   useEffect(()=>{
 
@@ -59,7 +59,7 @@ if(token){
 }
 },[token,Convo])
 
-
+    token = Cookies.get("auth");
 
 
 
@@ -111,7 +111,7 @@ function handleChange(e){
 }
 
 function handleClick(){
-
+    token = Cookies.get("auth");
   setLoader(true);
 if(!token){
   setLoader(false)
@@ -194,13 +194,13 @@ setClose(true);
       
 <div className="outerBody">
 {alert && <Allert/> }
-{offline && <h2>kslskssssssssssssss</h2>}
+{offline && <h2>offline</h2>}
 <div className="head">
 <h2>Chat with Ai</h2>
 <Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
 <div className="authOptions">
  {
-  ttoken===undefined &&
+  ttoken && token ===undefined &&
   <>
    <button onClick={()=>handleauth()} style={{borderRadius:"15px",padding:"0.5rem",width:"6rem",backgroundColor:"black",color:"white"}} >login</button>
 
