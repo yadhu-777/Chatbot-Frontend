@@ -52,7 +52,7 @@ const[recId,setRecId] = useState(null);
  const chatEndRef = useRef(null); 
  
   useEffect(()=>{
-    if(performance.navigate.type===1){
+    if(performance.navigatation.type===1){
       setRecId(null);
       navigate("/");
     }
