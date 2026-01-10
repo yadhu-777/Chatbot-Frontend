@@ -46,7 +46,7 @@ export default function Options(){
 
     setThreads(data.threads)
     )
-    },[Delete]);
+    },[Delete,img]);
 
 function handleClick(data){
 navigate("/",{state:{data}});
