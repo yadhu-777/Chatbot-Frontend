@@ -22,7 +22,7 @@ export default function Options(){
 
 
 
-     const {Convo,setDelete,Delete,img,setImg,id,setId,setNull,setConvo,setClose,tokenss} = useContext(Mycontext);
+     const {Convo,setDelete,Delete,img,setImg,id,setId,setNull,setConvo,setClose,tokenss,optch,setOpch} = useContext(Mycontext);
     const navigate = useNavigate();
   
  const [threads,setThreads] = useState("");
@@ -46,7 +46,7 @@ export default function Options(){
 
     setThreads(data.threads)
     )
-    },[Delete,tokenss]);
+    },[Delete,tokenss,optch]);
 
 function handleClick(data){
 navigate("/",{state:{data}});

@@ -30,10 +30,10 @@ const{setAlert,setAuthreturn,setId,setClose,setTokennss} = useContext(Mycontext)
              })
              .then((res)=>res.json())
              .then((data)=>{
-              setClose(false)
-            setId(data.email)
-              setAuthreturn(true)
-              setTokennss(false)
+              setClose(false);
+            setId(data.email);
+              setAuthreturn(true);
+              setTokennss(false);
                navigate("/");
              })
              .catch((err)=>console.log(err))

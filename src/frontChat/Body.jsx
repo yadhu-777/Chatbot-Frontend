@@ -41,7 +41,7 @@ useEffect(()=>{
 const { data } = location.state|| "" ;
 const[recId,setRecId] = useState(null);
 
-    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,img,setImg,id,setId,nulll,tokenss,setTokennss} = useContext(Mycontext);
+    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,img,setImg,id,setId,nulll,tokenss,setTokennss,optch,setOpch} = useContext(Mycontext);
       
   useEffect(() => {
     if (chatEndRef.current) {
@@ -169,7 +169,7 @@ setRecId(data.thrId);
     }]
     
   )
-       
+       setOpch(true);
     setValue(" ");
     setLoader(false);
 })
