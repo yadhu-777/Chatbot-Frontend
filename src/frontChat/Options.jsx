@@ -35,7 +35,7 @@ export default function Options(){
              "Content-Type":"application/json"
            },
            body:JSON.stringify({
-            userId:id
+            userId:id || img
            })
 
         })
