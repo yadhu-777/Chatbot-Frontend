@@ -86,7 +86,8 @@ function handleremove(){
         method:"DELETE",
         headers:{
             "Content-Type":"application/json"
-        }
+        },
+        credentials:"include"
     })
     .then((res)=>res.json)
     .then((data)=>toast(data.message,
