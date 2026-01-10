@@ -44,7 +44,7 @@ export default function Options(){
 
     setThreads(data.threads)
     )
-    },[Convo,Delete,id])
+    },[Convo,Delete,id,img])
 
 
 function handleClick(data){

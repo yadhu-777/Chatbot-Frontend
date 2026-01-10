@@ -79,7 +79,7 @@ useEffect(()=>{
             },
             body:JSON.stringify({
                 ThreadId:data,
-                userId:id
+                userId:id ||img
 
             })
         })
