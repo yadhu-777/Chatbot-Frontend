@@ -56,7 +56,7 @@ const[recId,setRecId] = useState(null);
       setRecId(null);
       navigate("/");
     }
-  })
+  },[])
 
 
 
