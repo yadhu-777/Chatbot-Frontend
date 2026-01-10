@@ -77,6 +77,7 @@ useEffect(()=>{
             headers:{
               "Content-Type":"application/json"
             },
+            credentials:"include",
             body:JSON.stringify({
                 ThreadId:data,
                 userId:id ||img
