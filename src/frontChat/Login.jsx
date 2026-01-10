@@ -18,10 +18,11 @@ const{setAlert,setAuthreturn,setId,setClose} = useContext(Mycontext);
              if(token){
              fetch("https://chatbot-backend-0k0q.onrender.com/vauth",{
               method:"POST",
+                credentials: "include",
              headers:{
               "Content-Type":"application/json"
             },
-         
+          
             body:JSON.stringify({
               tknId:token
             })
