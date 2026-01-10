@@ -138,6 +138,7 @@ function handleremove(){
       
         setImg(null);
         setConvo( null);
+        window.location.reload();
 
         }}       sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.5rem",width:"13rem"}}>   <Avatar sx={{ bgcolor: "purple"}}>{img?.slice(0,1,0)}
     </Avatar> &nbsp;&nbsp;&nbsp;logout</Button>
