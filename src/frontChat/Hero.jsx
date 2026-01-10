@@ -21,7 +21,7 @@ fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
 .then((res)=>res.json())
 .then((data)=>{
     toast(data.message,{position: "top-right"}), 
-    setImg(data.content?.email)
+    setImg(data?.content?.email)
    
     if(data.content.email){
          setTokennss(false)
