@@ -148,7 +148,7 @@ return;
             body:JSON.stringify({
                 inp:value,
                 threadID: data||recId,
-                userId:id
+                userId:id || img
             })
         })
         .then((res)=>res.json())
