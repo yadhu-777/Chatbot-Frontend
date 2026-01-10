@@ -31,9 +31,7 @@ useEffect(()=>{
 },[]);
 
 
- const chatEndRef = useRef(null); 
- 
-  
+
   
 
   const navigate = useNavigate();
@@ -51,7 +49,14 @@ const[recId,setRecId] = useState(null);
   }, [Convo,authreturn]);
      
 
-
+ const chatEndRef = useRef(null); 
+ 
+  useEffect(()=>{
+    if(performance.navigate.type===1){
+      setRecId(null);
+      navigate("/");
+    }
+  })
 
 
 
