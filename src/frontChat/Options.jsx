@@ -84,10 +84,11 @@ theme: "light",
 function handleremove(){
     fetch("https://chatbot-backend-0k0q.onrender.com/delcookie",{
         method:"DELETE",
+        credentials:"include",
         headers:{
             "Content-Type":"application/json"
         },
-        credentials:"include"
+        
     })
     .then((res)=>res.json)
     .then((data)=>toast(data.message,
@@ -133,9 +134,9 @@ function handleremove(){
 <div className="logout">
     <p id="emg">{img}</p>
 <Button    onClick={() => {
-     
+        handleremove();
         googleLogout();
-      handleremove();
+   
         setImg(null);
         setConvo( null);
         window.location.reload();
