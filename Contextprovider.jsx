@@ -12,14 +12,14 @@ const [Delete,setDelete] = useState(false);
 const [authreturn,setAuthreturn] = useState(false);
 const [img,setImg] = useState(null);
 const [nulll,setNull] = useState(" ");
-
+const[tokenss,setTokennss] = useState(true)
 const [Convo,setConvo] = useState([{
     User: " ",
     Chatbot:" "
    }]);
     const[id,setId] = useState("");
     return(
-<Mycontext.Provider value={{authreturn,setAuthreturn,value,setValue,Convo,setConvo,nulll,setNull,newchat,setNewchat,id,setId,Delete,setDelete,alert,setAlert,loader,setLoader,close,setClose,img,setImg}}>
+<Mycontext.Provider value={{authreturn,setAuthreturn,value,setValue,Convo,setConvo,nulll,setNull,newchat,setNewchat,id,setId,Delete,setDelete,alert,setAlert,loader,setLoader,close,setClose,img,setImg,tokenss,setTokennss}}>
 {children}
 </Mycontext.Provider>
     )

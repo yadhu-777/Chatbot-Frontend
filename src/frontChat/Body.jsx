@@ -41,7 +41,7 @@ useEffect(()=>{
 const { data } = location.state|| "" ;
 const[recId,setRecId] = useState(null);
 
-    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,setImg,id,setId,nulll} = useContext(Mycontext);
+    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,setImg,id,setId,nulll,tokenss,setTokennss} = useContext(Mycontext);
        let token = Cookies.get("auth");
   useEffect(() => {
     if (chatEndRef.current) {
@@ -202,7 +202,7 @@ setClose(true);
 <Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
 <div className="authOptions">
  {
- token ===undefined &&
+ tokenss &&
   <>
    <button onClick={()=>handleauth()} style={{borderRadius:"15px",padding:"0.5rem",width:"6rem",backgroundColor:"black",color:"white"}} >login</button>
 
