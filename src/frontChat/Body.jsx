@@ -115,7 +115,7 @@ function handleChange(e){
 function handleClick(){
  
   setLoader(true);
-if(!tokenss){
+if(tokenss === true){
   setLoader(false)
 toast("you are not signed up",{
   position:"top-center",
