@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react"
-import Allert2 from "./OnlineAlert";
+
 import Mycontext from "../../Context"
    import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -113,9 +113,9 @@ function handleChange(e){
 }
 
 function handleClick(){
-    token = Cookies.get("auth");
+ 
   setLoader(true);
-if(!token){
+if(!tokenss){
   setLoader(false)
 toast("you are not signed up",{
   position:"top-center",
@@ -214,8 +214,8 @@ setClose(true);
 </div>
 
 <div className="body">
-{ !authreturn&& close && <AuthPage/>}
-  {
+{ close && <AuthPage/>}
+
  Convo!=null &&   Convo.map((val)=>(
      <React.Fragment  key={uuidv4()}>
      
