@@ -132,14 +132,14 @@ function handleremove(){
 
 <div className="logout">
     <p id="emg">{img}</p>
-<Button    onClick={() => (
-      handleremove(),
-        googleLogout(),
+<Button    onClick={() => {
+      handleremove();
+        googleLogout();
       
-        setImg(null),
-        setConvo( null)
+        setImg(null);
+        setConvo( null);
 
-        )}       sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.5rem",width:"13rem"}}>   <Avatar sx={{ bgcolor: "purple"}}>{img?.slice(0,1,0)}
+        }}       sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.5rem",width:"13rem"}}>   <Avatar sx={{ bgcolor: "purple"}}>{img?.slice(0,1,0)}
     </Avatar> &nbsp;&nbsp;&nbsp;logout</Button>
 </div>
 
