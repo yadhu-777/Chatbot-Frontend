@@ -21,8 +21,7 @@ setClose(false);
   <ClearIcon  onClick={handleClick}  ></ClearIcon>
 </div>
 <Login/>
-  <Button style={{ backgroundColor: "white",color:"black" ,  textTransform: "none", width:"11rem",marginTop:"1.5rem"}}  
-  variant="contained">Continue with email </Button>
+  
 
 </div>
 
