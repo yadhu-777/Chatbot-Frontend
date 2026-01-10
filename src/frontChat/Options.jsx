@@ -58,6 +58,7 @@ function handledelete(idval){
   fetch("https://chatbot-backend-0k0q.onrender.com/delThread",{
             method:"DELETE",
            headers:{ "Content-Type":"application/json"},
+           credentials:"include",
 body:JSON.stringify({
     userId:id,
     idd:idval
