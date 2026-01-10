@@ -52,10 +52,11 @@ const[recId,setRecId] = useState(null);
  const chatEndRef = useRef(null); 
  
   useEffect(()=>{
-    if(performance.navigation.type===1){
-      setRecId(null);
-      navigate("/");
-    }
+     const navEntry = performance.getEntriesByType("navigation")[0];
+     if (navEntry?.type === "reload") {
+    setRecId(null);
+    navigate("/");
+  }
   },[])
 
 
