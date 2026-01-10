@@ -62,7 +62,11 @@ const[recId,setRecId] = useState(null);
 
 },[tokenss])
 
-  
+    useEffect(() => {
+    if (performance.navigation.type === 1) {
+      navigate("/");
+    }
+  }, []);
 
 
 
