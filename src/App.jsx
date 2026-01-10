@@ -6,8 +6,11 @@ import Hero from './frontChat/Hero'
 import AuthPage from './frontChat/Auth';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { useEffect } from 'react';
 const client_Id = import.meta.env.VITE_CLIENT_ID;
 function App() {
+
+
 
 
   return (

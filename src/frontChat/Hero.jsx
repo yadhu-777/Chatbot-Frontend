@@ -4,23 +4,21 @@ import Body from "./Body"
 import Payment from "./Payment"
 
 export default function Hero(){
-    
-    // useEffect(()=>{
+    useEffect(()=>{
 
+fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
+    method:"POST",
+      headers:{
+              "Content-Type":"application/json"
+            },
+            credentials:"include",
 
-    //     fetch("http://localhost:3000/config",{
-    //         method:"POST",
-    //         headers:{
-    //           "  Content-Type":"application/json"
-    //         },
-    //         body:JSON.stringify({
-    //             content:"Act like an chatbot"
-    //         })
-    //     })
-    //     .then((res)=>res.json())
-    //     .then((data)=>console.log(data))
-    //     .catch((err)=>console.log(err))
-    // },[])
+})
+.then((res)=>res.json())
+.then((data)=>console.log(data))
+  
+},[])
+   
     return(
 
 <div className="outerHero">
