@@ -177,10 +177,7 @@ setRecId(data.thrId);
 
 async function  handleauth(){
 setClose(true);
- const tokenAuth =  Cookies.get("auth");
- if(tokenAuth){
-  setClose(false)
- }
+
 
 }
 
@@ -190,7 +187,6 @@ setClose(true);
 
    
 
-   const ttoken = Cookies.get("auth");
   
     return(
       
