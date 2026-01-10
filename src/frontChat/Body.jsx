@@ -41,27 +41,28 @@ useEffect(()=>{
 const { data } = location.state|| "" ;
 const[recId,setRecId] = useState(null);
 
-    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,setImg,id,setId,nulll,tokenss,setTokennss} = useContext(Mycontext);
-       let token = Cookies.get("auth");
+    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,img,setImg,id,setId,nulll,tokenss,setTokennss} = useContext(Mycontext);
+      
   useEffect(() => {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-      token = Cookies.get("auth");
+      
   }, [Convo,authreturn]);
      
     
   useEffect(()=>{
  
-  console.log("token",token)
-if(token){
-  const decoded = jwtDecode(token);
-    setId(decoded.email);
-   
-}
-},[token,Convo,authreturn])
+ if(tokenss){
+  setId(img)
+ }
 
-    token = Cookies.get("auth");
+    
+   
+
+},[tokenss])
+
+  
 
 
 
