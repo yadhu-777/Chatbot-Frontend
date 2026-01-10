@@ -133,9 +133,9 @@ function handleremove(){
 <div className="logout">
     <p id="emg">{img}</p>
 <Button    onClick={() => {
-      handleremove;
+     
         googleLogout();
-      
+       handleremove;
         setImg(null);
         setConvo( null);
         window.location.reload();
