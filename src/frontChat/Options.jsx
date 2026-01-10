@@ -135,7 +135,7 @@ function handleremove(){
 <Button    onClick={() => {
      
         googleLogout();
-       handleremove;
+      
         setImg(null);
         setConvo( null);
         window.location.reload();
