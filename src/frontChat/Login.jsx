@@ -18,7 +18,7 @@ const{setAlert,setAuthreturn,setId,setClose} = useContext(Mycontext);
              if(token){
              fetch("https://chatbot-backend-0k0q.onrender.com/vauth",{
               method:"POST",
-                credentials: "include",
+             credentials: "include",
              headers:{
               "Content-Type":"application/json"
             },
@@ -33,13 +33,14 @@ const{setAlert,setAuthreturn,setId,setClose} = useContext(Mycontext);
               setClose(false)
             setId(data.email)
               setAuthreturn(true)
+               navigate("/");
              })
              .catch((err)=>console.log(err))
               
               
              setAlert(true);
 
-  navigate("/");
+ 
   setTimeout(()=>{
     setAlert(false)
   },2000)
