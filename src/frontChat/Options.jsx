@@ -32,6 +32,7 @@ export default function Options(){
     useEffect(()=>{
         fetch("https://chatbot-backend-0k0q.onrender.com/threads",{
             method:"POST",
+            credentials:"include",
            headers:{
              "Content-Type":"application/json"
            },
