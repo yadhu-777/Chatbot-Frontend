@@ -93,7 +93,7 @@ function handleremove(){
     })
     .then((res)=>res.json)
     .then((data)=>toast(data.message,
-      {  positions:"top-center"}
+      {  position:"top-center"}
     ))
 }
 
