@@ -89,7 +89,7 @@ function handleremove(){
         credentials:"include",
         headers:{
             "Content-Type":"application/json"
-        },
+        }
         
     })
     .then((res)=>res.json)
