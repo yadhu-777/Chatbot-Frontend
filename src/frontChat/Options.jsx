@@ -13,6 +13,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Avatar from '@mui/material/Avatar';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from "uuid";
+import { positions } from "@mui/system";
  
 
 export default function Options(){
@@ -80,7 +81,18 @@ theme: "light",
         console.log(err);
     })
 }
-
+function handleremove(){
+    fetch("https://chatbot-backend-0k0q.onrender.com/delcookie",{
+        method:"DELETE",
+        headers:{
+            "Content-Type":"application/json"
+        }
+    })
+    .then((res)=>res.json)
+    .then((data)=>toast(data.message,
+      {  positions:"top-center"}
+    ))
+}
 
 
     return(
@@ -121,7 +133,7 @@ theme: "light",
     <p id="emg">{img}</p>
 <Button    onClick={() => (
         googleLogout(),
-        Cookies.remove("auth"),
+        handleremove(),
         setImg(null),
         setConvo( null),
        window.location.reload()
