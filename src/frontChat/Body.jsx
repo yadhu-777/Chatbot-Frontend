@@ -50,23 +50,8 @@ const[recId,setRecId] = useState(null);
       
   }, [Convo,authreturn]);
      
-    
-  useEffect(()=>{
- 
- if(tokenss){
-  setId(img)
- }
 
-    
-   
 
-},[tokenss])
-
-    useEffect(() => {
-    if (performance.navigation.type === 1) {
-      navigate("/");
-    }
-  }, []);
 
 
 
