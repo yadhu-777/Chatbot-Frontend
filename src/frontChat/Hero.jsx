@@ -2,6 +2,7 @@ import Options from "./Options"
 import Body from "./Body"
 
 import Payment from "./Payment"
+import { useEffect } from "react"
 
 export default function Hero(){
     useEffect(()=>{
