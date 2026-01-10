@@ -143,6 +143,7 @@ return;
 )
         fetch("https://chatbot-backend-0k0q.onrender.com/config",{
             method:"POST",
+            credentials:true,
             headers:{
               "Content-Type":"application/json"
             },
