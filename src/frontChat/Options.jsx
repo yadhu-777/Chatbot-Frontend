@@ -133,7 +133,7 @@ function handleremove(){
 <div className="logout">
     <p id="emg">{img}</p>
 <Button    onClick={() => (
-      handleremove,
+      handleremove(),
         googleLogout(),
       
         setImg(null),
