@@ -3,8 +3,11 @@ import Body from "./Body"
 
 import Payment from "./Payment"
 import { useEffect } from "react"
+import { useContext } from "react"
+import Mycontext from "../../Context"
 
 export default function Hero(){
+    const {img,setImg} = useContext(Mycontext)
     useEffect(()=>{
 
 fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
@@ -16,8 +19,12 @@ fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
 
 })
 .then((res)=>res.json())
-.then((data)=>console.log(data))
-  
+.then((data)=>{
+    toast(data.message,{position: "top-right"}),
+    setImg(data.content.email)
+    
+})
+.catch((err)=>console.log(err))
 },[])
    
     return(

@@ -118,7 +118,7 @@ theme: "light",
 </div>
 
 <div className="logout">
-    <p id="emg">{img?.email}</p>
+    <p id="emg">{img}</p>
 <Button    onClick={() => (
         googleLogout(),
         Cookies.remove("auth"),
