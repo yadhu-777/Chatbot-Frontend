@@ -11,18 +11,21 @@ import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from "uuid";
 import Button from '@mui/material/Button';
 import AuthPage from "./Auth";
-import { jwtDecode } from "jwt-decode";
-import Payment from "./Payment";
+
 
 export default function Body(){
 
 const [online,setOnline] = useState(false);
 const[offline,setOffline] = useState(false);
 function handleOnline(){
-setOffline(false)
+setOffline(false);
+setOnline(true);
+setTimeout(()=>{
+  setOnline(false)
+},2000);
 }
 function handleOffline(){
- setOffline(true)
+ setOffline(true);
 }
 
 useEffect(()=>{
@@ -190,7 +193,8 @@ setClose(true);
       
 <div className="outerBody">
 {alert && <Allert/> }
-{offline && <h2>offline</h2>}
+{offline && <h2>You`re offline !</h2>}
+{online &&  <h2>Back online !</h2>}
 <div className="head">
 <h2>Chat with Ai</h2>
 <Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
