@@ -164,7 +164,7 @@ setRecId(data.thrId);
     }]
     
   )
-       setOpch(true);
+       setOpch(prev=>!prev);
     setValue(" ");
     setLoader(false);
 })
