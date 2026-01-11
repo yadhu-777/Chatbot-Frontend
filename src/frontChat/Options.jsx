@@ -54,7 +54,7 @@ navigate("/",{state:{data}});
 
 
 function handledelete(idval){
- console.log(idval)
+
   fetch("https://chatbot-backend-0k0q.onrender.com/delThread",{
             method:"POST",
             
@@ -66,7 +66,7 @@ body:JSON.stringify({
 })
         })
         .then((res)=>res.json())
-        .then((data)=>
+        .then((data)=>{
     toast(data.message,
         {
 position: "top-right",
@@ -74,11 +74,11 @@ autoClose: 5000,
 
 theme: "light",
 
-}),
-    setDelete(prev=>!prev),
-    setConvo(null),
-    navigate("/"),
-    ).catch((err)=>{
+})
+    setDelete(prev=>!prev);
+    setConvo(null);
+    navigate("/");
+    }).catch((err)=>{
         console.log(err);
     })
 }
