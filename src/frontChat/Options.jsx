@@ -60,7 +60,7 @@ function handledelete(idval){
            headers:{ "Content-Type":"application/json"},
            credentials:"include",
 body:JSON.stringify({
-    userId:id || img,
+    userId:id ,
     idd:idval
 })
         })
@@ -120,7 +120,7 @@ function handleremove(){
 
     threads.map((data)=>(
 <div key={uuidv4()} className="lists">
-<p  >{data.thread.title}<IconButton  aria-label="delete">
+<p onClick={()=>handleClick(data.thread.threadId)}  >{data.thread.title}<IconButton  aria-label="delete">
   <DeleteIcon  key={uuidv4()} onClick={()=>handledelete(data.thread.threadId)} />
 </IconButton></p>
 
