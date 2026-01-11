@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
 import { useEffect } from "react"
-import Cookies from "js-cookie";
+
 import {  googleLogout} from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
+
 import { useNavigate } from "react-router-dom";
 import Mycontext from "../../Context"
 import Button from '@mui/material/Button';
@@ -13,7 +13,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Avatar from '@mui/material/Avatar';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from "uuid";
-import { positions } from "@mui/system";
+
  
 
 export default function Options(){
@@ -102,9 +102,9 @@ function handleremove(){
 <div className="outerOption">
 <div className="newChat">
 &nbsp;&nbsp;&nbsp;<p id="addchat" onClick={() =>{
-    setId(null),
-    setNull(null),
-    navigate("/")
+    setId(null);
+    setNull(null);
+    navigate("/");
 
 }}>new chat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Fab size="small"    color="primary" aria-label="add">
   < AddIcon sx={{ fontSize:15 }}  />
