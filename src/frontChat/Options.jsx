@@ -74,12 +74,11 @@ autoClose: 5000,
 
 theme: "light",
 
-}
-    ),setDelete(prev=>!prev),
+}),
+    setDelete(prev=>!prev),
     setConvo(null),
-    navigate("/")
-    )
-    .catch((err)=>{
+    navigate("/"),
+    ).catch((err)=>{
         console.log(err);
     })
 }
