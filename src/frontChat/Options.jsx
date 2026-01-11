@@ -54,7 +54,7 @@ navigate("/",{state:{data}});
 
 
 function handledelete(idval){
- 
+ console.log(idval)
   fetch("https://chatbot-backend-0k0q.onrender.com/delThread",{
             method:"POST",
             
