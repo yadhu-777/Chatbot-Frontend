@@ -60,7 +60,7 @@ function handledelete(idval){
            headers:{ "Content-Type":"application/json"},
            credentials:"include",
 body:JSON.stringify({
-    userId:id,
+    userId:id || img,
     idd:idval
 })
         })
