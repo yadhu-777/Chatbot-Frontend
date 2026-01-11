@@ -120,7 +120,7 @@ function handleremove(){
 
     threads.map((data)=>(
 <div key={uuidv4()} className="lists">
-<p onClick={()=>handleClick(data.thread.threadId)}  >{data.thread.title}<IconButton  aria-label="delete">
+<p  >{data.thread.title}<IconButton  aria-label="delete">
   <DeleteIcon  key={uuidv4()} onClick={()=>handledelete(data.thread.threadId)} />
 </IconButton></p>
 
