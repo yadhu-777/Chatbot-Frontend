@@ -102,12 +102,13 @@ function handleremove(){
 <div className="outerOption">
 <div className="newChat">
 &nbsp;&nbsp;&nbsp;<p id="addchat" onClick={() =>{
+      navigate("/");
     setId(null);
     setNull(null);
-    navigate("/");
+  
 
 }}>new chat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Fab size="small"    color="primary" aria-label="add">
-  < AddIcon sx={{ fontSize:15 }}  />
+  < AddIcon onClick={()=>  navigate("/")} sx={{ fontSize:15 }}  />
 </Fab></p>
 </div>
 <div className="innerOption">
