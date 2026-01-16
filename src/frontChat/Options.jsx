@@ -67,14 +67,21 @@ body:JSON.stringify({
         })
         .then((res)=>res.json())
         .then((data)=>{
-    toast(data.message,
-        {
-position: "top-right",
-autoClose: 5000,
+toast(data.message, {
+  position: "top-right",
+  autoClose: 5000,
+  theme: "dark",
 
-theme: "light",
+  style: {
+    background: "#121212",
+    color: "#fff",
+  },
 
-})
+  progressStyle: {
+    background: "#9b5cff",
+  },
+});
+
     setDelete(prev=>!prev);
     setConvo(null);
     navigate("/");
