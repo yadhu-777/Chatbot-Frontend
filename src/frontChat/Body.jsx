@@ -197,7 +197,7 @@ setClose(true);
 {online &&  <h2>Back online !</h2>}
 <div className="head">
 <h2>Chat with Ai</h2>
-<Button sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.3rem"}}>Upgrade to pro</Button>
+
 <div className="authOptions">
  {
  tokenss &&
