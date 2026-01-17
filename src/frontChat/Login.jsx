@@ -8,7 +8,7 @@ import Mycontext from "../../Context"
 import { useContext } from "react";
 export default function Login(){
 const navigate = useNavigate();
-const{setAlert,setAuthreturn,setId,setClose,setTokennss} = useContext(Mycontext);
+const{setAlert,setAuthreturn,setId,setClose,setTokennss,setImg} = useContext(Mycontext);
   return(
 <GoogleLogin
    onSuccess={(credentialResponse) => {
@@ -32,6 +32,7 @@ const{setAlert,setAuthreturn,setId,setClose,setTokennss} = useContext(Mycontext)
              .then((data)=>{
               setClose(false);
             setId(data.email);
+            setImg(data.email);
               setAuthreturn(true);
               setTokennss(false);
                navigate("/");
