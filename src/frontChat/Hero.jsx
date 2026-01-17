@@ -35,7 +35,7 @@ fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
     }
         
     ), 
-    setImg(data?.content.email)
+    setImg(data?.content?.email)
    
     if(data.content.email){
          setTokennss(false)
