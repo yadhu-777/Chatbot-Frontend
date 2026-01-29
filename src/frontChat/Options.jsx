@@ -1,166 +1,169 @@
-import { useContext, useState } from "react"
-import { useEffect } from "react"
+import { useContext, useState } from "react";
+import { useEffect } from "react";
 
-import {  googleLogout} from "@react-oauth/google";
+import { googleLogout } from "@react-oauth/google";
 
 import { useNavigate } from "react-router-dom";
-import Mycontext from "../../Context"
-import Button from '@mui/material/Button';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Avatar from '@mui/material/Avatar';
-import { toast } from 'react-toastify';
+import Mycontext from "../../Context";
+import Button from "@mui/material/Button";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Avatar from "@mui/material/Avatar";
+import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
- 
+export default function Options() {
+  const {
+    Convo,
+    setDelete,
+    Delete,
+    img,
+    setImg,
+    id,
+    setId,
+    setNull,
+    setConvo,
+    setClose,
+    tokenss,
+    optch,
+    setOpch,
+  } = useContext(Mycontext);
+  const navigate = useNavigate();
 
-export default function Options(){
-  
+  const [threads, setThreads] = useState("");
 
+  useEffect(() => {
+    fetch("https://chatbot-backend-0k0q.onrender.com/threads", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: id || img,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => setThreads(data.threads));
+  }, [Delete, tokenss, optch]);
 
+  function handleClick(data) {
+    navigate("/", { state: { data } });
+  }
 
+  function handledelete(idval) {
+    fetch("https://chatbot-backend-0k0q.onrender.com/delThread", {
+      method: "POST",
 
-     const {Convo,setDelete,Delete,img,setImg,id,setId,setNull,setConvo,setClose,tokenss,optch,setOpch} = useContext(Mycontext);
-    const navigate = useNavigate();
-  
- const [threads,setThreads] = useState("");
+      headers: { "Content-Type": "application/json" },
 
+      body: JSON.stringify({
+        userId: img || id,
+        idd: idval,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast(data.message, {
+          position: "top-right",
+          autoClose: 5000,
+          theme: "dark",
 
+          style: {
+            background: "#121212",
+            color: "#fff",
+          },
 
-    useEffect(()=>{
-        fetch("https://chatbot-backend-0k0q.onrender.com/threads",{
-            method:"POST",
-            credentials:"include",
-           headers:{
-             "Content-Type":"application/json"
-           },
-           body:JSON.stringify({
-            userId:id || img
-           })
+          progressStyle: {
+            background: "#9b5cff",
+          },
+        });
 
-        })
-        .then((res)=>res.json())
-        .then((data)=>
-
-    setThreads(data.threads)
-    )
-    },[Delete,tokenss,optch]);
-
-function handleClick(data){
-navigate("/",{state:{data}});
-};
-
-
-function handledelete(idval){
-
-  fetch("https://chatbot-backend-0k0q.onrender.com/delThread",{
-            method:"POST",
-            
-           headers:{ "Content-Type":"application/json"},
-          
-body:JSON.stringify({
-    userId:img || id ,
-    idd:idval
-})
-        })
-        .then((res)=>res.json())
-        .then((data)=>{
-toast(data.message, {
-  position: "top-right",
-  autoClose: 5000,
-  theme: "dark",
-
-  style: {
-    background: "#121212",
-    color: "#fff",
-  },
-
-  progressStyle: {
-    background: "#9b5cff",
-  },
-});
-
-    setDelete(prev=>!prev);
-    setConvo(null);
-    navigate("/");
-    }).catch((err)=>{
+        setDelete((prev) => !prev);
+        setConvo(null);
+        navigate("/");
+      })
+      .catch((err) => {
         console.log(err);
+      });
+  }
+  function handleremove() {
+    fetch("https://chatbot-backend-0k0q.onrender.com/delcookie", {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-}
-function handleremove(){
-    fetch("https://chatbot-backend-0k0q.onrender.com/delcookie",{
-        method:"DELETE",
-        credentials:"include",
-        headers:{
-            "Content-Type":"application/json"
-        }
-        
-    })
-    .then((res)=>res.json)
-    .then((data)=>toast(data.message,
-      {  position:"top-center"}
-    ))
-}
+      .then((res) => res.json)
+      .then((data) => toast(data.message, { position: "top-center" }));
+  }
 
+  return (
+    <div className="outerOption">
+      <div className="newChat">
+        &nbsp;&nbsp;&nbsp;
+        <p
+          id="addchat"
+          onClick={() => {
+            setConvo(null);
 
-    return(
-<div className="outerOption">
-<div className="newChat">
-&nbsp;&nbsp;&nbsp;<p id="addchat" onClick={() =>{
-    setConvo(null)
-     
-    setId(null);
-    setNull(null);
-   navigate("/");
+            setId(null);
+            setNull(null);
+            navigate("/");
+          }}
+        >
+          new chat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Fab size="small" color="primary" aria-label="add">
+            <AddIcon onClick={() => navigate("/")} sx={{ fontSize: 15 }} />
+          </Fab>
+        </p>
+      </div>
+      <div className="innerOption">
+        {threads &&
+          threads.map((data) => (
+            <div key={uuidv4()} className="lists">
+              <p onClick={() => handleClick(data.thread.threadId)}>
+                {data.thread.title}
+                <IconButton aria-label="delete">
+                  <DeleteIcon
+                    key={uuidv4()}
+                    onClick={() => handledelete(data.thread.threadId)}
+                  />
+                </IconButton>
+              </p>
+            </div>
+          ))}
+      </div>
 
-}}>new chat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Fab size="small"    color="primary" aria-label="add">
-  < AddIcon onClick={()=>  navigate("/")} sx={{ fontSize:15 }}  />
-</Fab></p>
-</div>
-<div className="innerOption">
+      <div className="logout">
+        <p id="emg">{img}</p>
+        <Button
+          onClick={() => {
+            handleremove();
+            googleLogout();
 
-{threads &&
-
-
-
-    threads.map((data)=>(
-<div key={uuidv4()} className="lists">
-<p onClick={()=>handleClick(data.thread.threadId)}  >{data.thread.title}<IconButton  aria-label="delete">
-  <DeleteIcon  key={uuidv4()} onClick={()=>handledelete(data.thread.threadId)} />
-</IconButton></p>
-
-</div>
-))
-
-
-
-}
-
-    
-</div>
-
-<div className="logout">
-    <p id="emg">{img}</p>
-<Button    onClick={() => {
-        handleremove();
-        googleLogout();
-   
-        setImg(null);
-        setConvo( null);
-      setTimeout(()=>{
-          window.location.reload();
-      },2000)
-
-        }}      sx={{color:"white",background:"#5b5fd5ff ",borderRadius:"15px",padding:"0.5rem",width:"13rem"}}>   <Avatar sx={{ bgcolor: "purple"}}>{img?.slice(0,1,0)}
-    </Avatar> &nbsp;&nbsp;&nbsp;logout</Button>
-</div>
-
-
-</div>
-
-
-
-    )
+            setImg(null);
+            setConvo(null);
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
+          }}
+          sx={{
+            color: "white",
+            background: "#5b5fd5ff ",
+            borderRadius: "15px",
+            padding: "0.5rem",
+            width: "13rem",
+          }}
+        >
+          {" "}
+          <Avatar sx={{ bgcolor: "purple" }}>{img?.slice(0, 1, 0)}</Avatar>{" "}
+          &nbsp;&nbsp;&nbsp;logout
+        </Button>
+      </div>
+    </div>
+  );
 }

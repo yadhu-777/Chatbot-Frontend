@@ -1,256 +1,283 @@
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react";
 
-import Mycontext from "../../Context"
-   import React from "react";
+import Mycontext from "../../Context";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Allert from "./Alert";
 import Cookies from "js-cookie";
 import Loader from "./Loader";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import AuthPage from "./Auth";
 
+export default function Body() {
+  const [online, setOnline] = useState(false);
+  const [offline, setOffline] = useState(false);
+  function handleOnline() {
+    setOffline(false);
+    setOnline(true);
+    setTimeout(() => {
+      setOnline(false);
+    }, 2000);
+  }
+  function handleOffline() {
+    setOffline(true);
+  }
 
-export default function Body(){
-
-const [online,setOnline] = useState(false);
-const[offline,setOffline] = useState(false);
-function handleOnline(){
-setOffline(false);
-setOnline(true);
-setTimeout(()=>{
-  setOnline(false)
-},2000);
-}
-function handleOffline(){
- setOffline(true);
-}
-
-useEffect(()=>{
-  window.addEventListener("online",handleOnline);
-    window.addEventListener("offline",handleOffline);
-},[]);
-
-
-
-  
+  useEffect(() => {
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+  }, []);
 
   const navigate = useNavigate();
-        const location = useLocation();
-const { data } = location.state|| "" ;
-const[recId,setRecId] = useState(null);
+  const location = useLocation();
+  const { data } = location.state || "";
+  const [recId, setRecId] = useState(null);
 
-    const {value,setValue,Convo,setConvo,close,setClose,alert,loader,setLoader,authreturn,img,setImg,id,setId,nulll,tokenss,setTokennss,optch,setOpch} = useContext(Mycontext);
-      
+  const {
+    value,
+    setValue,
+    Convo,
+    setConvo,
+    close,
+    setClose,
+    alert,
+    loader,
+    setLoader,
+    authreturn,
+    img,
+    setImg,
+    id,
+    setId,
+    nulll,
+    tokenss,
+    setTokennss,
+    optch,
+    setOpch,
+  } = useContext(Mycontext);
+
   useEffect(() => {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-      
-  }, [Convo,authreturn]);
-     
+  }, [Convo, authreturn]);
 
- const chatEndRef = useRef(null); 
- 
-  useEffect(()=>{
-     const navEntry = performance.getEntriesByType("navigation")[0];
-     if (navEntry?.type === "reload") {
-    setRecId(null);
-    navigate("/");
-  }
-  },[])
+  const chatEndRef = useRef(null);
 
+  useEffect(() => {
+    const navEntry = performance.getEntriesByType("navigation")[0];
+    if (navEntry?.type === "reload") {
+      setRecId(null);
+      navigate("/");
+    }
+  }, []);
 
+  useEffect(() => {
+    setConvo(null);
 
-useEffect(()=>{
-
-
-      setConvo(null);
-  
-    setId(null)
-       fetch("https://chatbot-backend-0k0q.onrender.com/fetchChat",{
-            method:"POST",
-            headers:{
-              "Content-Type":"application/json"
-            },
-            credentials:"include",
-            body:JSON.stringify({
-                ThreadId:data,
-                userId:id ||img
-
-            })
-        })
-        .then(async(res)=> {
-          if(res.status ===500){
-            console.log("international Eror");
-            return
-          }
-          return res.json();
+    setId(null);
+    fetch("https://chatbot-backend-0k0q.onrender.com/fetchChat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        ThreadId: data,
+        userId: id || img,
+      }),
+    })
+      .then(async (res) => {
+        if (res.status === 500) {
+          console.log("international Eror");
+          return;
         }
-           
-       
-    )
-        .then((data)=>
-       
-   setConvo(
-data && data.recData?.thread[0].messages.map((dat)=>(
-   {User:dat.role=="User"? dat.message:"",
-   Chatbot:dat.role=="Chatbot"? dat.message:""}
- 
-))
+        return res.json();
+      })
+      .then((data) =>
+        setConvo(
+          data &&
+            data.recData?.thread[0].messages.map((dat) => ({
+              User: dat.role == "User" ? dat.message : "",
+              Chatbot: dat.role == "Chatbot" ? dat.message : "",
+            })),
+        ),
+      )
+      .catch((err) => console.log(err));
+  }, [data]);
 
-   )
-        )
-        .catch((err)=>console.log(err))
-},[data])
-
- 
-function handleChange(e){
+  function handleChange(e) {
     setValue(e.target.value);
-     
-}
+  }
 
-function handleClick(){
- 
-  setLoader(true);
-if(tokenss === true){
-  setLoader(false)
-toast("you are not signed up",{
-  position:"top-center",
-  autoClose:1000,
-  theme:"dark"
-});
+  function handleClick() {
+    setLoader(true);
+    if (tokenss === true) {
+      setLoader(false);
+      toast("you are not signed up", {
+        position: "top-center",
+        autoClose: 1000,
+        theme: "dark",
+      });
 
-setTimeout(()=>{
-navigate("/auth");
-},2000)
-return;
-}
- setConvo(prev=>prev?[
-       ...prev,{
-        User:value,
-     
-    }]:
-    [
-      {
-        User:value,
-      
-    }]
-)
-        fetch("https://chatbot-backend-0k0q.onrender.com/config",{
-            method:"POST",
-          
-            headers:{
-              "Content-Type":"application/json"
+      setTimeout(() => {
+        navigate("/auth");
+      }, 2000);
+      return;
+    }
+    setConvo((prev) =>
+      prev
+        ? [
+            ...prev,
+            {
+              User: value,
             },
-            body:JSON.stringify({
-                inp:value,
-                threadID: data||recId,
-                userId:id || img
-            })
-        })
-        .then((res)=>res.json())
-        .then((data)=>{
-     
-setRecId(data.thrId);
-     setConvo(prev=>prev?[
-       ...prev,{
-      
-        Chatbot:data.message
-    }]:
-    [
-      {
-     
-        Chatbot:data.message
-    }]
-    
-  )
-       setOpch(prev=>!prev);
-    setValue(" ");
-    setLoader(false);
-})
-        .catch((err)=>console.log(err))
+          ]
+        : [
+            {
+              User: value,
+            },
+          ],
+    );
+    fetch("https://chatbot-backend-0k0q.onrender.com/config", {
+      method: "POST",
 
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        inp: value,
+        threadID: data || recId,
+        userId: id || img,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setRecId(data.thrId);
+        setConvo((prev) =>
+          prev
+            ? [
+                ...prev,
+                {
+                  Chatbot: data.message,
+                },
+              ]
+            : [
+                {
+                  Chatbot: data.message,
+                },
+              ],
+        );
+        setOpch((prev) => !prev);
+        setValue(" ");
+        setLoader(false);
+      })
+      .catch((err) => console.log(err));
+  }
 
-}
+  async function handleauth() {
+    setClose(true);
+  }
 
-async function  handleauth(){
-setClose(true);
+  return (
+    <div className="outerBody">
+      {alert && <Allert />}
+      {offline && <h2>You`re offline !</h2>}
+      {online && <h2>Back online !</h2>}
+      <div className="head">
+        <h2>Chat with Ai</h2>
 
+        <div className="authOptions">
+          {tokenss && (
+            <>
+              <button
+                onClick={() => handleauth()}
+                style={{
+                  borderRadius: "15px",
+                  padding: "0.5rem",
+                  width: "6rem",
+                  backgroundColor: "black",
+                  color: "white",
+                }}
+              >
+                login
+              </button>
 
-}
-
-
-
-
-
-   
-
-  
-    return(
-      
-<div className="outerBody">
-{alert && <Allert/> }
-{offline && <h2>You`re offline !</h2>}
-{online &&  <h2>Back online !</h2>}
-<div className="head">
-<h2>Chat with Ai</h2>
-
-<div className="authOptions">
- {
- tokenss &&
-  <>
-   <button onClick={()=>handleauth()} style={{borderRadius:"15px",padding:"0.5rem",width:"6rem",backgroundColor:"black",color:"white"}} >login</button>
-
-  <button onClick={()=>handleauth()} style={{borderRadius:"15px",padding:"0.5rem",width:"6rem",backgroundColor:"black",color:"white"}}  >signup</button>
- 
-  </>
- }
-</div>
-</div>
-
-<div className="body">
-{ close && <AuthPage/>}
-{
- Convo!=null &&   Convo.map((val)=>(
-     <React.Fragment  key={uuidv4()}>
-     
-        {val.User &&  <div  className="User">{val.User}</div> }
-        {val.Chatbot  && <div className="Chatbot"> <ReactMarkdown>{val.Chatbot}</ReactMarkdown></div>}
+              <button
+                onClick={() => handleauth()}
+                style={{
+                  borderRadius: "15px",
+                  padding: "0.5rem",
+                  width: "6rem",
+                  backgroundColor: "black",
+                  color: "white",
+                }}
+              >
+                signup
+              </button>
+            </>
+          )}
        
-     </React.Fragment>
-    ))
+        </div>
+           <div className="menuu">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+      </div>
 
-}
-  {!data && !Convo && <div key={uuidv4()} className="heading"><h2 id="heads">new chat</h2></div>
-    }
- {loader &&
+      <div className="body">
+        {close && <AuthPage />}
+        {Convo != null &&
+          Convo.map((val) => (
+            <React.Fragment key={uuidv4()}>
+              {val.User && <div className="User">{val.User}</div>}
+              {val.Chatbot && (
+                <div className="Chatbot">
+                  {" "}
+                  <ReactMarkdown>{val.Chatbot}</ReactMarkdown>
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+        {!data && !Convo && (
+          <div key={uuidv4()} className="heading">
+            <h2 id="heads">new chat</h2>
+          </div>
+        )}
+        {loader && (
+          <div className="loaders">
+            <Loader />
+          </div>
+        )}
+        <div ref={chatEndRef} />
+      </div>
 
-
-   <div className="loaders">
- <Loader/>
-   </div>}
-<div ref={chatEndRef} />
-</div>
-    
-<div className={data || Convo? "inputboxdown" : "inputbox"}>
-    
-<input   onKeyDown={(e) => {
-    if (e.key === "Enter") {
-      handleClick();  
-    }
-  }}
-  type="text" onChange={handleChange} value={value} placeholder="Enter text" />
-<button style={{borderRadius:"15px",padding:"0.6rem",width:"6rem",backgroundColor:"black",color:"white"}} onClick={handleClick}><i className="fa-regular fa-paper-plane"></i></button>
-
-</div>
-
-</div>
-
-
-
-
-    )
+      <div className={data || Convo ? "inputboxdown" : "inputbox"}>
+        <input
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleClick();
+            }
+          }}
+          type="text"
+          onChange={handleChange}
+          value={value}
+          placeholder="Enter text"
+        />
+        <button
+          style={{
+            borderRadius: "15px",
+            padding: "0.6rem",
+            width: "6rem",
+            backgroundColor: "black",
+            color: "white",
+          }}
+          onClick={handleClick}
+        >
+          <i className="fa-regular fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  );
 }

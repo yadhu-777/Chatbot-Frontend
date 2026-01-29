@@ -272,3 +272,50 @@ body {
   background-color: rgb(13, 136, 101);
   border-radius: 2rem;
 }
+
+@media (max-width:700px) {
+  #heads{
+    font-size: 2em;
+  }
+  .outerHero{
+    width: 100vw;
+  }
+  .outerBody{
+    width: 100vw;
+  }
+  .body{
+    height: 100vh !important;
+   
+  }
+  .outerOption{
+    display: none;
+  }
+ .inputbox{
+margin-bottom: -19rem;
+  width: 100%;
+ }
+  .head{
+    width: 100vw;
+  }
+  .heading{
+   
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width:500px) {
+ .authOptions{
+  display: none;
+ }
+ .menuu{
+  display: flex;
+ }
+}
+@media (min-width:501px) {
+
+ .menuu{
+  display: none;
+ }
+}
+

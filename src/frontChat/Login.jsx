@@ -1,58 +1,51 @@
-
 import { GoogleLogin } from "@react-oauth/google";
 
 import { useNavigate } from "react-router-dom";
-import Mycontext from "../../Context"
-
+import Mycontext from "../../Context";
 
 import { useContext } from "react";
-export default function Login(){
-const navigate = useNavigate();
-const{setAlert,setAuthreturn,setId,setClose,setTokennss,setImg} = useContext(Mycontext);
-  return(
-<GoogleLogin
-   onSuccess={(credentialResponse) => {
-           const token = credentialResponse.credential;
-            
-          
-             if(token){
-             fetch("https://chatbot-backend-0k0q.onrender.com/vauth",{
-              method:"POST",
-             credentials: "include",
-             headers:{
-              "Content-Type":"application/json"
-            },
-          
-            body:JSON.stringify({
-              tknId:token
-            })
+export default function Login() {
+  const navigate = useNavigate();
+  const { setAlert, setAuthreturn, setId, setClose, setTokennss, setImg } =
+    useContext(Mycontext);
+  return (
+    <GoogleLogin
+      onSuccess={(credentialResponse) => {
+        const token = credentialResponse.credential;
 
-             })
-             .then((res)=>res.json())
-             .then((data)=>{
+        if (token) {
+          fetch("https://chatbot-backend-0k0q.onrender.com/vauth", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+              tknId: token,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
               setClose(false);
-            setId(data.email);
-            setImg(data.email);
+              setId(data.email);
+              setImg(data.email);
               setAuthreturn(true);
               setTokennss(false);
-               navigate("/");
-             })
-             .catch((err)=>console.log(err))
-              
-              
-             setAlert(true);
+              navigate("/");
+            })
+            .catch((err) => console.log(err));
 
- 
-  setTimeout(()=>{
-    setAlert(false)
-  },2000)
+          setAlert(true);
 
-             }
+          setTimeout(() => {
+            setAlert(false);
+          }, 2000);
+        }
       }}
       onError={() => {
         console.log("Login Failed");
       }}
-
-/>
-  )
+    />
+  );
 }
