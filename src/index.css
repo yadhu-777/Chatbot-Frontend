@@ -277,6 +277,9 @@ body {
   #heads{
     font-size: 2em;
   }
+  .inputboxdown{
+    width: 100%;
+  }
   .outerHero{
     width: 100vw;
   }
