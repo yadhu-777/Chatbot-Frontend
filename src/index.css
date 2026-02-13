@@ -312,10 +312,16 @@ margin-bottom: -19rem;
     display: flex;
     justify-content: center;
   }
+   .authInner{
+  width: 80%;
+ }
 }
 @media (max-width:500px) {
  .authOptions{
   display: none;
+ }
+ .authInner{
+  width: 80%;
  }
  .menuu{
   display: flex;
