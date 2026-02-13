@@ -14,6 +14,7 @@ export default function MycontextProvider({ children }) {
   const [nulll, setNull] = useState(" ");
   const [tokenss, setTokennss] = useState(true);
   const [optch, setOpch] = useState(false);
+  const [menu, setMenu] = useState(false);
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -50,6 +51,8 @@ export default function MycontextProvider({ children }) {
         setTokennss,
         optch,
         setOpch,
+        menu,
+        setMenu,
       }}
     >
       {children}

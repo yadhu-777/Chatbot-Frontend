@@ -29,6 +29,8 @@ export default function Options() {
     tokenss,
     optch,
     setOpch,
+    menu,
+    setMenu,
   } = useContext(Mycontext);
   const navigate = useNavigate();
 
