@@ -276,12 +276,7 @@ body {
 }
 
 @media (max-width:700px) {
-  .outerBody{
-    height: 100dvh;
-  }
-  .outerHero{
-     height: 100dvh;
-  }
+
   .body{
      height: 100dvh;
   }
