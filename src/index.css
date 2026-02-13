@@ -16,8 +16,9 @@ body {
 }
 
 .outerBody {
+   height: calc(var(--vh) * 100);
   width: 80%;
-  height: 100dvh;
+  
   display: flex;
   flex-direction: column;
 }

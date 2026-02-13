@@ -180,6 +180,20 @@ export default function Body() {
   async function handleauth() {
     setClose(true);
   }
+  useEffect(() => {
+  const setHeight = () => {
+    document.documentElement.style.setProperty(
+      "--vh",
+      `${window.innerHeight * 0.01}px`
+    );
+  };
+
+  setHeight();
+  window.addEventListener("resize", setHeight);
+
+  return () => window.removeEventListener("resize", setHeight);
+}, []);
+
 
   return (
     <div className="outerBody">
