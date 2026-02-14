@@ -276,9 +276,12 @@ body {
 }
 
 @media (max-width:700px) {
-
+body{
+  overflow-y: hidden;
+}
   .body{
      height: 100dvh;
+     overflow-y: hidden;
   }
   #heads{
     font-size: 2em;
