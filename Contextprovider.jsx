@@ -3,7 +3,7 @@ import Mycontext from "./Context";
 
 export default function MycontextProvider({ children }) {
   const [loader, setLoader] = useState(false);
-
+ const [form,setForm] = useState(false)
   const [value, setValue] = useState("");
   const [alert, setAlert] = useState(false);
   const [newchat, setNewchat] = useState(false);
@@ -25,6 +25,8 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        form,
+        setForm,
         authreturn,
         setAuthreturn,
         value,

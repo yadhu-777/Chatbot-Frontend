@@ -193,6 +193,9 @@ export default function Body() {
 
   return () => window.removeEventListener("resize", setHeight);
 }, []);
+function college(){
+
+}
 
 
   return (
@@ -233,7 +236,21 @@ export default function Body() {
               </button>
             </>
           )}
-       
+     <button
+onClick={
+ ()=> navigate("/clg")
+}
+      style={{
+                  borderRadius: "15px",
+                  padding: "0.5rem",
+                  width: "6rem",
+                  border:"0px",
+                  backgroundColor: "black",
+                  color: "white",
+                }}
+     >
+      college
+     </button>
         </div>
            <div className="menuu">
             <i class="fa-solid fa-bars"></i>

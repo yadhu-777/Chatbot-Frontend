@@ -7,6 +7,7 @@ import AuthPage from './frontChat/Auth';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
+import Clg from './frontChat/Clg';
 const client_Id = import.meta.env.VITE_CLIENT_ID;
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
     <Routes>
           <Route path='/auth' element={<AuthPage/>} />
+           <Route path='/clg' element={<Clg/>} />
       <Route path='/' element={<Hero/>} />
         <Route path='/:data' element={<Hero/>} />
     </Routes>

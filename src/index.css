@@ -338,3 +338,38 @@ margin-bottom: -19rem;
  }
 }
 
+.outerClg .innerClg{
+  width: 100%;
+  height: 100vh;
+}
+.options{
+  width: 100%;
+  height: 4rem;
+  background-color: #0d0e23;
+
+}
+.outerform{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.innerForm{
+  width: 50%;
+  height: 70vh;
+  background-color: black;
+  position: relative;
+  padding: 2rem;
+  
+}
+.clear{
+position: absolute;
+right: 0.8rem;
+top: 0.7rem;
+}
+#formsfill{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
