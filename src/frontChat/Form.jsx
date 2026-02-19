@@ -18,6 +18,8 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/data",{
       })
 
 })
+.then((res)=>res.json())
+.then((data)=>console.log(data.details))
 }
 function handleChange(e){
 setFormVal(e.target.value)
