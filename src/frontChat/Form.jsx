@@ -46,7 +46,7 @@ setFormVal2(e.target.value)
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Details of College</label>
   <textarea  value={formVal} onChange={handleChange2}  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  <button style={{marginTop:"2rem"}} type="button" class="btn btn-secondary" onClick={} >Secondary</button>
+  <button style={{marginTop:"2rem"}} type="button" class="btn btn-secondary" onClick={handleSubmit} >Secondary</button>
 </div>
 
      </form>
