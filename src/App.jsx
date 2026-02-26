@@ -9,6 +9,8 @@ import { ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
 import Clg from './frontChat/Clg';
 const client_Id = import.meta.env.VITE_CLIENT_ID;
+import College from './frontChat/College';
+
 function App() {
 
 
@@ -20,7 +22,9 @@ function App() {
       <BrowserRouter>
     <Routes>
           <Route path='/auth' element={<AuthPage/>} />
-           <Route path='/clg' element={<Clg/>} />
+           <Route path='/clg' element={<College/>} />
+           
+               
       <Route path='/' element={<Hero/>} />
         <Route path='/:data' element={<Hero/>} />
     </Routes>

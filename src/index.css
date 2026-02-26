@@ -337,15 +337,26 @@ margin-bottom: -19rem;
   display: none;
  }
 }
-
-.outerClg .innerClg{
+.outerClg {
   width: 100%;
   height: 100vh;
+  position: relative;
+  background-color: azure;
+}
+
+.innerClg{
+  width: 100%;
+  height: 100vh;
+  background-color: azure;
 }
 .options{
-  width: 100%;
-  height: 4rem;
+  width:80%;
+  height: 3.2rem;
   background-color: #0d0e23;
+  border-radius: 3rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 
 }
 .outerform{
@@ -354,6 +365,10 @@ margin-bottom: -19rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
+  position: absolute;
+ 
+ 
 }
 .innerForm{
   width: 50%;
@@ -361,6 +376,7 @@ margin-bottom: -19rem;
   background-color: black;
   position: relative;
   padding: 2rem;
+  position: absolute;
   
 }
 .clear{
@@ -372,4 +388,120 @@ top: 0.7rem;
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
+}
+.innerClg{
+  overflow-y: auto;
+}
+
+.clgBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.headerHero{
+  width: 80%;
+  height: 27rem;
+position: relative;
+ margin-top: 2rem;
+}
+#clgImg{
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
+
+}
+.headerhero2{
+  width: 80%;
+  display: flex;
+  color: black;
+  margin-top: 4rem;
+
+  
+}
+.headerImg{
+  margin-left: 2rem;
+ 
+}
+.headerImg img{
+  margin-top: 1rem;
+ 
+}
+
+.herdertxt{
+  margin-left: 14rem;
+  font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.headerhero3{
+  width: 80%;
+  color: black;
+  padding: 3rem;
+  line-height: 2.44rem;
+}
+.courseHeader{
+  color: black;
+  width: 80%;
+   padding: 3rem;
+line-height: 2.44rem;
+
+}
+
+.courseHeader ul  li{
+  
+line-height: 3rem;
+
+}
+.courseHeader h3{
+margin-bottom: 2rem;
+
+}
+.headtext{
+  width: 25%;
+position: absolute;
+right: 0rem;
+bottom: 3rem;
+color: white;
+z-index: 998;
+
+}
+.headtext h4{
+  font-size: 3rem;
+  color: white;
+
+font-weight: 800;
+ 
+ font-family: 'Poppins', sans-serif;
+}
+.outerCollege{
+  position: relative;
+  background-color: aliceblue;
+}
+.outerInterface{
+  background-color: #2b2d77;
+}
+.outerEvents{
+ margin-top: 2rem;
+  width: 100%;
+  height: 100vh;
+
+}
+.eventImg{
+  height: 60vh;
+}
+#eventImg{
+height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.outerOptionn{
+  width: 100%;
+  height: 5rem;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
