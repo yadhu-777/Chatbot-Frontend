@@ -251,6 +251,22 @@ onClick={
      >
       college
      </button>
+       {/* <button
+ onClick={() => {
+    window.location.href = "/";
+  }
+}
+      style={{
+                  borderRadius: "15px",
+                  padding: "0.5rem",
+                  width: "6rem",
+                  border:"0px",
+                  backgroundColor: "black",
+                  color: "white",
+                }}
+     >
+      close
+     </button> */}
         </div>
            <div className="menuu">
             <i class="fa-solid fa-bars"></i>

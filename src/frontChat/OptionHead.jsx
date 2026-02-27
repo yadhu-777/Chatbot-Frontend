@@ -2,37 +2,38 @@ import { useContext } from "react";
 
 import Mycontext from "../../Context";
 import { Link } from "react-router-dom";
-export default function OptionHead(){
-const{select,setSelect} = useContext(Mycontext);
-  function college(){
-setSelect("college");
-
+export default function OptionHead() {
+  const { select, setSelect } = useContext(Mycontext);
+  function college() {
+    setSelect("college");
   }
-   function Event(){
-setSelect("event");
-
+  function Event() {
+    setSelect("event");
   }
-   function Teacher(){
-setSelect("teacher");
-
+  function Teacher() {
+    setSelect("teacher");
   }
-   function Complain(){
-setSelect("complain");
-
+  function Complain() {
+    setSelect("complain");
   }
-  
-      const {form,setForm} = useContext(Mycontext)
-    return(
-   <div className="outerOptionn">
-     <div className="options">
-          <button onClick={() => setForm((prev) => !prev)}>Register</button>
-       <button onClick={college} >College</button>
-        <button onClick={Teacher} >teacher</button>
-         <button onClick={Event} >Events</button>
-           <button onClick={Complain} >Complain</button>
-             <button onClick={Complain} >Time Table</button>
-        </div>
-   </div>
 
-    )
+  const { form, setForm } = useContext(Mycontext);
+  return (
+    <nav className="navbar">
+      <div className="logo">
+        <div className="headerImg2">
+              <img src="4.png" alt="" />
+            </div>
+      </div>
+
+      <ul className="nav-links">
+        <li onClick={() => setForm((prev) => !prev)}>Register</li>
+        <li onClick={college}>College</li>
+        <li onClick={Teacher}>Teacher</li>
+        <li onClick={Event}>Events</li>
+        <li onClick={Complain}>Complain</li>
+        <li onClick={Complain}>Time Table</li>
+      </ul>
+    </nav>
+  );
 }
