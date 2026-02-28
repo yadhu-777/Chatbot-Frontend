@@ -5,7 +5,7 @@ import OptionHead from "./OptionHead"
 import Teacher from "./Teacher";
 import Complain from "./Complain";
 import Events from "./Events";
-
+import Timetable from "./Timetable";
 import Form from "./Form";
 
 
@@ -22,7 +22,7 @@ export default function College(){
 { select === "college" && <Clg/>  }
 {form && <Form />}
 { select === "event" && <Events/>  }
-
+{select ==="timetable" && <Timetable/>}
 
 </div>
 

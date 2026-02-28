@@ -16,6 +16,9 @@ export default function OptionHead() {
   function Complain() {
     setSelect("complain");
   }
+  function timetable(){
+    setSelect("timetable")
+  }
 
   const { form, setForm } = useContext(Mycontext);
   return (
@@ -32,7 +35,7 @@ export default function OptionHead() {
         <li onClick={Teacher}>Teacher</li>
         <li onClick={Event}>Events</li>
         <li onClick={Complain}>Complain</li>
-        <li onClick={Complain}>Time Table</li>
+        <li onClick={timetable}>Time Table</li>
       </ul>
     </nav>
   );
