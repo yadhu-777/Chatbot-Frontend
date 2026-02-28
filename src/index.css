@@ -576,3 +576,18 @@ height: 100%;
 width: 100%;
  
 }
+.outerTeacher{
+  width: 100%;
+  height: 100vh;
+  padding: 3rem;
+}
+.innerTeacher{
+  border: 2px solid black;
+  height: 20rem;
+  width: 20%;
+}
+.outerTeacher{
+  display: flex;
+ 
+
+}
