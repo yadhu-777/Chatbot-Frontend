@@ -301,7 +301,7 @@ onClick={
       </div>
 
       <div className={data || Convo ? "inputboxdown" : "inputbox"}>
-        <input
+        <input style={{padding:"1.3rem"}}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               handleClick();
