@@ -494,11 +494,14 @@ overflow-y: scroll;
 }
 .eventImg{
   height: 60vh;
+  display: flex;
+  justify-content: center;
 }
 #eventImg{
 height: 100%;
-  width: 100%;
+  width: 90%;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
 /* .outerOptionn{

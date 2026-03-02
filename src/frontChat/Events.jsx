@@ -9,7 +9,7 @@ export default function Events(){
     return(
         <div className="outerEvents">
             <div className="eventImg">
-              <img id="eventImg" src="c.jpeg" alt="" />
+              <img id="eventImg" src="event2.png" alt="" />
             </div>
             <div className="outerEventss">
                   <div className="outerTeacher">
