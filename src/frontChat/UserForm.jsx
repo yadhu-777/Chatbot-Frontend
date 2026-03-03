@@ -9,7 +9,10 @@ const Userform = () => {
    
   };
 function handleform(){
-navigate("/clg")
+navigate("/student")
+}
+function handleAdmin(){
+    navigate("/admin")
 }
 
 
@@ -29,7 +32,7 @@ navigate("/clg")
           <p className="role-description">
             Manage system users, view detailed reports, and configure institution settings.
           </p>
-          <span className="action-text admin-text">
+          <span onClick={handleAdmin} className="action-text admin-text">
             Admin Login <ArrowRight size={18} />
           </span>
         </div>
