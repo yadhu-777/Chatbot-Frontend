@@ -23,8 +23,9 @@ function App() {
     <MycontextProvider>
       <BrowserRouter>
     <Routes>
-        <Route path='/' element={<College/>} />
-         <Route path='/' element={<Userform/>} />
+           <Route path='/' element={<Userform/>} />
+        <Route path='/clg' element={<College/>} />
+    
               <Route path='/admin' element={<ValidationForm/>} />
                <Route path='/student' element={<ValidationFormtudent/>} />
           <Route path='/auth' element={<AuthPage/>} />

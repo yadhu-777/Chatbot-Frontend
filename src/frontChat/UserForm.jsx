@@ -1,12 +1,17 @@
 
 import { ShieldCheck, GraduationCap, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Userform = () => {
-  
+  const navigate = useNavigate();
   const handleSelection = (role) => {
     console.log(`Selected Role: ${role}`);
    
   };
+function handleform(){
+navigate("/clg")
+}
+
 
   return (
     <div className="container2">
@@ -38,7 +43,7 @@ const Userform = () => {
           <p className="role-description">
             Access your dashboard, submit assignments, and view your academic progress.
           </p>
-          <span className="action-text student-text">
+          <span onClick={handleform} className="action-text student-text">
             Student Login <ArrowRight size={18} />
           </span>
         </div>
