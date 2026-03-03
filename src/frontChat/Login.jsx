@@ -32,7 +32,7 @@ export default function Login() {
               setImg(data.email);
               setAuthreturn(true);
               setTokennss(false);
-              navigate("/");
+              navigate("/clg");
             })
             .catch((err) => console.log(err));
 
