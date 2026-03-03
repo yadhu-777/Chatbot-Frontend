@@ -10,7 +10,9 @@ import { useEffect } from 'react';
 import Clg from './frontChat/Clg';
 const client_Id = import.meta.env.VITE_CLIENT_ID;
 import College from './frontChat/College';
-
+import Userform from './frontChat/UserForm';
+import ValidationForm from './frontChat/Admin';
+import ValidationFormtudent from './frontChat/Student';
 function App() {
 
 
@@ -21,12 +23,17 @@ function App() {
     <MycontextProvider>
       <BrowserRouter>
     <Routes>
+        <Route path='/' element={<College/>} />
+         <Route path='/' element={<Userform/>} />
+              <Route path='/admin' element={<ValidationForm/>} />
+               <Route path='/student' element={<ValidationFormtudent/>} />
           <Route path='/auth' element={<AuthPage/>} />
-           <Route path='/clg' element={<College/>} />
+          
+         
            
                
-      <Route path='/' element={<Hero/>} />
-        <Route path='/:data' element={<Hero/>} />
+      <Route path='/ai' element={<Hero/>} />
+        <Route path='/ai/:data' element={<Hero/>} />
     </Routes>
      </BrowserRouter>
         <ToastContainer position="top-center"

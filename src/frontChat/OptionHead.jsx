@@ -30,7 +30,7 @@ export default function OptionHead() {
       </div>
 
       <ul className="nav-links">
-       <li onClick={() => setForm((prev) => !prev)}>Register</li>
+       {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
         <li onClick={college}>College</li>
         <li onClick={Teacher}>Teacher</li>
        

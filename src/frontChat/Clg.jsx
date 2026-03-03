@@ -41,7 +41,7 @@ export default function Clg() {
               Higher Education, Govt. of Karnataka.
             </p>
 
-            <p>
+             <p> 
               HBS is a centre of excellence with a strong focus on providing
               quality education in the fields of Commerce, Aviation Commerce,
               Aviation Sciences and Aviation Management and proudly boasts of
@@ -99,6 +99,7 @@ Management and staff welcome you to come and experience the facilities and teach
           
         </div>
       </div>
-    </div>
-  );
+      </div>
+  
+  )  
 }
