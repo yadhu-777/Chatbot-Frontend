@@ -23,6 +23,7 @@ function App() {
     <MycontextProvider>
       <BrowserRouter>
     <Routes>
+         <Route path='/' element={<Hero/>} />
            <Route path='/' element={<Userform/>} />
         <Route path='/clg' element={<College/>} />
     
@@ -33,7 +34,7 @@ function App() {
          
            
                
-      <Route path='/ai' element={<Hero/>} />
+   
         <Route path='/ai/:data' element={<Hero/>} />
     </Routes>
      </BrowserRouter>
