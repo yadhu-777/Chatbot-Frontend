@@ -23,10 +23,10 @@ function App() {
     <MycontextProvider>
       <BrowserRouter>
     <Routes>
-         <Route path='/' element={<Hero/>} />
+       
            <Route path='/' element={<Userform/>} />
         <Route path='/clg' element={<College/>} />
-    
+      <Route path='/' element={<Hero/>} />
               <Route path='/admin' element={<ValidationForm/>} />
                <Route path='/student' element={<ValidationFormtudent/>} />
           <Route path='/auth' element={<AuthPage/>} />
