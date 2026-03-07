@@ -54,7 +54,7 @@ const ValidationForm = () => {
     <div className="form-container">
       
             
-      <form style={{height:"29rem"}} className="validation-form" onSubmit={handleSubmit}>
+      <form style={{height:"29rem"}} className="validation-form" >
         {/* <h2 style={{color:"black"}}>Create Account</h2> */}
       <div className="adminImg">
         <img src="4.png" alt="" />
