@@ -28,6 +28,17 @@ const ValidationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  function handlePassClick(){
+    fetch("https://chatbot-backend-0k0q.onrender.com"),{
+      headers:{
+          "Content-Type": "application/json"
+      },
+      body:JSON.stringify({content:formData})
+    }
+    .then((data)=>data.json())
+    .then((res)=>console.log(res))
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
@@ -54,6 +65,7 @@ const ValidationForm = () => {
             type="email"
             name="email"
             className={errors.email ? 'input-error' : ''}
+            value={formData}
             onChange={handleChange}
           />
           {errors.email && <span className="error-text">{errors.email}</span>}
@@ -64,13 +76,14 @@ const ValidationForm = () => {
           <input
             type="password"
             name="password"
+             value={formData}
             className={errors.password ? 'input-error' : ''}
             onChange={handleChange}
           />
           {errors.password && <span className="error-text">{errors.password}</span>}
         </div>
 
-        <button style={{marginTop:"1rem"}} type="submit" className="submit-btn">Sign Up</button>
+        <button style={{marginTop:"1rem"}} type="submit" onClick={handlePassClick} className="submit-btn">Sign Up</button>
       </form>
         </div>
    

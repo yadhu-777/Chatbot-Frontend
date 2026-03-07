@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import MycontextProvider from '../Contextprovider';
 import './App.css'
@@ -6,8 +6,7 @@ import Hero from './frontChat/Hero'
 import AuthPage from './frontChat/Auth';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { useEffect } from 'react';
-import Clg from './frontChat/Clg';
+
 const client_Id = import.meta.env.VITE_CLIENT_ID;
 import College from './frontChat/College';
 import Userform from './frontChat/UserForm';
