@@ -28,18 +28,17 @@ const ValidationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  function handlePassClick(){
-    fetch("https://chatbot-backend-0k0q.onrender.com/data"),{
-          method:"POST",
-      headers:{
-          "Content-Type": "application/json"
-      },
-  
-      body:JSON.stringify({content:formData})
-    }
-    .then((data)=>data.json())
-    .then((res)=>console.log(res))
-  }
+function handlePassClick() {
+  fetch("https://chatbot-backend-0k0q.onrender.com/data", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ content: formData })
+  })
+  .then((data) => data.json())
+  .then((res) => console.log(res));
+}
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
