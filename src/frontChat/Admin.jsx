@@ -65,7 +65,7 @@ const ValidationForm = () => {
             type="email"
             name="email"
             className={errors.email ? 'input-error' : ''}
-            value={formData}
+            value={formData.email}
             onChange={handleChange}
           />
           {errors.email && <span className="error-text">{errors.email}</span>}
@@ -76,7 +76,7 @@ const ValidationForm = () => {
           <input
             type="password"
             name="password"
-             value={formData}
+             value={formData.password}
             className={errors.password ? 'input-error' : ''}
             onChange={handleChange}
           />
