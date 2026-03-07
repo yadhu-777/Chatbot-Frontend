@@ -33,6 +33,7 @@ const ValidationForm = () => {
       headers:{
           "Content-Type": "application/json"
       },
+      method:"POST",
       body:JSON.stringify({content:formData})
     }
     .then((data)=>data.json())
