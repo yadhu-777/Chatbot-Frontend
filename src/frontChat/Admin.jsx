@@ -39,12 +39,12 @@ const ValidationForm = () => {
     .then((res)=>console.log(res))
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      alert("Form submitted successfully! 🎉");
-    }
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (validate()) {
+  //     alert("Form submitted successfully! 🎉");
+  //   }
+  // };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
