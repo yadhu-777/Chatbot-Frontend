@@ -83,7 +83,7 @@ const ValidationForm = () => {
           {errors.password && <span className="error-text">{errors.password}</span>}
         </div>
 
-        <button style={{marginTop:"1rem"}} type="submit" onClick={handlePassClick} className="submit-btn">Sign Up</button>
+        <button style={{marginTop:"1rem"}}  onClick={handlePassClick} className="submit-btn">Sign Up</button>
       </form>
         </div>
    
