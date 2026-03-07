@@ -29,7 +29,7 @@ const ValidationForm = () => {
   };
 
   function handlePassClick(){
-    fetch("https://chatbot-backend-0k0q.onrender.com"),{
+    fetch("https://chatbot-backend-0k0q.onrender.com/data"),{
       headers:{
           "Content-Type": "application/json"
       },
