@@ -28,7 +28,8 @@ const ValidationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-function handlePassClick() {
+function handlePassClick(e) {
+   e.preventDefault(); 
   fetch("https://chatbot-backend-0k0q.onrender.com/data", {
     method: "POST",
     headers: {
@@ -56,6 +57,7 @@ function handlePassClick() {
       
             
       <form style={{height:"29rem"}} className="validation-form" >
+        
         {/* <h2 style={{color:"black"}}>Create Account</h2> */}
       <div className="adminImg">
         <img src="4.png" alt="" />
@@ -84,7 +86,7 @@ function handlePassClick() {
           {errors.password && <span className="error-text">{errors.password}</span>}
         </div>
 
-        <button style={{marginTop:"1rem"}}  onClick={handlePassClick} className="submit-btn">Sign Up</button>
+        <button type="button" style={{marginTop:"1rem"}}  onClick={handlePassClick} className="submit-btn">Sign Up</button>
       </form>
         </div>
    
