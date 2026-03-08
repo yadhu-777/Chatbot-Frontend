@@ -19,6 +19,9 @@ export default function OptionHead() {
   function timetable(){
     setSelect("timetable")
   }
+  function AskAi(){
+     setSelect("Ai")
+  }
 
   const { form, setForm } = useContext(Mycontext);
   return (
@@ -38,7 +41,7 @@ export default function OptionHead() {
               <li onClick={Complain}>Placements</li>
         <li onClick={Complain}>Complain</li>
         <li onClick={timetable}>Time Table</li>
-            <li onClick={Complain}>Ask Ai</li>
+            <li onClick={AskAi}>Ask Ai</li>
       </ul>
     </nav>
   );
