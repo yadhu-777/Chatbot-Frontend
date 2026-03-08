@@ -852,3 +852,9 @@ input {
     width: 87%;
   }
 }
+
+.outer{
+  width: 100%;
+  display: flex;
+height: auto;
+}

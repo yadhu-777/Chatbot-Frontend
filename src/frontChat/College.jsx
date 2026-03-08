@@ -24,7 +24,7 @@ export default function College(){
 { select === "event" && <Events/>  }
 {select ==="timetable" && <Timetable/>}
 {select ==="Ai" &&( 
-   <>
+   <div className="outer">
    <Options/>
       <Body/>
    </>
