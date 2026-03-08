@@ -199,7 +199,7 @@ function college(){
 
 
   return (
-    <div className="outerBody">
+    <div  className="outerBody">
       {alert && <Allert />}
       {offline && <h2>You`re offline !</h2>}
       {online && <h2>Back online !</h2>}
@@ -273,7 +273,7 @@ onClick={
           </div>
       </div>
 
-      <div className="body">
+      <div  className="body">
         {close && <AuthPage />}
         {Convo != null &&
           Convo.map((val) => (

@@ -16,8 +16,8 @@ body {
 }
 
 .outerBody {
-   height:78vh;
-  width: 100%;
+   height:50vh;
+  width: 70%;
   color: #2b2d77;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@ body {
 .body {
   margin-top: 2rem;
   width: 100%;
-  height: 70dvh;
+  height: 40dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -482,6 +482,10 @@ font-weight: 800;
 .outerCollege{
   position: relative;
   background-color: aliceblue;
+  overflow-y: scroll;
+  overflow-x: scroll;
+ height: 100vh;
+  background-color: #0056b3;
 }
 .outerInterface{
   background-color: #2b2d77;
@@ -855,7 +859,8 @@ input {
 
 .outer{
   width: 100%;
+  
+
   display: flex;
-height: auto;
-overflow-y: auto;
+  height: 90vh;
 }
