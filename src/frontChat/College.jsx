@@ -8,7 +8,7 @@ import Events from "./Events";
 import Timetable from "./Timetable";
 import Form from "./Form";
 import Body from "./Body";
-
+import Options from "./Options";
 export default function College(){
       const { form, setForm } = useContext(Mycontext);
   const {select,setSelect} = useContext(Mycontext);  
@@ -23,7 +23,11 @@ export default function College(){
 {form && <Form />}
 { select === "event" && <Events/>  }
 {select ==="timetable" && <Timetable/>}
-{select ==="Ai" && <Body/>}
+{select ==="Ai" &&( 
+   <>
+    <Options/>  <Body/>
+   </>
+    )}
 </div>
 
     )
