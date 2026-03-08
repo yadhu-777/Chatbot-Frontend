@@ -24,7 +24,7 @@ function handleAdmin(){
          <div className="card-grid">
         
   
-        <div className="role-card admin-card" onClick={() => handleSelection('admin')}>
+        <div  className="role-card admin-card" onClick={() => handleSelection('admin')}>
           <div className="icon-box-admin">
             <ShieldCheck size={32} />
           </div>

@@ -40,18 +40,21 @@ const ValidationForm = () => {
     })
       .then((data) => data.json())
       .then((res) =>
-          toast(res.message, {
+         {
+           toast(res.message, {
                 position: "top-center",
                 autoClose: 1000,
                 theme: "dark",
-              }),
-              navigate("/clg"))
+              });
+              navigate("/clg")})
+         
               .catch((err)=>{
                   toast(err.message, {
                 position: "top-center",
                 autoClose: 1000,
                 theme: "dark",
-              }, navigate("/admin"))
+              } );
+              navigate("/admin")
               })
               
   }

@@ -35,9 +35,10 @@ export default function OptionHead() {
         <li onClick={Teacher}>Teacher</li>
        
         <li onClick={Event}>Events</li>
-          
+              <li onClick={Complain}>Placements</li>
         <li onClick={Complain}>Complain</li>
         <li onClick={timetable}>Time Table</li>
+            <li onClick={Complain}>Ask Ai</li>
       </ul>
     </nav>
   );

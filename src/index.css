@@ -838,3 +838,16 @@ input {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+
+@media (max-width:500px){
+  .role-card{
+    width: 80%;
+  }
+  .role-description{
+   margin-bottom: 0.3rem;
+  }
+  .validation-form{
+    width: 87%;
+  }
+}
