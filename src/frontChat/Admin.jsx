@@ -41,15 +41,26 @@ const ValidationForm = () => {
       .then((data) => data.json())
       .then((res) =>
          {
-           toast(res.message, {
+if(res.message === "Authentication Success"){
+ toast(res.message, {
+                position: "top-center",
+                autoClose: 1000,
+                theme: "dark",
+              } );
+              navigate("/clg")
+}else{
+    toast(res.message, {
                 position: "top-center",
                 autoClose: 1000,
                 theme: "dark",
               });
-              navigate("/clg")})
+              navigate("/admin")
+}
+
+         })
          
               .catch((err)=>{
-                  toast(err.message, {
+                 toast(err.response.message, {
                 position: "top-center",
                 autoClose: 1000,
                 theme: "dark",
