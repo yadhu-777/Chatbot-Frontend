@@ -27,7 +27,7 @@ export default function College(){
    <div className="outer">
    <Options/>
       <Body/>
-   </>
+   </div>
     )}
 </div>
 
