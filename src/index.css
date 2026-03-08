@@ -857,4 +857,5 @@ input {
   width: 100%;
   display: flex;
 height: auto;
+overflow-y: auto;
 }
