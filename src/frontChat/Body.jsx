@@ -207,7 +207,7 @@ function college(){
         <h2>Chat with Ai</h2>
 
         <div className="authOptions">
-          {tokenss && (
+          {/* {tokenss && (
             <>
               <button
                 onClick={() => handleauth()}
@@ -250,7 +250,7 @@ onClick={
                 }}
      >
       college
-     </button>
+     </button> */}
        {/* <button
  onClick={() => {
     window.location.href = "/";
