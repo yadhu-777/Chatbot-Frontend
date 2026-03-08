@@ -60,7 +60,7 @@ if(res.message === "Authentication Success"){
          })
          
               .catch((err)=>{
-                 toast(err.response.message, {
+                 toast(err.message, {
                 position: "top-center",
                 autoClose: 1000,
                 theme: "dark",
