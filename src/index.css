@@ -17,10 +17,11 @@ body {
 
 .outerBody {
    height:78vh;
-  width: 80%;
+  width: 100%;
   color: #2b2d77;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .heading {

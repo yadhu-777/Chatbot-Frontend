@@ -25,7 +25,8 @@ export default function College(){
 {select ==="timetable" && <Timetable/>}
 {select ==="Ai" &&( 
    <>
-    <Options/>  <Body/>
+   <Options/>
+      <Body/>
    </>
     )}
 </div>
