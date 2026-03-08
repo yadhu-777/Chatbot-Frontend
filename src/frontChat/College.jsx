@@ -15,7 +15,7 @@ export default function College(){
     return(
 
 <div className="outerCollege">
-    <OptionHead/>
+ { select == "Ai" ||  <OptionHead/>}
 
 { select === "teacher" && <Teacher/>  }
 { select === "complain" && <Complain/>  }
