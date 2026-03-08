@@ -8,7 +8,6 @@ const ValidationForm = () => {
   const validate = () => {
     let newErrors = {};
 
-  
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
       newErrors.email = "Email is required";
@@ -16,7 +15,6 @@ const ValidationForm = () => {
       newErrors.email = "Invalid email format";
     }
 
-   
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (!formData.password) {
       newErrors.password = "Password is required";
@@ -39,35 +37,33 @@ const ValidationForm = () => {
       body: JSON.stringify({ content: formData }),
     })
       .then((data) => data.json())
-      .then((res) =>
-         {
-if(res.message === "Authentication Success"){
- toast(res.message, {
-                position: "top-center",
-                autoClose: 1000,
-                theme: "dark",
-              } );
-              navigate("/clg")
-}else{
-    toast(res.message, {
-                position: "top-center",
-                autoClose: 1000,
-                theme: "dark",
-              });
-              navigate("/admin")
-}
+      .then((res) => {
+        
+        if (res.message === "Authentication Success") {
+          toast(res.message, {
+            position: "top-center",
+            autoClose: 1000,
+            theme: "dark",
+          });
+          navigate("/clg");
+        } else {
+          toast(res.message, {
+            position: "top-center",
+            autoClose: 1000,
+            theme: "dark",
+          });
+          navigate("/admin");
+        }
+      })
 
-         })
-         
-              .catch((err)=>{
-                 toast(err.message, {
-                position: "top-center",
-                autoClose: 1000,
-                theme: "dark",
-              } );
-              navigate("/admin")
-              })
-              
+      .catch((err) => {
+        toast(err.message, {
+          position: "top-center",
+          autoClose: 1000,
+          theme: "dark",
+        });
+        navigate("/admin");
+      });
   }
 
   // const handleSubmit = (e) => {
