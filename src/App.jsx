@@ -35,6 +35,7 @@ function App() {
                
    
         <Route path='/ai/:data' element={<Hero/>} />
+        <Route path="*" element={<h1>Page Not Found</h1>} />
     </Routes>
      </BrowserRouter>
         <ToastContainer position="top-center"
