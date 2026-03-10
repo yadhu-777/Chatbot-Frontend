@@ -1,7 +1,8 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
+
 
 
 function ProtectedRoute({ children }) {
