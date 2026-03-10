@@ -53,7 +53,7 @@ export default function Options() {
   }, [Delete, tokenss, optch]);
 
   function handleClick(data) {
-setData(data)
+setData(data);
   }
 
   function handledelete(idval) {

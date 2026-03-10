@@ -59,6 +59,7 @@ export default function MycontextProvider({ children }) {
         setMenu,
         select,
         setSelect,
+        data, setData
       }}
     >
       {children}
