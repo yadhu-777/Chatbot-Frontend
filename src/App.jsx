@@ -12,6 +12,7 @@ import College from './frontChat/College';
 import Userform from './frontChat/UserForm';
 import ValidationForm from './frontChat/Admin';
 import ValidationFormtudent from './frontChat/Student';
+import ProtectedRoute from "../ProtectRoute";
 function App() {
 
 
@@ -22,14 +23,16 @@ function App() {
     <MycontextProvider>
       <BrowserRouter>
     <Routes>
-       
-           <Route path='/home' element={<Userform/>} />
-                 <Route path='/ai' element={<Hero/>} />
-        <Route path='/clg' element={<College/>} />
-      <Route path='/' element={<Hero/>} />
               <Route path='/admin' element={<ValidationForm/>} />
                <Route path='/student' element={<ValidationFormtudent/>} />
-          <Route path='/auth' element={<AuthPage/>} />
+           <Route path='/auth' element={<AuthPage/>} />
+        <Route element={<ProtectedRoute />}>
+            <Route path="/home" element={<Userform />} />
+            <Route path="/ai" element={<Hero />} />
+            <Route path="/clg" element={<College />} />
+          </Route>
+         
+         
           
          
            
