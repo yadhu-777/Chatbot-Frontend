@@ -31,6 +31,7 @@ export default function Options() {
     setOpch,
     menu,
     setMenu,
+    setData
   } = useContext(Mycontext);
   const navigate = useNavigate();
 
@@ -52,7 +53,7 @@ export default function Options() {
   }, [Delete, tokenss, optch]);
 
   function handleClick(data) {
-    navigate("/ai", { state: { data } });
+setData(data)
   }
 
   function handledelete(idval) {

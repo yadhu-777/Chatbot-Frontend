@@ -24,6 +24,7 @@ function App() {
     <Routes>
        
            <Route path='/home' element={<Userform/>} />
+                 <Route path='/ai' element={<Hero/>} />
         <Route path='/clg' element={<College/>} />
       <Route path='/' element={<Hero/>} />
               <Route path='/admin' element={<ValidationForm/>} />
@@ -34,7 +35,7 @@ function App() {
            
                
    
-        <Route path='/ai/:data' element={<Hero/>} />
+  
         <Route path="*" element={<h1>Page Not Found</h1>} />
     </Routes>
      </BrowserRouter>

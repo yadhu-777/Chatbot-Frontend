@@ -33,7 +33,7 @@ export default function Body() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { data } = location.state || "";
+  // const { data } = location.state || "";
   const [recId, setRecId] = useState(null);
 
   const {
@@ -56,6 +56,7 @@ export default function Body() {
     setTokennss,
     optch,
     setOpch,
+    data
   } = useContext(Mycontext);
 
   useEffect(() => {
@@ -91,7 +92,7 @@ export default function Body() {
     })
       .then(async (res) => {
         if (res.status === 500) {
-          console.log("international Eror");
+          console.log("internal Eror");
           return;
         }
         return res.json();

@@ -16,6 +16,7 @@ export default function MycontextProvider({ children }) {
   const [optch, setOpch] = useState(false);
   const [menu, setMenu] = useState(false);
   const [select, setSelect] = useState("college");
+    const [data, setData] = useState(" ");
   const [Convo, setConvo] = useState([
     {
       User: " ",
