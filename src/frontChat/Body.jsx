@@ -199,7 +199,7 @@ function college(){
 
 
   return (
-    <div style={{width:"100%"}}   className="outerBody">
+    <div   className="outerBody">
       {alert && <Allert />}
       {offline && <h2>You`re offline !</h2>}
       {online && <h2>Back online !</h2>}
