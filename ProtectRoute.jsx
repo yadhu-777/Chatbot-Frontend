@@ -9,7 +9,7 @@ function ProtectedRoute({ children }) {
       const [auth, setAuth] = useState(null);
      const navigate = useNavigate();
 async function checkAuth(){
-     fetch("https://chatbot-backend-0k0q.onrender.com/vauth2", {
+     fetch("https://chatbot-backend-0k0q.onrender.com/auth2", {
             method: "POST",
             credentials: "include",
             headers: {
