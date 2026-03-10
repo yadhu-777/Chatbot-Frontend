@@ -52,7 +52,7 @@ export default function Options() {
   }, [Delete, tokenss, optch]);
 
   function handleClick(data) {
-    navigate("/", { state: { data } });
+    navigate("/ai", { state: { data } });
   }
 
   function handledelete(idval) {

@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
     <Routes>
        
-           <Route path='/' element={<Userform/>} />
+           <Route path='/home' element={<Userform/>} />
         <Route path='/clg' element={<College/>} />
       <Route path='/' element={<Hero/>} />
               <Route path='/admin' element={<ValidationForm/>} />
