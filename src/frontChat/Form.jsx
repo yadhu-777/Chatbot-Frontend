@@ -2,14 +2,18 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { useContext, useState } from "react";
 import Mycontext from "../../Context";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Form() {
   const [formVal,setFormVal] = useState(" ");
    const [formVal2,setFormVal2] = useState(" ");
   
 async function handleSubmit (){
+  const navigate =useNavigate();
 fetch ("https://chatbot-backend-0k0q.onrender.com/data",{
   method:"POST",
+ credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -27,7 +31,8 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/data",{
         theme: "dark",
   }
     
-  )
+  ),
+  navigate("/clg")
 )
 }
 function handleChange(e){
