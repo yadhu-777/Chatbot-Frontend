@@ -32,7 +32,7 @@ function ProtectedRoute() {
     return <div>Loading...</div>;
   }
 
-  return auth ? <Outlet /> : <Navigate to="/admin" />;
+  return auth ? <Outlet /> : <Navigate to="/home" />;
 }
 
 export default ProtectedRoute;
