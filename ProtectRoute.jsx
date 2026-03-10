@@ -1,9 +1,13 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
+
+
 function ProtectedRoute({ children }) {
+      const [auth, setAuth] = useState(null);
      const navigate = useNavigate();
-  function async(){
+async function checkAuth(){
      fetch("https://chatbot-backend-0k0q.onrender.com/vauth2", {
             method: "POST",
             credentials: "include",
@@ -15,28 +19,27 @@ function ProtectedRoute({ children }) {
           })
           .then((res)=>res.json())
           .then((data)=>{
-            if(data.message==="not logged in"){
- navigate("/admin")
-            }else{
-                 navigate("/clg")
-            }
-         
+            if (data.message === "not logged in") {
+            setAuth(false);
+        } else {
+            setAuth(true);
+        }
            
           })
-          .catch((err)=>{
-             toast(err.message, {
-                    position: "top-center",
-                    autoClose: 1000,
-                    theme: "dark",
-                  });
-          })
+          if (auth === null) {
+    return <div>Loading...</div>;
+  }
+
+  return auth ? <Outlet /> : <Navigate to="/admin" />;
            
 }
 
 
+useEffect(() => {
+  checkAuth();
+}, []);
 
-
-  return children;
+  return <Outlet />;
 }
 
 export default ProtectedRoute;
