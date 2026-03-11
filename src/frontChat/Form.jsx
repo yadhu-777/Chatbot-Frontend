@@ -19,8 +19,8 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/data",{
         "Content-Type": "application/json",
       },
       body:JSON.stringify({
-        details:formVal,
-        details2:formVal2
+        email:formVal,
+        password:formVal2
       })
 
 })
