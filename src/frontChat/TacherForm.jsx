@@ -54,16 +54,16 @@ function handleTeacherSubmit(){
      ">
    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Teacher Name</label>
-  <input value={teacherDetails.name} onChange={handleTeacher}  type="email" class="form-control" id="exampleFormControlInput1" placeholder="name"/>
+  <input  name="name" value={teacherDetails.name} onChange={handleTeacher}  type="email" class="form-control" id="exampleFormControlInput1" placeholder="name"/>
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Position </label>
-  <input value={teacherDetails.position}  onChange={handleTeacher}  type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex: HOD"/>
+  <input  name="position" value={teacherDetails.position}  onChange={handleTeacher}  type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex: HOD"/>
 </div>
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-  <textarea value={teacherDetails.description}  onChange={handleTeacher}  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <textarea  name="description" value={teacherDetails.description}  onChange={handleTeacher}  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   <button style={{marginTop:"2rem"}}  onClick={handleTeacherSubmit}  type="button" class="btn btn-secondary" >Secondary</button>
 </div>
 
