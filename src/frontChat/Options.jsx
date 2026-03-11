@@ -141,7 +141,7 @@ setData(data);
           ))}
       </div>
 
-      <div className="logout">
+      {/* <div className="logout">
         <p id="emg">{img}</p>
         <Button
           onClick={() => {
@@ -165,8 +165,8 @@ setData(data);
           {" "}
           <Avatar sx={{ bgcolor: "purple" }}>{img?.slice(0, 1, 0)}</Avatar>{" "}
           &nbsp;&nbsp;&nbsp;logout
-        </Button>
-      </div>
+        </Button> 
+      </div>*/}
     </div>
   );
 }

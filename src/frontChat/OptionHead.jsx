@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Mycontext from "../../Context";
 import { Link } from "react-router-dom";
 export default function OptionHead() {
-  const { select, setSelect } = useContext(Mycontext);
+  const { select, setSelect,admin, setAdmin } = useContext(Mycontext);
   function college() {
     setSelect("college");
   }
@@ -23,7 +23,7 @@ export default function OptionHead() {
      setSelect("Ai")
   }
 
-  const { form, setForm } = useContext(Mycontext);
+  
   return (
     <nav className="navbar">
       <div className="logo">
@@ -41,7 +41,7 @@ export default function OptionHead() {
               <li onClick={Complain}>Placements</li>
         <li onClick={Complain}>Complain</li>
         <li onClick={timetable}>Time Table</li>
-            <li onClick={AskAi}>Ask Ai</li>
+         { admin  && <li onClick={AskAi}>Ask Ai</li>}
       </ul>
     </nav>
   );

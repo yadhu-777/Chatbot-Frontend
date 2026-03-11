@@ -17,6 +17,7 @@ export default function MycontextProvider({ children }) {
   const [menu, setMenu] = useState(false);
   const [select, setSelect] = useState("college");
     const [data, setData] = useState(" ");
+        const [admin, setAdmin] = useState(false);
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -27,6 +28,7 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        admin, setAdmin,
         form,
         setForm,
         authreturn,

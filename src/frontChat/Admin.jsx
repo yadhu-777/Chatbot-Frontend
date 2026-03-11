@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Mycontext from "../../Context";
 const ValidationForm = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
+  const{setAdmin} = useContext(Mycontext);
   const navigate = useNavigate();
   const validate = () => {
     let newErrors = {};
@@ -48,6 +51,7 @@ const ValidationForm = () => {
             autoClose: 1000,
             theme: "dark",
           });
+setAdmin(prev => !prev);
           navigate("/clg");
         } else {
           toast(res.message, {
