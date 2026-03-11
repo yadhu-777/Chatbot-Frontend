@@ -21,8 +21,8 @@ export default function Form() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: email.trim(),
-            password,
+            email: email,
+            password:password,
           }),
         },
       );
