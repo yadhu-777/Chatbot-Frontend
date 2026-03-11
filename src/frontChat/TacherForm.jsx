@@ -21,7 +21,6 @@ function handleTeacherSubmit(){
  fetch("https://chatbot-backend-0k0q.onrender.com/addTeacher", {
      
       method: "POST",
-      
       headers: {
         "Content-Type": "application/json",
       },
@@ -35,7 +34,9 @@ function handleTeacherSubmit(){
                     autoClose: 1000,
                     theme: "dark",
                   })
-    )
+    ).catch((err)=>{
+        console.log(err.message)
+    })
 }
 
 
