@@ -30,6 +30,7 @@ const ValidationForm = () => {
   function handlePassClick(e) {
     e.preventDefault();
     fetch("https://chatbot-backend-0k0q.onrender.com/data", {
+      credentials:"include",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
