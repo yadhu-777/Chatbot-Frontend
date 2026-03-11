@@ -32,10 +32,11 @@ const ValidationForm = () => {
     fetch("https://chatbot-backend-0k0q.onrender.com/data", {
      
       method: "POST",
-       credentials:"include",
+      
       headers: {
         "Content-Type": "application/json",
       },
+       credentials:"include",
       body: JSON.stringify({ content: formData }),
     })
       .then((data) => data.json())
