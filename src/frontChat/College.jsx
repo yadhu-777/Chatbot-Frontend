@@ -9,15 +9,15 @@ import Timetable from "./Timetable";
 import Form from "./Form";
 import Body from "./Body";
 import Options from "./Options";
+import TeacherForm from "./TacherForm";
 export default function College(){
       const { form, setForm } = useContext(Mycontext);
-  const {select,setSelect} = useContext(Mycontext);  
+  const {select,setSelect,teacher} = useContext(Mycontext);  
     return(
 
 <div className="outerCollege">
   <OptionHead/>
 
-{ select === "teacher" && <Teacher/>  }
 { select === "complain" && <Complain/>  }
 { select === "college" && <Clg/>  }
 {form && <Form />}
@@ -29,6 +29,8 @@ export default function College(){
       <Body/>
    </div>
     )}
+    {teacher && <TeacherForm/>}
+{ select === "teacher" && <Teacher/>  }
 </div>
 
     )

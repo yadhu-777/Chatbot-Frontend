@@ -15,6 +15,7 @@ export default function MycontextProvider({ children }) {
   const [tokenss, setTokennss] = useState(true);
   const [optch, setOpch] = useState(false);
   const [menu, setMenu] = useState(false);
+    const [teacher, setTeacher] = useState(false);
   const [select, setSelect] = useState("college");
     const [data, setData] = useState(" ");
         const [admin, setAdmin] = useState(true);
@@ -28,6 +29,7 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        teacher, setTeacher,
         admin, setAdmin,
         form,
         setForm,

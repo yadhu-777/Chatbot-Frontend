@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Mycontext from "../../Context";
 import { Link } from "react-router-dom";
 export default function OptionHead() {
-  const { select, setSelect,admin, setAdmin } = useContext(Mycontext);
+  const { setSelect,admin } = useContext(Mycontext);
   function college() {
     setSelect("college");
   }
@@ -40,7 +40,7 @@ export default function OptionHead() {
         <li onClick={Event}>Events</li>
               <li onClick={Complain}>Placements</li>
         <li onClick={Complain}>Complain</li>
-        <li onClick={timetable}>Time Table</li>
+        <li onClick={timetable}>Highlight</li>
          { admin  && <li onClick={AskAi}>Ask Ai</li>}
       </ul>
     </nav>

@@ -592,18 +592,32 @@ width: 100%;
   width: 100%;
   height: 100vh;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 .innerTeacher{
   border: 2px solid black;
   height: 20rem;
   width: 20%;
 }
-.outerTeacher{
+.teacherDisplay{
   display: flex;
- 
-
+justify-content: center;
+  width: 100%;
+  height: auto;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
+.teacherDisplay .card{
+  margin-bottom: 4rem;
+}
+.Addteacher{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
 .outerEvents2{
   width: 100%;
   height: 100vh;
@@ -864,4 +878,30 @@ input {
 
   display: flex;
   height: 90vh;
+}
+
+.outerFormm{
+  width: 100%;
+  height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+z-index: 999;
+
+}
+.innerFormm{
+  width: 60%;
+  padding: 2rem;
+  height: 60vh;
+  position: absolute;
+ background-color:white;
+ 
+}
+.outerFormm input{
+  width: 60%;
+}
+.outerFormm textarea{
+  width: 80%;
+  height: 8rem;
 }
