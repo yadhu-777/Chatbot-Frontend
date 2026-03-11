@@ -7,7 +7,7 @@ function ProtectedRoute() {
 
   useEffect(() => {
 
-    fetch("https://chatbot-backend-0k0q.onrender.com/auth2", {
+    fetch("https://chatbot-backend-0k0q.onrender.com/auth2",{
       credentials: "include",    
       method: "POST",
       headers: {
