@@ -19,6 +19,7 @@ function ProtectedRoute() {
     .then((data) => {
 
       if (data.message === "not logged in") {
+        console.log(data.message);
         setAuth(false);
       } else {
         setAuth(true);
