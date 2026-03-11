@@ -22,6 +22,7 @@ function ProtectedRoute() {
         console.log(data.message);
         setAuth(false);
       } else {
+         console.log(data.message);
         setAuth(true);
       }
 
