@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import College from "./src/frontChat/College";
 function ProtectedRoute() {
 
   const [auth, setAuth] = useState(null);
@@ -8,8 +8,9 @@ function ProtectedRoute() {
   useEffect(() => {
 
     fetch("https://chatbot-backend-0k0q.onrender.com/auth2", {
+           credentials: "include",
       method: "POST",
-      credentials: "include",
+ 
       headers: {
         "Content-Type": "application/json",
       }
@@ -32,7 +33,7 @@ function ProtectedRoute() {
     return <div>Loading...</div>;
   }
 
-  return auth ? <Outlet /> : <Navigate to="/home" />;
+  return auth ? <College /> : <Navigate to="/home" />;
 }
 
 export default ProtectedRoute;
