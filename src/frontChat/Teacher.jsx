@@ -62,7 +62,7 @@ useEffect(()=>{
 
           <CardContent sx={{ textAlign: "center", p: 3 }}>
             <Typography variant="h5" fontWeight="bold">
-            {  teacherData[0].name}
+            { teacherData[0][0].name}
             </Typography>
 
             <Typography
