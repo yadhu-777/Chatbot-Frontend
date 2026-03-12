@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import Mycontext from "../../Context";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Form from "./Form";
 export default function Events(){
   const [eventData,setEventData] = useState("");
