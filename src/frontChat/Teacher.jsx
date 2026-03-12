@@ -40,7 +40,7 @@ useEffect(()=>{
       {teacherData.map((data)=>{
         return(
           <Card
-        style={{ height: "27rem" }}
+        style={{ height: "27rem" ,maxWidth:"6rem"}}
         sx={{
           maxWidth: 360,
           borderRadius: "20px",
