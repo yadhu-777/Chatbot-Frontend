@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
+import { toast } from "react-toastify";
 import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
 
@@ -27,7 +28,38 @@ useEffect(()=>{
       setTeacherData(data.message)
       console.log(data.message)
     })
-},[teacher])
+},[teacher]);
+
+
+function handleRemove(data){
+   fetch("https://chatbot-backend-0k0q.onrender.com/deleteTeacher", {
+     
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+       credentials:"include",
+      body:JSON.stringify({
+        id:data
+      })
+    }).then((res)=>res.json)
+    .then((data)=>{
+toast(data.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+   setTeacher(prev =>!prev);
+                })
+    .catch((err)=>{
+      toast(err.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+    })
+
+}
 
   return (
     <div className="outerTeacher">
@@ -103,6 +135,7 @@ useEffect(()=>{
             </Typography>
           </CardContent>
         </CardActionArea>
+         <button onClick={()=> handleRemove(data?._id)} className="btn btn-primary" >Remove Teacher</button>
       </Card>
         )
       })}
