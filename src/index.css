@@ -667,12 +667,14 @@ justify-content: center;
 display: flex;
 justify-content: center;
 align-items: center;
+position: relative;
 margin-bottom: 4rem;
 }
 .innerForm2{
   width: 80%;
   height: 80%;
-  top: 1;
+position: absolute;
+top: 0.5rem;
    border: 2px solid #b9bad5;
    color: #0d0e23;
   display: flex;
