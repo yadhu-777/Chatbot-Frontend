@@ -5,11 +5,12 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
     const [teacherData,setTeacherData]= useState([]);
 export default function Teacher() {
     const {  teacher, setTeacher } = useContext(Mycontext);
+    
 
 useEffect(()=>{
   fetch("https://chatbot-backend-0k0q.onrender.com/getTeacher", {
