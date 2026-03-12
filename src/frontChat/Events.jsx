@@ -29,7 +29,33 @@ export default function Events(){
         setEventData(data.message)
         
       })
-      },[form])
+      },[form]);
+
+
+
+  function handleEventDelet(data){
+fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
+        credentials: "include",
+        method:"POST",
+       
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+              id:data
+            })
+           
+      
+      })
+      .then((res)=>res.json())
+      .then((data)=>{
+        console.log(data);
+        setForm(prev=>!prev)
+      })
+  }
+
+
+
     return(
         <div className="outerEvents">
             <div className="eventImg">
@@ -107,6 +133,11 @@ export default function Events(){
             </Typography>
           </CardContent>
         </CardActionArea>
+        <div className="Addteacher">
+  <button onClick={()=> {
+   handleEventDelet(data._id)
+  }} className="btn btn-primary" >Delete Event</button>
+</div>
       </Card>
       )
     })}
