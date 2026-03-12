@@ -22,6 +22,7 @@ function handleTeacher(e){
 
 
 function handleTeacherSubmit(){
+setTeacher(prev =>!prev);
  fetch("https://chatbot-backend-0k0q.onrender.com/addTeacher", {
      
       method: "POST",

@@ -27,7 +27,7 @@ useEffect(()=>{
       setTeacherData(data.message)
       console.log(data.message)
     })
-},[])
+},[teacher])
 
   return (
     <div className="outerTeacher">
@@ -42,7 +42,7 @@ useEffect(()=>{
           <Card
         style={{ height: "27rem"}}
         sx={{
-          maxWidth: 760,
+          maxWidth: 360,
           borderRadius: "20px",
           boxShadow: 6,
           transition: "all 0.3s ease",
