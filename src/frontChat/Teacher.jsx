@@ -62,7 +62,7 @@ useEffect(()=>{
 
           <CardContent sx={{ textAlign: "center", p: 3 }}>
             <Typography variant="h5" fontWeight="bold">
-              Gayathri K
+            {  teacherData.name}
             </Typography>
 
             <Typography
@@ -84,13 +84,11 @@ useEffect(()=>{
                 },
               }}
             >
-              25+ Years Experience
+             {teacherData.position}
             </Typography>
 
             <Typography variant="body2" color="text.secondary">
-              Dedicated Computer Science teacher skilled in programming and
-              algorithms. Passionate about mentoring students and guiding them
-              toward success in technology.
+             {teacherData.description}
             </Typography>
           </CardContent>
         </CardActionArea>
