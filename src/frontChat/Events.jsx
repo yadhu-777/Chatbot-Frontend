@@ -7,7 +7,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import Mycontext from "../../Context";
 import { useContext } from "react";
-
+import Form from "./Form";
 export default function Events(){
   
       const {admin,form,setForm  } = useContext(Mycontext);
@@ -24,6 +24,7 @@ export default function Events(){
   }} className="btn btn-primary" >Add Event</button>
 </div>}
                   <div className="outerEventsss">
+                    {form && <Form />}
       <Card
         style={{ height: "27rem" }}
         sx={{

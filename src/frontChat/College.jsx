@@ -20,7 +20,7 @@ export default function College(){
 
 { select === "complain" && <Complain/>  }
 { select === "college" && <Clg/>  }
-{form && <Form />}
+
 { select === "event" && <Events/>  }
 {select ==="timetable" && <Timetable/>}
 {select ==="Ai" &&( 
