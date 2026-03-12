@@ -75,6 +75,7 @@ toast(data.message, {
   </p>
 </div>
 <div className="teacherDisplay">
+   {teacher && <TeacherForm/>}
   
       {teacherData.map((data)=>{
         return(
