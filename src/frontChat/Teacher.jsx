@@ -64,9 +64,7 @@ toast(data.message, {
   return (
     <div className="outerTeacher">
 
-{ !admin &&   <div className="Addteacher">
-  <button onClick={()=> setTeacher(prev =>!prev)} className="btn btn-primary" >Add Teacher</button>
-</div>}
+
 <div className="teacherHeader">
   <h2>Meet Our Faculty</h2>
   <p>
@@ -74,6 +72,9 @@ toast(data.message, {
     to guide students toward success.
   </p>
 </div>
+{ !admin &&   <div className="Addteacher">
+  <button onClick={()=> setTeacher(prev =>!prev)} className="btn btn-primary" >Add Teacher</button>
+</div>}
 <div className="teacherDisplay">
    {teacher && <TeacherForm/>}
   
