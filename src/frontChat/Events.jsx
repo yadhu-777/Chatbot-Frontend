@@ -9,7 +9,7 @@ import Mycontext from "../../Context";
 import { useContext, useEffect, useState } from "react";
 import Form from "./Form";
 export default function Events(){
-  const [eventData,setEventData] = useState("");
+  const [eventData,setEventData] = useState([]);
       const {admin,form,setForm  } = useContext(Mycontext);
 
       
@@ -45,7 +45,7 @@ export default function Events(){
                   <div className="outerEventsss">
                     {form && <Form />}
      
-    {eventData.map((data)=>{
+    {eventData?.map((data)=>{
       return(
           <Card
         style={{ height: "27rem" }}
