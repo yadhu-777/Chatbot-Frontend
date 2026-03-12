@@ -9,7 +9,7 @@ import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
 
 export default function Teacher() {
-    const {  teacher, setTeacher } = useContext(Mycontext);
+    const {  teacher, setTeacher,admin } = useContext(Mycontext);
         const [teacherData,setTeacherData]= useState([]);
 
 useEffect(()=>{
@@ -32,9 +32,9 @@ useEffect(()=>{
   return (
     <div className="outerTeacher">
 
-<div className="Addteacher">
+{ !admin &&   <div className="Addteacher">
   <button onClick={()=> setTeacher(prev =>!prev)} className="btn btn-primary" >Add Teacher</button>
-</div>
+</div>}
 <div className="teacherDisplay">
   
       <Card
