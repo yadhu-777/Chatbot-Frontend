@@ -10,7 +10,7 @@ import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
 
 export default function Teacher() {
-    const {  teacher, setTeacher,admin } = useContext(Mycontext);
+    const {  teacher, setTeacher,admin,del, setDel } = useContext(Mycontext);
         const [teacherData,setTeacherData]= useState([]);
 
 useEffect(()=>{
@@ -28,7 +28,7 @@ useEffect(()=>{
       setTeacherData(data.message)
       console.log(data.message)
     })
-},[teacher]);
+},[teacher,del]);
 
 
 function handleRemove(data){
@@ -49,7 +49,7 @@ toast(data.message, {
                     autoClose: 1000,
                     theme: "dark",
                   });
-   setTeacher(prev =>!prev);
+    setDel(prev =>!prev);
                 })
     .catch((err)=>{
       toast(err.message, {
