@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 export default function Form() {
   const [formVal,setFormVal] = useState(" ");
    const [formVal2,setFormVal2] = useState(" ");
+  const {form,setForm} = useContext(Mycontext);
   
 async function handleSubmit (){
   const navigate =useNavigate();
@@ -43,7 +44,7 @@ function handleChange2(e){
 setFormVal2(e.target.value)
 }
 
-  const {form,setForm} = useContext(Mycontext)
+ 
   return (
     <div className="outerform">
       <div className="innerForm">

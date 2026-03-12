@@ -5,18 +5,30 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
+import Mycontext from "../../Context";
+import { useContext } from "react";
+
 export default function Events(){
+  
+      const {admin,form,setForm  } = useContext(Mycontext);
     return(
         <div className="outerEvents">
             <div className="eventImg">
               <img id="eventImg" src="event2.png" alt="" />
             </div>
             <div className="outerEventss">
-                  <div className="outerTeacher">
+              
+{ !admin &&   <div className="Addteacher">
+  <button onClick={()=> {
+    setForm(prev=>!prev)
+  }} className="btn btn-primary" >Add Event</button>
+</div>}
+                  <div className="outerEventsss">
       <Card
         style={{ height: "27rem" }}
         sx={{
           maxWidth: 360,
+          minWidth:300,
           borderRadius: "20px",
           boxShadow: 6,
           transition: "all 0.3s ease",
