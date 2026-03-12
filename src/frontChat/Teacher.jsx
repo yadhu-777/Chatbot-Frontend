@@ -43,6 +43,7 @@ useEffect(()=>{
         style={{ height: "27rem"}}
         sx={{
           maxWidth: 360,
+          minWidth:360,
           borderRadius: "20px",
           boxShadow: 6,
           transition: "all 0.3s ease",
