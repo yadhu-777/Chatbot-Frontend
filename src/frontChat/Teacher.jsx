@@ -42,7 +42,7 @@ function handleRemove(data){
       body:JSON.stringify({
         id:data
       })
-    }).then((res)=>res.json)
+    }).then((res)=>res.json())
     .then((data)=>{
 toast(data.message, {
                     position: "top-center",
@@ -135,7 +135,7 @@ toast(data.message, {
             </Typography>
           </CardContent>
         </CardActionArea>
-         <button onClick={()=> console.log(data?._id)} className="btn btn-primary" >Remove Teacher</button>
+         <button onClick={()=> handleRemove(data?._id)} className="btn btn-primary" >Remove Teacher</button>
       </Card>
         )
       })}
