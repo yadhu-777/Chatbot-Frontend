@@ -29,7 +29,7 @@ export default function Events(){
         setEventData(data.message)
         
       })
-      },[])
+      },[form])
     return(
         <div className="outerEvents">
             <div className="eventImg">
