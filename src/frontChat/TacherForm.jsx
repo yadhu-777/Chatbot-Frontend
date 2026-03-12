@@ -1,5 +1,5 @@
 import ClearIcon from "@mui/icons-material/Clear";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Mycontext from "../../Context";
 export default function TeacherForm(){
@@ -8,6 +8,7 @@ export default function TeacherForm(){
         position:"",
         description:""
     });
+    const [teacherData,setTeacherData]= useState([]);
       const { setSelect,admin ,setTeacher} = useContext(Mycontext);
 
 function handleTeacher(e){
@@ -16,6 +17,26 @@ function handleTeacher(e){
     [e.target.name]: e.target.value
   }));
 }
+
+
+useEffect(()=>{
+  fetch("https://chatbot-backend-0k0q.onrender.com/getTeacher", {
+     
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+       credentials:"include",
+      
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+      setTeacherData(data.message)
+      console.log(data.message)
+    })
+},[])
+
+
 
 function handleTeacherSubmit(){
  fetch("https://chatbot-backend-0k0q.onrender.com/addTeacher", {
