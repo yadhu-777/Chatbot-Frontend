@@ -1,23 +1,36 @@
-
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 const Placement = () => {
-  const upcomingDrives = [
-    { id: 1, company: "Google", date: "Oct 15, 2026", role: "Software Engineer", eligibility: "7.5+ CGPA" },
-    { id: 2, company: "TCS", date: "Oct 20, 2026", role: "System Engineer", eligibility: "6.0+ CGPA" },
-    { id: 3, company: "Accenture", date: "Nov 02, 2026", role: "Associate Developer", eligibility: "All Branches" },
+const data = [
+    { year: '2020', students: 420 },
+    { year: '2021', students: 510 },
+    { year: '2022', students: 680 },
+    { year: '2023', students: 740 },
+    { year: '2024', students: 850 },
   ];
-
+  const companyData = [
+    "Reliance Industries Limited [RIL]", "Hewlett-Packard (HP)", "Mercedes Benz (India) Ltd.", "Airbus engineering",
+    "Kirloskar Brothers", "Quest", "Volkswagen", "Safran Aerospace",
+    "Porsche", "Jet Airways", "British Airways", "Indigo",
+    "Mahindra Rise", "Audi", "Bajaj Corp Ltd", "Toyota",
+    "Qatar Airways", "Scania", "Etihad", "Emirates",
+    "Singapore Airlines", "Ducati", "Air Works"
+  ];
+const rows = [];
+  for (let i = 0; i < companyData.length; i += 4) {
+    rows.push(companyData.slice(i, i + 4));
+  }
   return (
     <div className="portal-wrapper">
       {/* Navbar */}
       <nav className="placement-nav">
         <div className="logo">University<span>Placement</span></div>
-        <ul className="nav-links">
+        {/* <ul className="nav-links">
           <li>Dashboard</li>
           <li>Companies</li>
           <li>Training</li>
           <li className="login-btn">Student Login</li>
-        </ul>
+        </ul> */}
       </nav>
 
       {/* Hero Section */}
@@ -25,10 +38,7 @@ const Placement = () => {
         <div className="hero-content">
           <h1>Shape Your Future</h1>
           <p>Connecting our talented students with world-class recruiters.</p>
-          <div className="hero-btns">
-            <button className="primary-btn">Register for Drive</button>
-            <button className="secondary-btn">Download Brochure</button>
-          </div>
+       
         </div>
       </header>
 
@@ -44,33 +54,65 @@ const Placement = () => {
       </section>
 
       {/* Upcoming Drives Table */}
-      <section className="drive-section">
-        <h2>Upcoming Recruitment Drives</h2>
-        <div className="table-wrapper">
-          <table className="drive-table">
-            <thead>
-              <tr>
-                <th>Company</th>
-                <th>Role</th>
-                <th>Drive Date</th>
-                <th>Criteria</th>
-                <th>Action</th>
+     <div className="table-container">
+      <h2 className="table-title">Frequently Visited Companies</h2>
+      <div className="table-wrapper">
+        <div className="table-header">Companies</div>
+        <table className="company-table">
+          <tbody>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((company, colIndex) => (
+                  <td key={colIndex}>{company}</td>
+                ))}
+                {/* Fill empty cells if the last row isn't full */}
+                {row.length < 4 && Array(4 - row.length).fill(null).map((_, i) => (
+                  <td key={`empty-${i}`}></td>
+                ))}
               </tr>
-            </thead>
-            <tbody>
-              {upcomingDrives.map((drive) => (
-                <tr key={drive.id}>
-                  <td className="company-name">{drive.company}</td>
-                  <td>{drive.role}</td>
-                  <td>{drive.date}</td>
-                  <td><span className="criteria-tag">{drive.eligibility}</span></td>
-                  <td><button className="reg-btn">Register</button></td>
-                </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div className="chart-card">
+      <div className="chart-header">
+        <h3>Year-wise Placement Trends</h3>
+        <p>Total number of students placed per academic year</p>
+      </div>
+      
+      <div className="chart-container">
+        <ResponsiveContainer width="100%" height={350}>
+          <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+            <XAxis 
+              dataKey="year" 
+              axisLine={false} 
+              tickLine={false} 
+              tick={{ fill: '#64748b', fontSize: 14 }}
+              dy={10}
+            />
+            <YAxis 
+              axisLine={false} 
+              tickLine={false} 
+              tick={{ fill: '#64748b', fontSize: 14 }}
+            />
+            <Tooltip 
+              cursor={{ fill: '#f1f5f9' }}
+              contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+            />
+            <Bar dataKey="students" radius={[6, 6, 0, 0]} barSize={50}>
+              {data.map((entry, index) => (
+                <Cell 
+                  key={`cell-${index}`} 
+                  fill={index === data.length - 1 ? '#3b82f6' : '#1e293b'} 
+                />
               ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
     </div>
   );
 };

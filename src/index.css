@@ -910,31 +910,59 @@ z-index: 999;
   width: 80%;
   height: 8rem;
 }
-.teacherHeader{
-  text-align:center;
-  padding:50px 20px;
-  margin-bottom:40px;
-  background: linear-gradient(135deg,#1b3c59,#3a7bd5);
-  border-radius:15px;
-  color:white;
-  width:85%;
-  margin-left:auto;
-  margin-right:auto;
+.table-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.teacherHeader h1{
-  font-size:38px;
-  font-weight:700;
-  margin-bottom:15px;
-  letter-spacing:1px;
+.table-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
 }
 
-.teacherHeader p{
-  font-size:18px;
-  max-width:650px;
-  margin:auto;
-  line-height:1.6;
-  opacity:0.9;
+.table-wrapper {
+  border: 1px solid #d1dbed;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures corners stay rounded */
+  background-color: #ffffff;
+}
+
+.table-header {
+  background-color: #eef2ff; /* Light blue header */
+  padding: 15px 20px;
+  font-weight: 700;
+  color: #334155;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #d1dbed;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company-table td {
+  padding: 18px 20px;
+  border: 1px solid #e2e8f0; /* Light gray borders */
+  color: #475569;
+  font-size: 0.95rem;
+  width: 25%; /* Equal width columns */
+  vertical-align: middle;
+}
+
+/* Remove outer borders of cells to let the wrapper handle it */
+.company-table tr td:first-child { border-left: none; }
+.company-table tr td:last-child { border-right: none; }
+.company-table tr:last-child td { border-bottom: none; }
+
+/* Hover effect for better UX */
+.company-table td:hover {
+  background-color: #f8fafc;
+  cursor: default;
 }
 :root {
   --navy: #1a2e4c;
@@ -1020,3 +1048,40 @@ z-index: 999;
   transition: 0.2s;
 }
 .reg-btn:hover { background: #16a34a; }
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.chart-header {
+  margin-bottom: 30px;
+}
+
+.chart-header h3 {
+  margin: 0;
+  color: #1a2e4c; /* Matching your Navy theme */
+  font-size: 1.4rem;
+}
+
+.chart-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.chart-container {
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* Customizing the hover effect on the bars */
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
