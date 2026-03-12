@@ -5,7 +5,7 @@ import OptionHead from "./OptionHead"
 import Teacher from "./Teacher";
 import Complain from "./Complain";
 import Events from "./Events";
-import Timetable from "./Timetable";
+import Placement from "./Placement";
 import Form from "./Form";
 import Body from "./Body";
 import Options from "./Options";
@@ -21,8 +21,8 @@ export default function College(){
 { select === "complain" && <Complain/>  }
 { select === "college" && <Clg/>  }
 
-{ select === "event" && <Events/>  }
-{select ==="timetable" && <Timetable/>}
+{ select === "Placement" && <Placement/>  }
+?
 {select ==="Ai" &&( 
    <div style={{height:"100vh"}}   className="outer">
    <Options/>

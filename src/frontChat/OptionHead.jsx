@@ -17,7 +17,7 @@ export default function OptionHead() {
     setSelect("complain");
   }
   function timetable(){
-    setSelect("timetable")
+    setSelect("Placement")
   }
   function AskAi(){
      setSelect("Ai")
@@ -40,7 +40,7 @@ export default function OptionHead() {
         <li onClick={Event}>Events</li>
               <li onClick={Complain}>Placements</li>
         <li onClick={Complain}>Complain</li>
-        <li onClick={timetable}>Highlight</li>
+        <li onClick={timetable}>Placement</li>
          { admin  && <li onClick={AskAi}>Ask Ai</li>}
       </ul>
     </nav>
