@@ -380,7 +380,7 @@ margin-bottom: -19rem;
   position: relative;
   padding: 2rem;
   position: absolute;
-  
+  top: 0rem;
 }
 .clear{
 position: absolute;
@@ -593,12 +593,7 @@ width: 100%;
   display: flex;
   flex-direction: column;
 }
-.outerEventsss{
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  padding: 3rem;
-}
+
 .innerTeacher{
   border: 2px solid black;
   height: 20rem;
@@ -667,14 +662,11 @@ justify-content: center;
 display: flex;
 justify-content: center;
 align-items: center;
-position: relative;
 margin-bottom: 4rem;
 }
 .innerForm2{
   width: 80%;
   height: 80%;
-position: absolute;
-top: 0.5rem;
    border: 2px solid #b9bad5;
    color: #0d0e23;
   display: flex;
@@ -691,7 +683,9 @@ border-radius: 1rem;
   height: auto;
 }
 
-
+.outerEventsss{
+  display: flex;
+}
 
 
 
@@ -903,7 +897,7 @@ z-index: 999;
   height: 60vh;
   position: absolute;
  background-color:white;
- 
+
 }
 .outerFormm input{
   width: 60%;

@@ -6,13 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Form() {
-  const [formVal,setFormVal] = useState(" ");
-   const [formVal2,setFormVal2] = useState(" ");
+const[eventDetails,setEventDetails]  = useState({
+  name:"",
+  date:"",
+  details:""
+})
   const {form,setForm} = useContext(Mycontext);
-  
+   const navigate =useNavigate();
 async function handleSubmit (){
-  const navigate =useNavigate();
-fetch ("https://chatbot-backend-0k0q.onrender.com/data",{
+ 
+fetch ("https://chatbot-backend-0k0q.onrender.com/addEvent",{
   credentials: "include",
   method:"POST",
  
@@ -20,28 +23,26 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/data",{
         "Content-Type": "application/json",
       },
       body:JSON.stringify({
-        email:formVal,
-        password:formVal2
+        data:eventDetails
+   
       })
 
 })
 .then((res)=>res.json())
 .then((data)=>
-  toast(data.message,{
-    position: "top-center",
-        autoClose: 1000,
-        theme: "dark",
-  }
+console.log(data.message)
     
-  ),
-  navigate("/clg")
-)
+  )
+
 }
+
 function handleChange(e){
-setFormVal(e.target.value)
-}
-function handleChange2(e){
-setFormVal2(e.target.value)
+setEventDetails(prev=>(
+  {
+    ...prev,
+    [e.target.name]:e.target.value
+  }
+));
 }
 
  
@@ -59,16 +60,16 @@ setFormVal2(e.target.value)
      ">
    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Event Name</label>
-  <input type="email" class="form-control" value={formVal} onChange={handleChange} id="exampleFormControlInput1" placeholder="name"/>
+  <input type="email" class="form-control" name="name" value={eventDetails.name} onChange={handleChange} id="exampleFormControlInput1" placeholder="name"/>
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Date </label>
-  <input type="email" class="form-control" value={formVal} onChange={handleChange} id="exampleFormControlInput1" placeholder="Date"/>
+  <input type="email" class="form-control" name="date" value={eventDetails.date} onChange={handleChange} id="exampleFormControlInput1" placeholder="Date"/>
 </div>
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Details of Event</label>
-  <textarea  value={formVal} onChange={handleChange2}  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <textarea  value={eventDetails.details} name="details" onChange={handleChange}  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   <button style={{marginTop:"2rem"}} type="button" class="btn btn-secondary" onClick={handleSubmit} >Secondary</button>
 </div>
 

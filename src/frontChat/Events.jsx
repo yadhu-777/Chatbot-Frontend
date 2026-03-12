@@ -18,11 +18,11 @@ export default function Events(){
             </div>
             <div className="outerEventss">
               
-{ !admin &&   <div className="Addteacher">
+   <div className="Addteacher">
   <button onClick={()=> {
     setForm(prev=>!prev)
   }} className="btn btn-primary" >Add Event</button>
-</div>}
+</div>
                   <div className="outerEventsss">
                     {form && <Form />}
       <Card
