@@ -10,6 +10,7 @@ import { useContext, useEffect, useState } from "react";
 import Form from "./Form";
 export default function Events(){
   const [eventData,setEventData] = useState([]);
+    const [delEvent,setDelEvent] = useState(false);
       const {admin,form,setForm  } = useContext(Mycontext);
 
       
@@ -29,7 +30,7 @@ export default function Events(){
         setEventData(data.message)
         
       })
-      },[form]);
+      },[form,delEvent]);
 
 
 
@@ -50,7 +51,7 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
       .then((res)=>res.json())
       .then((data)=>{
         console.log(data);
-        setForm(prev=>!prev)
+       setDelEvent(prev=>!prev)
       })
   }
 
