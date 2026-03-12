@@ -45,7 +45,7 @@ export default function Events(){
                   <div className="outerEventsss">
                     {form && <Form />}
      
-    {eventData?.map((data)=>{
+    {eventData.map((data)=>{
       return(
           <Card
         style={{ height: "27rem" }}
