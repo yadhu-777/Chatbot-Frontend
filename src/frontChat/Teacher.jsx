@@ -135,7 +135,7 @@ toast(data.message, {
             </Typography>
           </CardContent>
         </CardActionArea>
-         <button onClick={()=> handleRemove(data?._id)} className="btn btn-primary" >Remove Teacher</button>
+         <button onClick={()=> console.log(data?._id)} className="btn btn-primary" >Remove Teacher</button>
       </Card>
         )
       })}
