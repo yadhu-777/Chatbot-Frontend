@@ -35,6 +35,13 @@ useEffect(()=>{
 { !admin &&   <div className="Addteacher">
   <button onClick={()=> setTeacher(prev =>!prev)} className="btn btn-primary" >Add Teacher</button>
 </div>}
+<div className="teacherHeader">
+  <h2>Meet Our Faculty</h2>
+  <p>
+    Our dedicated teachers bring years of academic and industry experience
+    to guide students toward success.
+  </p>
+</div>
 <div className="teacherDisplay">
   
       {teacherData.map((data)=>{
