@@ -686,6 +686,7 @@ border-radius: 1rem;
 .outerEventsss{
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 
