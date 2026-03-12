@@ -27,7 +27,7 @@ export default function Events(){
       .then((res)=>res.json())
       .then((data)=>{
         setEventData(data.message)
-        setForm(prev=>!prev);
+        
       })
       },[])
     return(
