@@ -51,7 +51,9 @@ export default function Events(){
         style={{ height: "27rem" }}
         sx={{
           maxWidth: 360,
+          minWidth:300,
           borderRadius: "20px",
+          marginBottom:"2rem",
           boxShadow: 6,
           transition: "all 0.3s ease",
 
