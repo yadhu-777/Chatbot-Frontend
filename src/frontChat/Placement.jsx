@@ -53,6 +53,10 @@ const rows = [];
         </div>
       </section>
 
+      <div className="placementImg">
+        <img src="placement.png" alt="" />
+      </div>
+
       {/* Upcoming Drives Table */}
      <div className="table-container">
       <h2 className="table-title">Frequently Visited Companies</h2>
