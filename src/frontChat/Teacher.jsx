@@ -8,7 +8,7 @@ import CardActions from "@mui/material/CardActions";
 import { toast } from "react-toastify";
 import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
-
+import TeacherForm from "./TacherForm";
 export default function Teacher() {
     const {  teacher, setTeacher,admin,del, setDel } = useContext(Mycontext);
         const [teacherData,setTeacherData]= useState([]);
