@@ -72,7 +72,7 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/getEvent",{
 
 })
 .then((res)=>res.json)
-.then((data)=>console.log(data.essage))
+.then((data)=>console.log(data.message))
 },[])
 
  
