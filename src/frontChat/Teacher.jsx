@@ -45,6 +45,7 @@ useEffect(()=>{
           maxWidth: 360,
           minWidth:360,
           borderRadius: "20px",
+          marginBottom:"2rem",
           boxShadow: 6,
           transition: "all 0.3s ease",
           marginRight: "4rem",
