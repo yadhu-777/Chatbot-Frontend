@@ -905,20 +905,27 @@ z-index: 999;
 }
 .teacherHeader{
   text-align:center;
-  margin:40px 0 60px 0;
+  padding:50px 20px;
+  margin-bottom:40px;
+  background: linear-gradient(135deg,#1b3c59,#3a7bd5);
+  border-radius:15px;
+  color:white;
+  width:85%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .teacherHeader h1{
-  font-size:36px;
+  font-size:38px;
   font-weight:700;
-  color:#1b3c59;
-  margin-bottom:10px;
+  margin-bottom:15px;
+  letter-spacing:1px;
 }
 
 .teacherHeader p{
-  font-size:17px;
-  color:#555;
-  width:60%;
+  font-size:18px;
+  max-width:650px;
   margin:auto;
   line-height:1.6;
+  opacity:0.9;
 }

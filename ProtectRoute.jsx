@@ -31,10 +31,10 @@ function ProtectedRoute() {
   }, []);
 
   if (auth === null) {
-    return <College />;
+    return <div>Loading...</div>;
   }
 
-  return auth ? <College /> :<College />;
+  return auth ? <College /> : <Navigate to="/home" />;
 }
 
 export default ProtectedRoute;
