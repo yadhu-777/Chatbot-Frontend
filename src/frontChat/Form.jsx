@@ -1,5 +1,5 @@
 import ClearIcon from "@mui/icons-material/Clear";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -30,9 +30,23 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/addEvent",{
 })
 .then((res)=>res.json())
 .then((data)=>
-console.log(data.message)
+ {
+  toast(data.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+                  setForm(prev=>!prev)
+ }
     
   )
+  .catch((err)=>{
+    toast(err.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+  })
 
 }
 
@@ -44,6 +58,22 @@ setEventDetails(prev=>(
   }
 ));
 }
+
+
+useEffect(()=>{
+fetch ("https://chatbot-backend-0k0q.onrender.com/getEvent",{
+  credentials: "include",
+  method:"POST",
+ 
+      headers: {
+        "Content-Type": "application/json",
+      },
+     
+
+})
+.then((res)=>res.json)
+.then((data)=>console.log(data.essage))
+},[])
 
  
   return (
