@@ -37,7 +37,9 @@ useEffect(()=>{
 </div>}
 <div className="teacherDisplay">
   
-      <Card
+      {teacherData.map((data)=>{
+        return(
+          <Card
         style={{ height: "27rem" }}
         sx={{
           maxWidth: 360,
@@ -62,7 +64,7 @@ useEffect(()=>{
 
           <CardContent sx={{ textAlign: "center", p: 3 }}>
             <Typography variant="h5" fontWeight="bold">
-            { teacherData[0]?.name}
+            { data?.name}
             </Typography>
 
             <Typography
@@ -84,15 +86,17 @@ useEffect(()=>{
                 },
               }}
             >
-             {teacherData[0]?.position}
+             {data?.position}
             </Typography>
 
             <Typography variant="body2" color="text.secondary">
-             {teacherData[0]?.details}
+             {data?.details}
             </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
+        )
+      })}
 </div>
      
     </div>
