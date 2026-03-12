@@ -34,7 +34,7 @@ useEffect(()=>{
 function handleRemove(data){
    fetch("https://chatbot-backend-0k0q.onrender.com/deleteTeacher", {
      
-      method: "DELETE",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
