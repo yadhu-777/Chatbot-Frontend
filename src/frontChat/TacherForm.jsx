@@ -8,7 +8,7 @@ export default function TeacherForm(){
         position:"",
         description:""
     });
-    const [teacherData,setTeacherData]= useState([]);
+
       const { setSelect,admin ,setTeacher} = useContext(Mycontext);
 
 function handleTeacher(e){
@@ -18,23 +18,6 @@ function handleTeacher(e){
   }));
 }
 
-
-useEffect(()=>{
-  fetch("https://chatbot-backend-0k0q.onrender.com/getTeacher", {
-     
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-       credentials:"include",
-      
-    })
-    .then((res)=>res.json())
-    .then((data)=>{
-      setTeacherData(data.message)
-      console.log(data.message)
-    })
-},[])
 
 
 
