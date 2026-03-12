@@ -60,20 +60,6 @@ setEventDetails(prev=>(
 }
 
 
-useEffect(()=>{
-fetch ("https://chatbot-backend-0k0q.onrender.com/getEvent",{
-  credentials: "include",
-  method:"POST",
- 
-      headers: {
-        "Content-Type": "application/json",
-      },
-     
-
-})
-.then((res)=>res.json())
-.then((data)=>console.log(data.message))
-},[])
 
  
   return (
