@@ -22,7 +22,7 @@ function handleTeacher(e){
 
 
 function handleTeacherSubmit(){
-setTeacher(prev =>!prev);
+
  fetch("https://chatbot-backend-0k0q.onrender.com/addTeacher", {
      
       method: "POST",
@@ -33,12 +33,13 @@ setTeacher(prev =>!prev);
       body: JSON.stringify({ content: teacherDetails }),
     })
     .then((res)=>res.json())
-    .then((data)=>
+    .then((data)=>{
          toast(data.message, {
                     position: "top-center",
                     autoClose: 1000,
                     theme: "dark",
-                  })
+                  });
+                  setTeacher(prev =>!prev);}
     ).catch((err)=>{
         console.log(err.message)
     })
