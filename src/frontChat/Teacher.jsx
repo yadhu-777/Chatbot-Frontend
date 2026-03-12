@@ -7,10 +7,10 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
-    const [teacherData,setTeacherData]= useState([]);
+
 export default function Teacher() {
     const {  teacher, setTeacher } = useContext(Mycontext);
-    
+        const [teacherData,setTeacherData]= useState([]);
 
 useEffect(()=>{
   fetch("https://chatbot-backend-0k0q.onrender.com/getTeacher", {
