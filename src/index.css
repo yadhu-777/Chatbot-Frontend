@@ -1196,6 +1196,8 @@ padding-left: 3rem;
 .innerHighlight{
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 .outerPlacementForm{
   width: 100%;
@@ -1215,4 +1217,12 @@ padding-left: 3rem;
 .innerPlacementForm input{
   width: 50%;
  margin-bottom: 1rem;
+}
+.plDiv{
+  max-width: 10rem;
+  height: 6rem;
+}
+.plDiv img{
+  width: 100%;
+  height: 100%;
 }

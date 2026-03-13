@@ -25,7 +25,15 @@ useEffect(()=>{
         })
         .then((res)=>res.json())
         .then((data)=>{
-        setPlData(data.message)
+          if(data.message==="Error during fetch"){
+ toast(data.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+          }else{
+setPlData(data.message)
+          }
         })
         .catch((err)=>{
           console.log(err)
@@ -43,7 +51,15 @@ setShowpl(prev=>!prev);
 </div>
 {showpl && <PlacementFrom/>}
     <div className="innerHighlight">
-
+{
+  plData.map((data)=>{
+    return(
+      <div className="plDiv">
+        <img src="data.image" alt="" />
+      </div>
+    )
+  })
+}
 
     
     </div>
