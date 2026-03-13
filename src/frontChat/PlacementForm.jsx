@@ -5,7 +5,7 @@ import Mycontext from "../../Context";
 import { toast } from "react-toastify";
 
 export default function PlacementFrom(){
-     const{showpl,setShowpl } = useContext(Mycontext);
+     const{showpl,setShowpl ,recPl,setRcpl} = useContext(Mycontext);
 const [plImage, setPlImage] = useState({
   name: "",
   description: "",
@@ -57,6 +57,7 @@ function handleSubmit(){
                     autoClose: 1000,
                     theme: "dark",
                   });
+setRcpl(prev=>!prev);
 setShowpl(prev=>!prev);
  })
  .catch((err)=>{

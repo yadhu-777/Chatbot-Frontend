@@ -8,8 +8,8 @@ export default function Highlight(){
 
 const[plData,setPlData] = useState("");
 
-    const[recPl,setRcpl] = useState(false);
- const{showpl,setShowpl } = useContext(Mycontext);
+
+ const{showpl,setShowpl,recPl,setRcpl } = useContext(Mycontext);
 
 useEffect(()=>{
   fetch ("https://chatbot-backend-0k0q.onrender.com/getHighlight",{
@@ -38,7 +38,7 @@ setPlData(data.message)
         .catch((err)=>{
           console.log(err)
         })
-},[])
+},[recPl])
 
 
     return(

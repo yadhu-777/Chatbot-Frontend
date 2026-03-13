@@ -21,6 +21,7 @@ export default function MycontextProvider({ children }) {
     const [data, setData] = useState(" ");
         const [admin, setAdmin] = useState(true);
           const[showpl,setShowpl] = useState(false);
+              const[recPl,setRcpl] = useState(false);
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -31,6 +32,7 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        recPl,setRcpl,
         showpl,setShowpl,
         del, setDel,
         teacher, setTeacher,
