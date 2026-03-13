@@ -32,12 +32,16 @@ function handleImage(e){
 
 function handleSubmit(){
 
+  const formData = new FormData();
+
+  formData.append("name", plImage.name);
+  formData.append("description", plImage.description);
+  formData.append("image", plImage.image); // file
+
  fetch("https://chatbot-backend-0k0q.onrender.com/addImage",{
 
   method:"POST",
-  headers:{
-    "Content-Type":"application/json"
-  },
+ 
 
   body:JSON.stringify({
     name: plImage.name,
