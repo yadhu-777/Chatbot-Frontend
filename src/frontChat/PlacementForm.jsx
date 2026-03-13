@@ -16,18 +16,12 @@ function handleChange(e){
 }
 function handleImage(e){
 
-  const file = e.target.files[0];
+ const file = e.target.files[0];
 
-  const reader = new FileReader();
-
-  reader.onloadend = ()=>{
-    setPlImage(prev => ({
-      ...prev,
-      image: reader.result
-    }));
-  };
-
-  reader.readAsDataURL(file);
+ setPlImage(prev => ({
+   ...prev,
+   image: file
+ }));
 }
 
 function handleSubmit(){
@@ -43,12 +37,7 @@ function handleSubmit(){
   method:"POST",
  
 
-  body:JSON.stringify({
-    name: plImage.name,
- 
-    description: plImage.description,
-    image: plImage.image
-  })
+  body:formData
 
  })
  .then(res=>res.json())
