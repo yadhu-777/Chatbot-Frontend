@@ -55,7 +55,7 @@ setShowpl(prev=>!prev);
   plData.map((data)=>{
     return(
       <div className="plDiv">
-        <img src="data.image" alt="" />
+        <img src={data.image }alt="" />
       </div>
     )
   })
