@@ -1224,9 +1224,10 @@ padding-left: 3rem;
   max-width: 30%;
   height: 16rem;
   gap: 2rem;
-  border-radius: 2rem;
+
 }
 .plDiv img{
   width: 100%;
+    border-radius: 2rem;
   height: 100%;
 }
