@@ -52,7 +52,7 @@ setShowpl(prev=>!prev);
 {showpl && <PlacementFrom/>}
     <div className="innerHighlight">
 {
-  plData.map((data)=>{
+  plData?.map((data)=>{
     return(
       <div className="plDiv">
         <img src={data.image }alt="" />
