@@ -6,7 +6,7 @@ import PlacementFrom from './PlacementForm';
 import Mycontext from '../../Context';
 export default function Highlight(){
 
-const[plData,setPlData] = useState("");
+const[plData,setPlData] = useState([]);
 
 
  const{showpl,setShowpl,recPl,setRcpl } = useContext(Mycontext);
