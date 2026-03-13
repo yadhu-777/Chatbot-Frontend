@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-
+import imageCompression from "browser-image-compression";
 export default function PlacementFrom(){
     
 const [plImage, setPlImage] = useState({
@@ -8,20 +8,27 @@ const [plImage, setPlImage] = useState({
   description: "",
   image: ""
 });
-function handleChange(e){
+  function handleChange(e){
   setPlImage(prev => ({
     ...prev,
     [e.target.name]: e.target.value
   }));
 }
-function handleImage(e){
+ async function handleImage(e){
 
  const file = e.target.files[0];
+  const options = {
+    maxSizeMB: 4,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true
+  };
 
- setPlImage(prev => ({
-   ...prev,
-   image: file
- }));
+  const compressedFile = await imageCompression(file, options);
+
+  setPlImage(prev => ({
+    ...prev,
+    image: compressedFile
+  }));
 }
 
 function handleSubmit(){
