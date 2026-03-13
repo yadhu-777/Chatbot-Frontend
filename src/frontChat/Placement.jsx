@@ -34,7 +34,7 @@ const rows = [];
       </nav>
 
       {/* Hero Section */}
-      <header className="hero-banner">
+      <header style={{ backgroundImage: 'url("collegeImg2.png")' }}  className="hero-banner">
         <div className="hero-content">
           <h1>Shape Your Future</h1>
           <p>Connecting our talented students with world-class recruiters.</p>
