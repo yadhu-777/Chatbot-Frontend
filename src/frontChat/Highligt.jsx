@@ -25,15 +25,7 @@ useEffect(()=>{
         })
         .then((res)=>res.json())
         .then((data)=>{
-          if(data.message==="Error during fetch"){
- toast(data.message, {
-                    position: "top-center",
-                    autoClose: 1000,
-                    theme: "dark",
-                  });
-          }else{
-setPlData(data.message)
-          }
+        setPlData(data.message)
         })
         .catch((err)=>{
           console.log(err)
