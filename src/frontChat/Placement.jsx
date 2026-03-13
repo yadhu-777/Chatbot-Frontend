@@ -54,7 +54,21 @@ const rows = [];
       </section>
 
       <div className="placementImg">
-        <img src="placement.png" alt="" />
+        <div className="description">
+          <h1 className='placementTitle'>Placements</h1>
+          <p>Placement assistance is offered to those students who complete their course
+            and <br /> qualify as per the hiring  Employer / Company's requirements & regulations. </p>
+          <h2 className='placementTitle2'>Current / On-Going Placement Opportunities</h2>
+          <p>BlueDart hiring BBA Aviation Management graduates for Customer Service
+Lufthansa Technik Services Limited hiring BBA AM, BBA and BSc AM graduates for Cargo. 
+GMR hiring  AME Students 
+IndiGo  hiring BBA Aviation Management for PLM Warehouse and Stores functions
+IndiGo hiring AME as Jr Technician
+Air India Engineering Services Ltd hiring AME B1.1 / B2 as Technicians </p>
+        </div>
+       <div className="placementImgg">
+         <img src="placement.png" alt="" />
+       </div>
       </div>
 
       {/* Upcoming Drives Table */}

@@ -915,6 +915,8 @@ z-index: 999;
   margin: 40px auto;
   padding: 0 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .table-title {
@@ -1023,7 +1025,7 @@ z-index: 999;
 .secondary-btn { background: transparent; border: 2px solid white; padding: 10px 25px; color: white; border-radius: 5px; cursor: pointer; }
 
 /* Stats */
-.stats-section { padding: 60px 8%; text-align: center; }
+.stats-section { padding: 60px 8%; text-align: center; margin-bottom: 3rem; }
 .stats-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
 .stat-box { background: white; padding: 30px; border-radius: 10px; border-bottom: 4px solid var(--accent); }
 .stat-box h4 { font-size: 2rem; margin: 0; color: var(--accent); }
@@ -1087,42 +1089,102 @@ z-index: 999;
   transition: opacity 0.2s ease;
 }
 .placementImg{
+
   width: 100%;
 height: 70vh;
 margin-bottom: 1rem;
+display: flex;
 }
-.placementImg img{
+.placementImgg{
+  width: 50%;
+}
+.placementImgg img{
   width: 100%;
   height: 100%;
   object-fit: contain;
+  margin-top: 1rem;
   
+}
+.description p {
+margin-bottom: 3rem;
+}
+.description h2{
+margin-bottom: 2rem;
+}
+.description h1{
+margin-bottom: 2rem;
+}
+.description{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+ 
+padding-left: 3rem;
+  justify-content: center;
 }
 .teacherHeader{
   text-align:center;
-  margin:40px 0 60px 0;
+  padding:50px 20px;
+  margin-bottom:40px;
+  background: linear-gradient(135deg,#1b3c59,#3a7bd5);
+  border-radius:15px;
+  color:white;
+  width:85%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .teacherHeader h1{
-  font-size:36px;
+  font-size:38px;
   font-weight:700;
-  color:#1b3c59;
-  margin-bottom:10px;
+  margin-bottom:15px;
+  letter-spacing:1px;
 }
 
 .teacherHeader p{
-  font-size:17px;
-  color:#555;
-  width:60%;
+  font-size:18px;
+  max-width:650px;
   margin:auto;
   line-height:1.6;
+  opacity:0.9;
 }
 
 .teacherStats{
-  margin-top:20px;
+  margin-top:25px;
   display:flex;
   justify-content:center;
-  gap:30px;
-  font-size:15px;
-  color:#1b3c59;
+  gap:35px;
+  font-size:16px;
   font-weight:600;
+}
+
+.teacherStats span{
+  background:rgba(255,255,255,0.15);
+  padding:8px 16px;
+  border-radius:20px;
+}
+.placementTitle{
+  font-size:48px;
+  font-weight:700;
+  color:#1b2a41;
+
+  margin:40px 0;
+ 
+}
+
+.placementTitle::after{
+  content:"";
+ 
+  height:4px;
+  background:linear-gradient(90deg,#1976d2,#42a5f5);
+  display:block;
+  margin:10px auto;
+  border-radius:2px;
+}
+.placementTitle2{
+  font-size:40px;
+  font-weight:700;
+  color:#1b2a41;
+
+  margin:40px 0;
 }

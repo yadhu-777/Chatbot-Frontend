@@ -20,7 +20,7 @@ export default function College(){
 
 { select === "complain" && <Complain/>  }
 { select === "college" && <Clg/>  }
-
+{ select === "event" && <Events/>  }
 { select === "Placement" && <Placement/>  }
 ?
 {select ==="Ai" &&( 
