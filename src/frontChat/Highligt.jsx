@@ -38,7 +38,39 @@ setPlData(data.message)
         .catch((err)=>{
           console.log(err)
         })
-},[recPl])
+},[recPl]);
+function handleDlete(data){
+fetch ("https://chatbot-backend-0k0q.onrender.com/highlightDelete",{
+          credentials: "include",
+          method:"POST",
+         
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body:JSON.stringify({
+id:data
+              })
+              
+             
+        
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+          setRcpl(prev=>!prev);
+          toast(data.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+        })
+        .catch((err)=>{
+           toast(err.message, {
+                      position: "top-center",
+                      autoClose: 1000,
+                      theme: "dark",
+                    });
+        })
+}
 
 
     return(
@@ -56,6 +88,7 @@ setShowpl(prev=>!prev);
     return(
       <div className="plDiv">
         <img src={data.image }alt="" />
+        <button onClick={()=>handleDlete(data._id)} className='btn btn-danger'>Delete</button>
       </div>
     )
   })
