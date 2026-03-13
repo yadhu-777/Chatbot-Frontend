@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 const Placement = () => {
+
 const data = [
     { year: '2020', students: 420 },
     { year: '2021', students: 510 },
@@ -20,6 +22,8 @@ const rows = [];
   for (let i = 0; i < companyData.length; i += 4) {
     rows.push(companyData.slice(i, i + 4));
   }
+
+
   return (
     <div className="portal-wrapper">
       {/* Navbar */}

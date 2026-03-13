@@ -6,7 +6,7 @@ import Teacher from "./Teacher";
 import Complain from "./Complain";
 import Events from "./Events";
 import Placement from "./Placement";
-import Form from "./Form";
+import Highlight from "./Highligt";
 import Body from "./Body";
 import Options from "./Options";
 import TeacherForm from "./TacherForm";
@@ -19,6 +19,7 @@ export default function College(){
   <OptionHead/>
 
 { select === "complain" && <Complain/>  }
+{ select === "highlight" && <Highlight/>  }
 { select === "college" && <Clg/>  }
 { select === "event" && <Events/>  }
 { select === "Placement" && <Placement/>  }

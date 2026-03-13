@@ -22,6 +22,10 @@ export default function OptionHead() {
   function AskAi(){
      setSelect("Ai")
   }
+    function highlight(){
+     setSelect("highlight")
+  }
+
 
   
   return (
@@ -38,9 +42,10 @@ export default function OptionHead() {
         <li onClick={Teacher}>Teacher</li>
        
         <li onClick={Event}>Events</li>
-              <li onClick={Complain}>Placements</li>
+          <li onClick={timetable}>Placement</li>
+              
         <li onClick={Complain}>Complain</li>
-        <li onClick={timetable}>Placement</li>
+      <li onClick={highlight}>Highlight</li>
          { admin  && <li onClick={AskAi}>Ask Ai</li>}
       </ul>
     </nav>
