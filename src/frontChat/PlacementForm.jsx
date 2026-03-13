@@ -1,8 +1,11 @@
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import ClearIcon from "@mui/icons-material/Clear";
 import imageCompression from "browser-image-compression";
+import Mycontext from "../../Context";
+import { toast } from "react-toastify";
+
 export default function PlacementFrom(){
-    
+     const{showpl,setShowpl } = useContext(Mycontext);
 const [plImage, setPlImage] = useState({
   name: "",
   description: "",
@@ -48,14 +51,31 @@ function handleSubmit(){
 
  })
  .then(res=>res.json())
- .then(data=>{
-  console.log(data.message);
+ .then((data)=>{
+ toast(data.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+setShowpl(prev=>!prev);
+ })
+ .catch((err)=>{
+   toast(err.message, {
+                      position: "top-center",
+                      autoClose: 1000,
+                      theme: "dark",
+                    });
  })
 }
     return(
 <div className="outerFormm">
     <div className="innerFormm">
+  <div className="cross"  onClick={
+    ()=>setShowpl(prev=>!prev)
+}>
+      <ClearIcon  className="clear" ></ClearIcon  >
 
+        </div>
    <form action="
      ">
    <div class="mb-3">

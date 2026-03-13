@@ -20,6 +20,7 @@ export default function MycontextProvider({ children }) {
   const [select, setSelect] = useState("college");
     const [data, setData] = useState(" ");
         const [admin, setAdmin] = useState(true);
+          const[showpl,setShowpl] = useState(false);
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -30,6 +31,7 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        showpl,setShowpl,
         del, setDel,
         teacher, setTeacher,
         admin, setAdmin,

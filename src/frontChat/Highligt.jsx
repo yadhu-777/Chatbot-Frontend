@@ -1,28 +1,43 @@
 
-import { Cloudinary } from '@cloudinary/url-gen';
-import { auto } from '@cloudinary/url-gen/actions/resize';
-import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
-import { AdvancedImage } from '@cloudinary/react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+
+import { toast } from "react-toastify";
 import PlacementFrom from './PlacementForm';
+import Mycontext from '../../Context';
 export default function Highlight(){
 
-const[image,setImage] = useState("");
-  const[showpl,setShowpl] = useState(false);
- 
+const[plData,setPlData] = useState("");
+
+    const[recPl,setRcpl] = useState(false);
+ const{showpl,setShowpl } = useContext(Mycontext);
 
 useEffect(()=>{
-    
-  const cld = new Cloudinary({ cloud: { cloudName: 'dke8pn6li' } });
-  
-  // Use this sample image or upload your own via the Media Library
-  const immg = cld
-        .image('collegeImg2_a0d60t')
-        .format('auto') // Optimize delivery by resizing and applying auto-format and auto-quality
-        .quality('auto')
-        .resize(auto().gravity(autoGravity()).width(500).height(500)); // Transform the image: auto-crop to square aspect_ratio
-
- setImage(immg.toURL()); 
+  fetch ("https://chatbot-backend-0k0q.onrender.com/getHighlight",{
+          credentials: "include",
+          method:"POST",
+         
+              headers: {
+                "Content-Type": "application/json",
+              }
+              
+             
+        
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+          if(data.message==="Error during fetch"){
+ toast(data.message, {
+                    position: "top-center",
+                    autoClose: 1000,
+                    theme: "dark",
+                  });
+          }else{
+setPlData(data.message)
+          }
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
 },[])
 
 
@@ -30,14 +45,15 @@ useEffect(()=>{
 <div className="outerHighlight">
      <div className="plButton">
   <button onClick={()=>{
-setShowpl(prev=>!prev)
+setShowpl(prev=>!prev);
+
   }} className='btn btn-primary'  >add image</button>
 </div>
 {showpl && <PlacementFrom/>}
     <div className="innerHighlight">
 
 
-      <img src={image} alt="" />
+    
     </div>
 </div>
 
