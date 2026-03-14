@@ -71,10 +71,12 @@ toast(data.message, {
     Our dedicated teachers bring years of academic and industry experience
     to guide students toward success.
   </p>
-</div>
-{ !admin &&   <div className="Addteacher">
+</div>  
+  {/* {{ !admin &&} */}
+
+   <div className="Addteacher">
   <button onClick={()=> setTeacher(prev =>!prev)} className="btn btn-primary" >Add Teacher</button>
-</div>}
+</div>
 <div className="teacherDisplay">
    {teacher && <TeacherForm/>}
   
@@ -100,7 +102,7 @@ toast(data.message, {
           <CardMedia
             component="img"
             height="200"
-            image="data.image"
+            image={data.image}
             alt="teacher photo"
             sx={{ objectFit: "cover" }}
           />
