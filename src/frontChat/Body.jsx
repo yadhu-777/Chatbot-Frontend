@@ -273,7 +273,7 @@ onClick={
      </button> */}
         </div>
            <div onClick={ShowOption} className="menuu">
-            <i class="fa-solid fa-bars"></i>d
+            <i class="fa-solid fa-bars"></i>
           </div>
       </div>
 

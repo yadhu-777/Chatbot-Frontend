@@ -10,14 +10,16 @@ import Highlight from "./Highligt";
 import Body from "./Body";
 import Options from "./Options";
 import OptionsShow from "./OptionsShow";
+import ShowHeaderoptions from "./ShowHeaderoptions";
 export default function College(){
       const { form, setForm } = useContext(Mycontext);
-  const {select,setSelect,teacher,showOptions2,setShowOptions2} = useContext(Mycontext);  
+  const {select,setSelect,teacher,showOptions2,setShowOptions2,admin ,click2} = useContext(Mycontext);  
     return(
 
 <div className="outerCollege">
-  <OptionHead/>
 
+  <OptionHead/>
+{click2 && <ShowHeaderoptions/>}
 { select === "complain" && <Complain/>  }
 { select === "highlight" && <Highlight/>  }
 { select === "college" && <Clg/>  }
@@ -25,7 +27,7 @@ export default function College(){
 { select === "Placement" && <Placement/>  }
 
 {select ==="Ai" &&( 
-   <div style={{height:"100vh"}}   className="outer">
+   <div    className="outer">
   { showOptions2 && <OptionsShow/>}
    <Options/>
       <Body/>

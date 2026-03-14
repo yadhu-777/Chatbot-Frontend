@@ -1230,6 +1230,9 @@ padding-left: 3rem;
   gap:2rem;
 
 }
+.menuu2{
+  display: none;
+}
 .plDiv img{
    width:100%;
   height:19rem;
@@ -1239,10 +1242,22 @@ padding-left: 3rem;
 .logo{
   color: black;
 }
-@media (max-width:500px){
-  .nav-links {
+@media (max-width:750px){
+  .menuu2{
+  display: flex;
+}
+ .nav-links {
     display: none;
   }
+}
+
+
+@media (max-width:500px){
+ 
+.outer{
+  height: 70vh;
+}
+
 #clgImg{
     width: 100%;
     object-fit: contain;
@@ -1250,6 +1265,7 @@ padding-left: 3rem;
   .headerHero{
     width: 100%;
     margin: 0rem;
+  
   }
   .headtext{
     display: none;
@@ -1257,6 +1273,8 @@ padding-left: 3rem;
   .headerhero2{
     margin: 0rem;
     margin-bottom: -9rem;
+      flex-direction: column;
+      margin-bottom: 4rem;
   }
   .headerhero3{
     padding: 0rem;
@@ -1318,16 +1336,25 @@ padding-left: 3rem;
  
 
 }
-.outerBody{
+/* .outerBody{
   height: 70vh;
   overflow-y: hidden;
   overflow-x: hidden;
 
 
-}
+} */
 .User{
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-left: 9rem;
+}
+.herdertxt{
+  width: 100%;
+  margin: 0rem;
+ margin-top: 3rem;
+}
+.text{
+  width: 100%;
 }
 
 }
@@ -1346,5 +1373,23 @@ padding-left: 3rem;
   color: black;
 }
 .inneroptions2 p{
+  color: black;
+}
+
+.outerShowHeaderoptions{
+  height: 60vh;
+  background-color: white;
+  position: absolute;
+  right: 0rem;
+  top: 4.5rem;
+  color: black;
+  width: 50%;
+  z-index:1000;
+}
+.innerShowHeaderoptions{
+  width: 100%;
+  height: 100%;
+}
+.links{
   color: black;
 }

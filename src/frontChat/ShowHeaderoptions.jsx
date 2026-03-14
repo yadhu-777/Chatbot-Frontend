@@ -1,44 +1,44 @@
 import { useContext } from "react";
 
 import Mycontext from "../../Context";
-
-export default function OptionHead() {
-  const { setSelect,setClick2} = useContext(Mycontext);
+export default function ShowHeaderoptions(){
+     const { setSelect,setClick2} = useContext(Mycontext);
   function college() {
     setSelect("college");
+    setClick2(prev=>!prev)
   }
   function Event() {
     setSelect("event");
+    setClick2(prev=>!prev)
   }
   function Teacher() {
     setSelect("teacher");
+    setClick2(prev=>!prev)
   }
   function Complain() {
     setSelect("complain");
+    setClick2(prev=>!prev)
   }
   function timetable(){
     setSelect("Placement")
+    setClick2(prev=>!prev)
   }
   function AskAi(){
      setSelect("Ai")
+     setClick2(prev=>!prev)
   }
     function highlight(){
      setSelect("highlight")
+     setClick2(prev=>!prev)
   }
 
 function handleClick2(){
 setClick2(prev=>!prev)
 }
-  
-  return (
-    <nav className="navbar">
-      <div className="logo">
-        <div className="headerImg2">
-              <img src="4.png" alt="" />
-            </div>
-      </div>
-
-      <ul className="nav-links">
+    return(
+<div className="outerShowHeaderoptions">
+    <div className="innerShowHeaderoptions">
+ <ul className="links">
        {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
         <li onClick={college}>College</li>
         <li onClick={Teacher}>Teacher</li>
@@ -50,11 +50,9 @@ setClick2(prev=>!prev)
       <li onClick={highlight}>Highlight</li>
          <li onClick={AskAi}>Ask Ai</li>
       </ul>
-    
-        <div onClick={handleClick2}  className="menuu2">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-    
-    </nav>
-  );
+    </div>
+</div>
+
+
+    )
 }

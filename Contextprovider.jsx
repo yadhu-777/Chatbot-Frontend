@@ -22,6 +22,7 @@ export default function MycontextProvider({ children }) {
         const [admin, setAdmin] = useState(true);
           const[showpl,setShowpl] = useState(false);
             const[showOptions2,setShowOptions2] = useState(false);
+                const[click2,setClick2] = useState(false);
               const[recPl,setRcpl] = useState(false);
   const [Convo, setConvo] = useState([
     {
@@ -34,6 +35,7 @@ export default function MycontextProvider({ children }) {
     <Mycontext.Provider
       value={{
         showOptions2,setShowOptions2,
+        click2,setClick2,
         recPl,setRcpl,
         showpl,setShowpl,
         del, setDel,
