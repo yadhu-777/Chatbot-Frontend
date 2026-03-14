@@ -1,5 +1,6 @@
 import ClearIcon from "@mui/icons-material/Clear";
 import { useContext, useEffect, useState } from "react";
+import imageCompression from "browser-image-compression";
 import { toast } from "react-toastify";
 import Mycontext from "../../Context";
 export default function TeacherForm(){
