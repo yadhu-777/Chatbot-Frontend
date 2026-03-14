@@ -27,8 +27,8 @@ function handleTeacherSubmit(){
    const formData = new FormData();
 
   formData.append("name", teacherDetails.name);
-    formData.append("name", teacherDetails.position);
-      formData.append("name", teacherDetails.description);
+    formData.append("position", teacherDetails.position);
+      formData.append("description", teacherDetails.description);
 
   formData.append("image", teacherDetails.image); 
 
@@ -64,7 +64,7 @@ function handleTeacherSubmit(){
 
   const compressedFile = await imageCompression(file, options);
 
-  teacherDetails(prev => ({
+  setTeacherDetails(prev => ({
     ...prev,
     image: compressedFile
   }));
@@ -85,7 +85,7 @@ function handleTeacherSubmit(){
      ">
    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Teacher Name</label>
-  <input  name="name" value={teacherDetails.name} onChange={handleTeacher}  type="email" class="form-control" id="exampleFormControlInput1" placeholder="name"/>
+  <input  name="name" value={teacherDetails.name} onChange={handleTeacher}  type="text" class="form-control" id="exampleFormControlInput1" placeholder="name"/>
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Position </label>
