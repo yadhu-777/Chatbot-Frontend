@@ -6,7 +6,8 @@ export default function TeacherForm(){
     const[teacherDetails,setTeacherDetails] = useState({
         name:"",
         position:"",
-        description:""
+        description:"",
+        image:""
     });
 
       const { setSelect,admin ,setTeacher} = useContext(Mycontext);
@@ -22,15 +23,21 @@ function handleTeacher(e){
 
 
 function handleTeacherSubmit(){
+   const formData = new FormData();
+
+  formData.append("name", teacherDetails.name);
+    formData.append("name", teacherDetails.position);
+      formData.append("name", teacherDetails.description);
+
+  formData.append("image", teacherDetails.image); 
 
  fetch("https://chatbot-backend-0k0q.onrender.com/addTeacher", {
+  
      
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      
        credentials:"include",
-      body: JSON.stringify({ content: teacherDetails }),
+      body:formData,
     })
     .then((res)=>res.json())
     .then((data)=>{
@@ -45,6 +52,22 @@ function handleTeacherSubmit(){
     })
 }
 
+ async function handleImage(e){
+
+ const file = e.target.files[0];
+  const options = {
+    maxSizeMB: 4,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true
+  };
+
+  const compressedFile = await imageCompression(file, options);
+
+  teacherDetails(prev => ({
+    ...prev,
+    image: compressedFile
+  }));
+}
 
     return(
 
@@ -66,6 +89,12 @@ function handleTeacherSubmit(){
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Position </label>
   <input  name="position" value={teacherDetails.position}  onChange={handleTeacher}  type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex: HOD"/>
+</div>
+ <div class="mb-3">
+<input
+ type="file"
+ onChange={handleImage}
+/>
 </div>
 
 <div class="mb-3">
