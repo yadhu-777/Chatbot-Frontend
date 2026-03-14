@@ -46,7 +46,7 @@ export default function OptionHead() {
               
         <li onClick={Complain}>Complain</li>
       <li onClick={highlight}>Highlight</li>
-         { admin  && <li onClick={AskAi}>Ask Ai</li>}
+         <li onClick={AskAi}>Ask Ai</li>
       </ul>
     </nav>
   );

@@ -9,10 +9,10 @@ import Placement from "./Placement";
 import Highlight from "./Highligt";
 import Body from "./Body";
 import Options from "./Options";
-import TeacherForm from "./TacherForm";
+import OptionsShow from "./OptionsShow";
 export default function College(){
       const { form, setForm } = useContext(Mycontext);
-  const {select,setSelect,teacher} = useContext(Mycontext);  
+  const {select,setSelect,teacher,showOptions2,setShowOptions2} = useContext(Mycontext);  
     return(
 
 <div className="outerCollege">
@@ -23,11 +23,13 @@ export default function College(){
 { select === "college" && <Clg/>  }
 { select === "event" && <Events/>  }
 { select === "Placement" && <Placement/>  }
-?
+
 {select ==="Ai" &&( 
    <div style={{height:"100vh"}}   className="outer">
+  { showOptions2 && <OptionsShow/>}
    <Options/>
       <Body/>
+     
    </div>
     )}
    

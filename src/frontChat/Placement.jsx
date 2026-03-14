@@ -28,7 +28,7 @@ const rows = [];
     <div className="portal-wrapper">
       {/* Navbar */}
       <nav className="placement-nav">
-        <div className="logo">University<span>Placement</span></div>
+        <div className="logo"><h1>University Placement</h1></div>
         {/* <ul className="nav-links">
           <li>Dashboard</li>
           <li>Companies</li>

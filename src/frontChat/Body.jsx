@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 import Button from "@mui/material/Button";
 import AuthPage from "./Auth";
-
+import OptionsShow from "./OptionsShow";
 export default function Body() {
   const [online, setOnline] = useState(false);
   const [offline, setOffline] = useState(false);
@@ -38,12 +38,14 @@ export default function Body() {
 
   const {
     value,
+    setShowOptions2,
     setValue,
     Convo,
     setConvo,
     close,
     setClose,
     alert,
+    showOptions2,
     loader,
     setLoader,
     authreturn,
@@ -194,13 +196,14 @@ export default function Body() {
 
   return () => window.removeEventListener("resize", setHeight);
 }, []);
-function college(){
-
+function ShowOption(){
+setShowOptions2(prev=>!prev);
 }
 
 
   return (
     <div   className="outerBody">
+         
       {alert && <Allert />}
       {offline && <h2>You`re offline !</h2>}
       {online && <h2>Back online !</h2>}
@@ -269,8 +272,8 @@ onClick={
       close
      </button> */}
         </div>
-           <div className="menuu">
-            <i class="fa-solid fa-bars"></i>
+           <div onClick={ShowOption} className="menuu">
+            <i class="fa-solid fa-bars"></i>d
           </div>
       </div>
 
