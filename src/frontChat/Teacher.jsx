@@ -100,7 +100,7 @@ toast(data.message, {
           <CardMedia
             component="img"
             height="200"
-            image="teacher.jpeg"
+            image="data.image"
             alt="teacher photo"
             sx={{ objectFit: "cover" }}
           />
