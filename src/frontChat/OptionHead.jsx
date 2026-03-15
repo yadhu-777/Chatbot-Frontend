@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Mycontext from "../../Context";
 
 export default function OptionHead() {
-  const { setSelect,setClick2} = useContext(Mycontext);
+  const { setSelect,setClick2,aadmin,student} = useContext(Mycontext);
   function college() {
     setSelect("college");
   }
@@ -28,7 +28,7 @@ export default function OptionHead() {
 
 function handleClick2(){
 setClick2(prev=>!prev)
-}
+}  
   
   return (
     <nav className="navbar">
@@ -48,7 +48,7 @@ setClick2(prev=>!prev)
               
         <li onClick={Complain}>Complain</li>
       <li onClick={highlight}>Highlight</li>
-         <li onClick={AskAi}>Ask Ai</li>
+       {student &&  <li onClick={AskAi}>Ask Ai</li>}
       </ul>
     
         <div onClick={handleClick2}  className="menuu2">

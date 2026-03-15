@@ -1,17 +1,21 @@
+import React from "react";
 import { useContext, useEffect, useRef, useState } from "react";
 
-import Mycontext from "../../Context";
-import React from "react";
+
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Allert from "./Alert";
-import Cookies from "js-cookie";
+
 import Loader from "./Loader";
-import { toast } from "react-toastify";
+
 import { v4 as uuidv4 } from "uuid";
-import Button from "@mui/material/Button";
+
 import AuthPage from "./Auth";
 import OptionsShow from "./OptionsShow";
+import Mycontext from "../../Context";
+
+
+
 export default function Body() {
   const [online, setOnline] = useState(false);
   const [offline, setOffline] = useState(false);
@@ -59,6 +63,7 @@ export default function Body() {
     optch,
     setOpch,
     data
+ 
   } = useContext(Mycontext);
 
   useEffect(() => {
@@ -89,7 +94,7 @@ export default function Body() {
       credentials: "include",
       body: JSON.stringify({
         ThreadId: data,
-        userId: id || img,
+        userId: img||  id ,
       }),
     })
       .then(async (res) => {
@@ -116,20 +121,22 @@ export default function Body() {
   }
 
   function handleClick() {
+    console.log(id);
+    console.log(img)
     setLoader(true);
-    if (tokenss === true) {
-      setLoader(false);
-      toast("you are not signed up", {
-        position: "top-center",
-        autoClose: 1000,
-        theme: "dark",
-      });
+    // if (tokenss === true) {
+    //   setLoader(false);
+    //   toast("you are not signed up", {
+    //     position: "top-center",
+    //     autoClose: 1000,
+    //     theme: "dark",
+    //   });
 
-      setTimeout(() => {
-        navigate("/auth");
-      }, 2000);
-      return;
-    }
+    //   setTimeout(() => {
+    //     navigate("/auth");
+    //   }, 2000);
+    //   return;
+    // }
     setConvo((prev) =>
       prev
         ? [
@@ -153,7 +160,7 @@ export default function Body() {
       body: JSON.stringify({
         inp: value,
         threadID: data || recId,
-        userId: id || img,
+        userId: img ||id  ,
       }),
     })
       .then((res) => res.json())
@@ -203,7 +210,7 @@ setShowOptions2(prev=>!prev);
 
   return (
     <div   className="outerBody">
-         
+           { showOptions2 && OptionsShow}
       {alert && <Allert />}
       {offline && <h2>You`re offline !</h2>}
       {online && <h2>Back online !</h2>}
@@ -273,7 +280,7 @@ onClick={
      </button> */}
         </div>
            <div onClick={ShowOption} className="menuu">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars"></i>d
           </div>
       </div>
 

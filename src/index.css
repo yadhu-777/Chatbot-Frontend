@@ -1432,3 +1432,6 @@ padding-left: 3rem;
     transform:translateX(0);
   }
 }
+ .lists p{
+  color: black;
+}

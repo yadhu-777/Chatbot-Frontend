@@ -50,7 +50,7 @@ export default function Options() {
     })
       .then((res) => res.json())
       .then((data) => setThreads(data.threads));
-  }, [Delete, tokenss, optch]);
+  }, [Delete,   Convo,, optch]);
 
   function handleClick(data) {
 setData(data);
@@ -86,7 +86,7 @@ setData(data);
 
         setDelete((prev) => !prev);
         setConvo(null);
-        navigate("/");
+        
       })
       .catch((err) => {
         console.log(err);
