@@ -53,27 +53,27 @@ export default function College(){
 // .catch((err)=>console.log(err))
 // },[])}
 
-//    useEffect(()=>{
+   useEffect(()=>{
 
-//  fetch("https://chatbot-backend-0k0q.onrender.com/checkAuth",{
+ fetch("https://chatbot-backend-0k0q.onrender.com/checkAuth",{
     
-//         credentials:"include",
-//  })
-//  .then(res=>res.json())
-//  .then(data=>{
+        credentials:"include",
+ })
+ .then(res=>res.json())
+ .then(data=>{
 
-//   if(data.role === "admin"){
-//     setAadmin(true);
-//   }
+  if(data.role === "admin"){
+    setAadmin(true);
+  }
 
-//   if(data.role === "student"){
-//     setStudent(true);
-//     setImg(data.email);
-//   }
+  if(data.role === "student"){
+    setStudent(true);
+    setImg(data.email);
+  }
 
-//  })
+ })
 
-// },[])
+},[]);
    
     return(
 
