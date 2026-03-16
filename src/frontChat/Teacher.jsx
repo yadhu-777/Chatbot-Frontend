@@ -10,7 +10,7 @@ import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
 import TeacherForm from "./TacherForm";
 export default function Teacher() {
-    const {  teacher, setTeacher,admin,del, setDel } = useContext(Mycontext);
+    const {  teacher, setTeacher,admin,del, setDel,aadmin } = useContext(Mycontext);
         const [teacherData,setTeacherData]= useState([]);
 
 useEffect(()=>{
@@ -73,10 +73,10 @@ toast(data.message, {
   </p>
 </div>  
   {/* {{ !admin &&} */}
-
+{aadmin &&
    <div className="Addteacher">
   <button onClick={()=> setTeacher(prev =>!prev)} className="btn btn-primary" >Add Teacher</button>
-</div>
+</div>}
 <div className="teacherDisplay">
    {teacher && <TeacherForm/>}
   

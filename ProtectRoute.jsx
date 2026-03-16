@@ -82,18 +82,18 @@ function ProtectedRoute() {
         setAadmin(false);
         setStudent(false);
         setImg("");
-        setAuth(false);
+       
 
-        if (data.role === "admin") {
-          setAadmin(true);
-          setAuth(true);
-        }
+       if (data.role === "admin") {
+  setAadmin(true);
+  setAuth(true);
+}
 
-        if (data.role === "student") {
-          setStudent(true);
-          setImg(data.email);
-          setAuth(true);
-        }
+if (data.role === "student") {
+  setStudent(true);
+  setImg(data.email);
+  setAuth(true);
+}
         if (data.logged === false) {
           setAuth(false);
         }

@@ -51,7 +51,7 @@ const ValidationForm = () => {
             autoClose: 1000,
             theme: "dark",
           });
-setAdmin(prev => !prev);
+setAdmin(true);
           navigate("/clg");
         } else {
           toast(res.message, {
