@@ -9,7 +9,7 @@ export default function Highlight(){
 const[plData,setPlData] = useState([]);
 
 
- const{showpl,setShowpl,recPl,setRcpl } = useContext(Mycontext);
+ const{showpl,setShowpl,recPl,setRcpl ,aadmin} = useContext(Mycontext);
 
 useEffect(()=>{
   fetch ("https://chatbot-backend-0k0q.onrender.com/getHighlight",{
@@ -76,10 +76,10 @@ id:data
     return(
 <div className="outerHighlight">
      <div className="plButton">
-  <button onClick={()=>{
+{ aadmin && <button onClick={()=>{
 setShowpl(prev=>!prev);
 
-  }} className='btn btn-primary'  >add image</button>
+  }} className='btn btn-primary'  >add image</button>}
 </div>
 {showpl && <PlacementFrom/>}
     <div className="innerHighlight">
@@ -88,7 +88,7 @@ setShowpl(prev=>!prev);
     return(
       <div className="plDiv">
         <img src={data.image}alt="" />
-        <button onClick={()=>handleDlete(data._id)} className='btn btn-danger'>Delete</button>
+      { aadmin && <button onClick={()=>handleDlete(data._id)} className='btn btn-danger'>Delete</button>}
       </div>
     )
   })

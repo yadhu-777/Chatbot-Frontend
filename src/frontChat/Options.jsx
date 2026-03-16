@@ -115,7 +115,7 @@ setData(data);
 
             setId(null);
             setNull(null);
-            navigate("/");
+            // navigate("/");
           }}
         >
           new chat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

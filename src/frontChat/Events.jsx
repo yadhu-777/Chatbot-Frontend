@@ -11,7 +11,7 @@ import Form from "./Form";
 export default function Events(){
   const [eventData,setEventData] = useState([]);
     const [delEvent,setDelEvent] = useState(false);
-      const {admin,form,setForm  } = useContext(Mycontext);
+      const {admin,form,setForm,student,aadmin  } = useContext(Mycontext);
 
       
       useEffect(()=>{
@@ -32,7 +32,19 @@ export default function Events(){
       })
       },[form,delEvent]);
 
+function getDaysLeft(eventDate){
+  const today = new Date();
+  const event = new Date(eventDate);
 
+  const diff = event - today;
+
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  if(days < 0) return "Event Finished";
+  if(days === 0) return "Today";
+  
+  return days + " Days Left";
+}
 
   function handleEventDelet(data){
 fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
@@ -65,9 +77,9 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
             <div className="outerEventss">
               
    <div className="Addteacher">
-  <button onClick={()=> {
+ {aadmin && <button onClick={()=> {
     setForm(prev=>!prev)
-  }} className="btn btn-primary" >Add Event</button>
+  }} className="btn btn-primary" >Add Event</button>}
 </div>
                   <div className="outerEventsss">
                     {form && <Form />}
@@ -130,14 +142,14 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
                 },
               }}
             >
-           {data.date}
+         {new Date(data.date).toLocaleDateString()} | {getDaysLeft(data.date)}
             </Typography>
           </CardContent>
         </CardActionArea>
         <div className="Addteacher">
-  <button onClick={()=> {
+{ aadmin &&  <button onClick={()=> {
    handleEventDelet(data._id)
-  }} className="btn btn-primary" >Delete Event</button>
+  }} className="btn btn-primary" >Delete Event</button>}
 </div>
       </Card>
       )

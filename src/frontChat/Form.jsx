@@ -9,7 +9,8 @@ export default function Form() {
 const[eventDetails,setEventDetails]  = useState({
   name:"",
   date:"",
-  details:""
+  details:"",
+  email:""
 })
   const {form,setForm} = useContext(Mycontext);
    const navigate =useNavigate();
@@ -76,12 +77,17 @@ setEventDetails(prev=>(
      ">
    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Event Name</label>
-  <input type="email" class="form-control" name="name" value={eventDetails.name} onChange={handleChange} id="exampleFormControlInput1" placeholder="name"/>
+  <input type="text" class="form-control" name="name" value={eventDetails.name} onChange={handleChange} id="exampleFormControlInput1" placeholder="name"/>
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Date </label>
   <input  type="date" class="form-control" name="date" value={eventDetails.date} onChange={handleChange} id="exampleFormControlInput1" placeholder="Date"/>
 </div>
+   <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email </label>
+  <input type="email" class="form-control" name="email" value={eventDetails.email} onChange={handleChange} id="exampleFormControlInput1" placeholder="name"/>
+</div>
+
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Details of Event</label>

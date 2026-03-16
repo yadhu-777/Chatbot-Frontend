@@ -61,6 +61,9 @@ export default function College(){
  })
  .then(res=>res.json())
  .then(data=>{
+  setAadmin(false);
+  setStudent(false);
+  setImg("");
 
   if(data.role === "admin"){
     setAadmin(true);

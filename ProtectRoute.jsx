@@ -4,106 +4,107 @@ import Mycontext from "./Context";
 import College from "./src/frontChat/College";
 import Userform from "./src/frontChat/UserForm";
 function ProtectedRoute() {
-  const{ aadmin,setAadmin,setStudent,setImg} = useContext(Mycontext); 
+  const { aadmin, setAadmin, setStudent, setImg } = useContext(Mycontext);
   const [auth, setAuth] = useState(null);
-//   useEffect(()=>{
+  //   useEffect(()=>{
 
-// fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
-//     method:"POST",
-//       headers:{
-//               "Content-Type":"application/json"
-//             },
-//             credentials:"include",
+  // fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
+  //     method:"POST",
+  //       headers:{
+  //               "Content-Type":"application/json"
+  //             },
+  //             credentials:"include",
 
-// })
-// .then((res)=>res.json())
-// .then((data)=>{
-//    setAuth(true);
-//    setTokennss(false);
-//       setImg(data?.content?.email)
-   
-//     if(data.content.email){
-//          setTokennss(false)
-//     }
-//     toast(data.message,{position: "top-right",
-//          autoClose: 5000,
-//   theme: "dark",
+  // })
+  // .then((res)=>res.json())
+  // .then((data)=>{
+  //    setAuth(true);
+  //    setTokennss(false);
+  //       setImg(data?.content?.email)
 
-//   style: {
-//     background: "#121212",
-//     color: "#fff",
-//   },
+  //     if(data.content.email){
+  //          setTokennss(false)
+  //     }
+  //     toast(data.message,{position: "top-right",
+  //          autoClose: 5000,
+  //   theme: "dark",
 
-//   progressStyle: {
-//     background: "#9b5cff",
-//   },
-//     }
-        
-//     ), 
-//     setImg(data?.content?.email)
-   
-//     if(data.content.email){
-//          setTokennss(false)
-//     }
-// })
-// .catch((err)=>console.log(err))
-// },[]);
-//   useEffect(() => {
+  //   style: {
+  //     background: "#121212",
+  //     color: "#fff",
+  //   },
 
-//     fetch("https://chatbot-backend-0k0q.onrender.com/auth2",{
-//       credentials: "include",    
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       }
-//     })
-//     .then((res) => res.json())
-//     .then((data) => {
+  //   progressStyle: {
+  //     background: "#9b5cff",
+  //   },
+  //     }
 
-//       if (data.message === "not logged in") {
-//         console.log(data.message);
-//         setAuth(false);
-//       } else {
-//          console.log(data.message);
-//         setAuth(true);
-//       }
+  //     ),
+  //     setImg(data?.content?.email)
 
-//     })
-//     .catch(() => setAuth(false));
+  //     if(data.content.email){
+  //          setTokennss(false)
+  //     }
+  // })
+  // .catch((err)=>console.log(err))
+  // },[]);
+  //   useEffect(() => {
 
-//   }, []);
-   useEffect(()=>{
+  //     fetch("https://chatbot-backend-0k0q.onrender.com/auth2",{
+  //       credentials: "include",
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       }
+  //     })
+  //     .then((res) => res.json())
+  //     .then((data) => {
 
- fetch("https://chatbot-backend-0k0q.onrender.com/checkAuth",{
-  credentials:"include",
- })
- .then(res=>res.json())
- .then(data=>{
-console.log(data)
-  if(data.role === "admin"){
-    setAadmin(true);
-    setAuth(true)
-  }
+  //       if (data.message === "not logged in") {
+  //         console.log(data.message);
+  //         setAuth(false);
+  //       } else {
+  //          console.log(data.message);
+  //         setAuth(true);
+  //       }
 
-  if(data.role === "student"){
-    setStudent(true);
-     setImg(data.email);
-        
-     setAuth(true)
-  }
-  if(data.logged ==="false"){
- setAuth(false)
-  }
+  //     })
+  //     .catch(() => setAuth(false));
 
- })
+  //   }, []);
+  useEffect(() => {
+    fetch("https://chatbot-backend-0k0q.onrender.com/checkAuth", {
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setAadmin(false);
+        setStudent(false);
+        setImg("");
+        setAuth(false);
 
-},[])
+        if (data.role === "admin") {
+          setAadmin(true);
+          setAuth(true);
+        }
+
+        if (data.role === "student") {
+          setStudent(true);
+          setImg(data.email);
+          setAuth(true);
+        }
+        if (data.logged === false) {
+          setAuth(false);
+        }
+      });
+  }, []);
 
   if (auth === null) {
-    return <Userform /> ;
+    return <Userform />;
   }
 
-  return auth ? <College /> :<Userform /> ;
+  return auth ? <Outlet /> : <Navigate to="/home" />;
 }
 
 export default ProtectedRoute;
