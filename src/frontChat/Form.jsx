@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import Mycontext from "../../Context";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import imageCompression from "browser-image-compression";
 
 export default function Form() {
 const[eventDetails,setEventDetails]  = useState({
