@@ -28,13 +28,10 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/addEvent",{
   credentials: "include",
   method:"POST",
  
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body:JSON.stringify({
-        data:formData
+     
+      body: formData
    
-      })
+      
 
 })
 .then((res)=>res.json())
