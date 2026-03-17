@@ -12,18 +12,19 @@ const[eventDetails,setEventDetails]  = useState({
   details:"",
   image:""
 })
- const formData = new FormData();
+
+  const {form,setForm} = useContext(Mycontext);
+   const navigate =useNavigate();
+async function handleSubmit (){
+  const formData = new FormData();
 
   formData.append("name", eventDetails.name);
     formData.append("date", eventDetails.date);
       formData.append("details", eventDetails.details);
 
   formData.append("image", eventDetails.image); 
-  const {form,setForm} = useContext(Mycontext);
-   const navigate =useNavigate();
-async function handleSubmit (){
- 
 fetch ("https://chatbot-backend-0k0q.onrender.com/addEvent",{
+  
   credentials: "include",
   method:"POST",
  
