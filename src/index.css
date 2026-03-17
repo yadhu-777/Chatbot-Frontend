@@ -1257,6 +1257,9 @@ padding-left: 3rem;
 .outer{
   height: 70vh;
 }
+.innerHighlight{
+  width: 100%;
+}
 
 #clgImg{
     width: 100%;
