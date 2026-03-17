@@ -320,6 +320,7 @@ margin-bottom: -19rem;
    .authInner{
   width: 80%;
  }
+ 
 }
 @media (max-width:500px) {
  .authOptions{
@@ -1226,8 +1227,8 @@ padding-left: 3rem;
  display:flex;
   width:30%;
   flex-direction:column;
-  margin-bottom:4rem;
-  gap:2rem;
+  margin-bottom:0.5rem;
+  gap:1.7rem;
 
 }
 .menuu2{

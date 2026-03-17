@@ -40,7 +40,7 @@ function handleTeacherSubmit(){
        credentials:"include",
       body:formData,
     })
-    .then((res)=>res.json())
+    // .then((res)=>res.json())
     .then((data)=>{
          toast(data.message, {
                     position: "top-center",

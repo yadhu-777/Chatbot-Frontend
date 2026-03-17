@@ -10,8 +10,15 @@ const[eventDetails,setEventDetails]  = useState({
   name:"",
   date:"",
   details:"",
-  email:""
+  image:""
 })
+ const formData = new FormData();
+
+  formData.append("name", eventDetails.name);
+    formData.append("date", eventDetails.date);
+      formData.append("details", eventDetails.details);
+
+  formData.append("image", eventDetails.image); 
   const {form,setForm} = useContext(Mycontext);
    const navigate =useNavigate();
 async function handleSubmit (){
@@ -24,7 +31,7 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/addEvent",{
         "Content-Type": "application/json",
       },
       body:JSON.stringify({
-        data:eventDetails
+        data:formData
    
       })
 
@@ -59,10 +66,22 @@ setEventDetails(prev=>(
   }
 ));
 }
+ async function handleImage(e){
 
+ const file = e.target.files[0];
+  const options = {
+    maxSizeMB: 4,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true
+  };
+  const compressedFile = await imageCompression(file, options);
 
+  setEventDetails(prev => ({
+    ...prev,
+    image: compressedFile
+  }));
 
- 
+}
   return (
     <div className="outerform">
       <div className="innerForm">
@@ -83,11 +102,13 @@ setEventDetails(prev=>(
   <label for="exampleFormControlInput1" class="form-label">Date </label>
   <input  type="date" class="form-control" name="date" value={eventDetails.date} onChange={handleChange} id="exampleFormControlInput1" placeholder="Date"/>
 </div>
-   <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email </label>
-  <input type="email" class="form-control" name="email" value={eventDetails.email} onChange={handleChange} id="exampleFormControlInput1" placeholder="name"/>
+ 
+ <div class="mb-3">
+<input
+ type="file"
+ onChange={handleImage}
+/>
 </div>
-
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Details of Event</label>

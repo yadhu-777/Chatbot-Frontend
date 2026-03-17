@@ -87,10 +87,10 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
     {eventData.map((data)=>{
       return(
           <Card
-        style={{ height: "27rem" }}
+        style={{ height: "32rem" }}
         sx={{
-          maxWidth: 360,
-          minWidth:300,
+          maxWidth: 860,
+          minWidth:860,
           borderRadius: "20px",
           marginBottom:"2rem",
           boxShadow: 6,
@@ -105,8 +105,8 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
         <CardActionArea>
           <CardMedia
             component="img"
-            height="200"
-            image="grad.png"
+            height="270"
+            image={data.image}
             alt="event photo"
             sx={{ objectFit: "cover" }}
           />
