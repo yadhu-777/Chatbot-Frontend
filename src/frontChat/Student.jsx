@@ -43,9 +43,9 @@ const ValidationFormtudent = () => {
   //  function handlePassClick(e) {
   //     e.preventDefault();
   //     fetch("https://chatbot-backend-0k0q.onrender.com/data", {
-       
+
   //       method: "POST",
-        
+
   //       headers: {
   //         "Content-Type": "application/json",
   //       },
@@ -54,7 +54,7 @@ const ValidationFormtudent = () => {
   //     })
   //       .then((data) => data.json())
   //       .then((res) => {
-          
+
   //         if (res.message === "Authentication Success") {
   //           toast(res.message, {
   //             position: "top-center",
@@ -72,7 +72,7 @@ const ValidationFormtudent = () => {
   //           navigate("/admin");
   //         }
   //       })
-  
+
   //       .catch((err) => {
   //         toast(err.message, {
   //           position: "top-center",
@@ -84,45 +84,44 @@ const ValidationFormtudent = () => {
   //   }
 
   return (
-//     <div className="form-container">
-//       <form className="validation-form" >
-//         {/* <h2 style={{color:"black"}}>Create Account</h2> */}
-//         <div className="adminImg">
-//           <img src="4.png" alt="" />
-//         </div>
-//         <div className="input-group">
-//           <label>Email</label>
-//           <input
-//             type="text"
-//             name="uucmsId"
-//             className={errors.email ? "input-error" : ""}
-//             onChange={handleChange}
-//           />
-//           {errors.email && <span className="error-text">{errors.email}</span>}
-//         </div>
+    <div className="form-container">
+      <form className="validation-form">
+        {/* <h2 style={{color:"black"}}>Create Account</h2> */}
+        <div className="adminImg">
+          <img src="4.png" alt="" />
+        </div>
+        {/* <div className="input-group">
+          <label>Email</label>
+          <input
+            type="text"
+            name="uucmsId"
+            className={errors.email ? "input-error" : ""}
+            onChange={handleChange}
+          />
+          {errors.email && <span className="error-text">{errors.email}</span>}
+        </div> */}
 
-//         <div className="input-group">
-//           <label>Password</label>
-//           <input
-//             type="password"
-//             name="password"
-//             className={errors.password ? "input-error" : ""}
-//             onChange={handleChange}
-//           />
-//           {errors.password && (
-//             <span className="error-text">{errors.password}</span>
-//           )}
-//         </div>
-// <div style={{color:"black",textAlign:"center"}} className="or">
-//     <h3>or</h3>
-// </div>
-// <Login/>
-//         <button style={{marginTop:"1.5rem"}} onClick={handlePassClick} className="submit-btn">
-//           Sign Up
-//         </button>
-//       </form>
-//     </div>
-<Login/>
+        {/* <div className="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            className={errors.password ? "input-error" : ""}
+            onChange={handleChange}
+          />
+          {errors.password && (
+            <span className="error-text">{errors.password}</span>
+          )}
+        </div> */}
+        {/* <div style={{ color: "black", textAlign: "center" }} className="or">
+          <h3>or</h3>
+        </div> */}
+        <Login />
+        {/* <button style={{marginTop:"1.5rem"}} onClick={handlePassClick} className="submit-btn">
+          Sign Up
+        </button> */}
+      </form>
+    </div>
   );
 };
 
