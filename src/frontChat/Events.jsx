@@ -142,7 +142,7 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
                 },
               }}
             >
-         {new Date(data.date)} | {getDaysLeft(data.date)}
+         {new Date(data.date).toLocaleDateString()} | {getDaysLeft(data.date)}
             </Typography>
           </CardContent>
         </CardActionArea>

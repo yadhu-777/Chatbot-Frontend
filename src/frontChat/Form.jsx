@@ -98,7 +98,7 @@ setEventDetails(prev=>(
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Date </label>
-  <input  type="datetime-local" class="form-control" name="date" value={eventDetails.date} onChange={handleChange} id="exampleFormControlInput1" placeholder="Date"/>
+  <input  type="date" class="form-control" name="date" value={eventDetails.date} onChange={handleChange} id="exampleFormControlInput1" placeholder="Date"/>
 </div>
  
  <div class="mb-3">
