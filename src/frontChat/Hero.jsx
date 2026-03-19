@@ -48,7 +48,7 @@ fetch("https://chatbot-backend-0k0q.onrender.com/verify",{
 
 <div className="outerHero">
 
-<Options/>
+{/* <Options/> */}
 <Body/>
 
 </div>

@@ -2,10 +2,27 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Mycontext from "../../Context";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function OptionHead() {
 
-  const navigate = useNavigate();
+useEffect(() => {
+  const interval = setInterval(() => {
+    setShowBubble(true);
+
+    // hide after 3 sec
+    setTimeout(() => {
+      setShowBubble(false);
+    }, 3000);
+
+  }, 7000); // every 10 sec
+
+  return () => clearInterval(interval);
+}, []);
+const [showBubble, setShowBubble] = useState(false);
+const [hasClickedAI, setHasClickedAI] = useState(true);
+
   const { setSelect, setClick2, aadmin, student } = useContext(Mycontext);
   function college() {
     setSelect("college");
@@ -23,7 +40,8 @@ export default function OptionHead() {
     setSelect("Placement");
   }
   function AskAi() {
-    navigate("/ai");
+   setSelect("Ai");
+   setHasClickedAI(false)
   }
   function highlight() {
     setSelect("highlight");
@@ -49,9 +67,17 @@ export default function OptionHead() {
         <li onClick={Event}>Events</li>
         <li onClick={timetable}>Placement</li>
 
-        <li onClick={Complain}>Complain</li>
+        <li onClick={Complain}>Complaint</li>
         <li onClick={highlight}>Highlight</li>
-        {student && <li onClick={AskAi}>Ask Ai</li>}
+      {  student &&  <li onClick={AskAi}>Ask Ai</li>}
+        
+            
+  
+  {showBubble && student && hasClickedAI&&(
+  <div className="ai-bubble">
+    Any doubt? Ask  Jarvis  Jr. 🤖
+  </div>
+)}
       </ul>
 
       <div onClick={handleClick2} className="menuu2">

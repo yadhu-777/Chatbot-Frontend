@@ -18,6 +18,7 @@ export default function MycontextProvider({ children }) {
     const [teacher, setTeacher] = useState(false);
         const [del, setDel] = useState(false);
   const [select, setSelect] = useState("college");
+    const[alert2,setAlert2] = useState(false);
     const [data, setData] = useState(" ");
         const [admin, setAdmin] = useState(true);
           const[showpl,setShowpl] = useState(false);
@@ -26,6 +27,8 @@ export default function MycontextProvider({ children }) {
               const[recPl,setRcpl] = useState(false);
               const[aadmin,setAadmin] = useState(false);
                      const[student,setStudent] = useState(false);
+                     const[back,setBack] = useState([]);
+                         const[complain,setComplain]= useState(false);
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -36,6 +39,9 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        alert2,setAlert2,
+        complain,setComplain,
+        back,setBack,
         student,setStudent,
         aadmin,setAadmin,
         showOptions2,setShowOptions2,

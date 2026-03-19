@@ -83,12 +83,13 @@ toast(data.message, {
       {teacherData.map((data)=>{
         return(
           <Card
-        style={{ height: "27rem"}}
+      
         sx={{
-          maxWidth: 360,
+          maxWidth: 410,
           minWidth:300,
           borderRadius: "20px",
           marginBottom:"2rem",
+            height:"auto",
           boxShadow: 6,
           transition: "all 0.3s ease",
           marginRight: "4rem",
@@ -134,7 +135,10 @@ toast(data.message, {
              {data?.position}
             </Typography>
 
-            <Typography variant="body2" color="text.secondary">
+            <Typography 
+              
+
+            variant="body2" color="text.secondary">
              {data?.details}
             </Typography>
           </CardContent>

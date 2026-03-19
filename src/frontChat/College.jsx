@@ -22,6 +22,7 @@ export default function College() {
     admin,
     click2,
     img,
+    setAdmin,
     setImg,
     setTokennss,
     setAadmin,
@@ -102,7 +103,7 @@ export default function College() {
       {select === "Ai" && (
         <div className="outer">
           {showOptions2 && <OptionsShow />}
-          <Options />
+          {/* <Options /> */}
           <Body />
         </div>
       )}

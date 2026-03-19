@@ -74,13 +74,13 @@ export default function Body() {
 
   const chatEndRef = useRef(null);
 
-  useEffect(() => {
-    const navEntry = performance.getEntriesByType("navigation")[0];
-    if (navEntry?.type === "reload") {
-      setRecId(null);
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const navEntry = performance.getEntriesByType("navigation")[0];
+  //   if (navEntry?.type === "reload") {
+  //     setRecId(null);
+  //     navigate("/");
+  //   }
+  // }, []);
 
   useEffect(() => {
     setConvo(null);
@@ -215,7 +215,7 @@ setShowOptions2(prev=>!prev);
       {offline && <h2>You`re offline !</h2>}
       {online && <h2>Back online !</h2>}
       <div className="head">
-        <h2>Chat with Ai</h2>
+ <h2 className="jarvis-title">Chat with Jarvis Jr 🤖</h2>
 
         <div className="authOptions">
           {/* {tokenss && (
