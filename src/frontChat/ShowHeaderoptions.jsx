@@ -26,7 +26,7 @@ export default function ShowHeaderoptions() {
     setClick2((prev) => !prev);
   }
   function AskAi() {
-    navigate("/ai");
+   setSelect("Ai");
     setClick2((prev) => !prev);
   }
   function highlight() {

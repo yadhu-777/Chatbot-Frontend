@@ -722,6 +722,9 @@ height: 100vh;
  flex-direction: column;
  align-items: center;
 }
+.student-card{
+  margin-bottom: 1REM;
+}
 
 
 .role-card {
@@ -796,12 +799,14 @@ height: 100vh;
 
 .outerCont{
   border: 2px solid #cbcccd;
-  height: 46rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
+    
+
 }
 .outerCont img{
 margin-bottom: 1rem;
@@ -883,6 +888,7 @@ input {
   .role-description{
    margin-bottom: 0.3rem;
   }
+  
   .validation-form{
     width: 87%;
   }
@@ -1286,7 +1292,7 @@ padding-left: 3rem;
 }
 
 .outerShowHeaderoptions{
-  height: 70vh;
+  height: auto;
   background-color: white;
   position: absolute;
   right: 0rem;
@@ -1495,6 +1501,9 @@ box-shadow:0 10px 40px rgba(0,0,0,0.5);
  .outerHighlight{
   padding: 1rem 0rem 1rem 2.5rem;
  }
+ .outerCont{
+    width: 96%;
+  }
 
 .outer{
   height: 70vh;
@@ -1672,4 +1681,84 @@ padding: 1rem;
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+.news {
+  padding: 30px;
+  background: #0f172a; /* dark navy */
+  min-height: 100vh;
+  color: white;
+  overflow-y: scroll;
+  max-height: 100dvh;
+    scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE & Edge */
+
+}
+
+.news-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.loading {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* GRID */
+.news-grid {
+  width: 100%;
+  height: 100vh;
+ display: flex;
+
+ flex-wrap: wrap;
+
+
+}
+
+/* CARD */
+.news-card {
+  min-width: 30%;
+  max-width: 20rem;
+  height: auto;
+  margin: 1rem;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 1px solid transparent;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+.news-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* DATE */
+.news-date {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.read-btn {
+  text-decoration: none;
+  color: #38bdf8;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.read-btn:hover {
+  color: #0ea5e9;
+  text-decoration: underline;
 }
