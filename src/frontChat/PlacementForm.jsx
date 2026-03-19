@@ -80,11 +80,11 @@ setShowpl(prev=>!prev);
    <form action="
      ">
    <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Teacher Name</label>
+  <label for="exampleFormControlInput1" class="form-label"> Name</label>
   <input name="name"
   type="text"
  value={plImage.name}
- placeholder="Teacher Name"
+ placeholder=" Name"
  onChange={handleChange} class="form-control" id="exampleFormControlInput1"/>
 </div>
 
@@ -98,7 +98,7 @@ setShowpl(prev=>!prev);
 />
   
 </div>
-<button style={{marginTop:"2rem"}} onClick={handleSubmit} type="button" className="btn btn-secondary">Secondary</button>
+<button style={{marginTop:"2rem"}} onClick={handleSubmit} type="button" className="btn btn-secondary">Upload</button>
      </form>
 
 

@@ -108,28 +108,30 @@ Add Image
 {plData?.map((data)=>{
 
 return(
-
 <div className="plDiv" key={data._id}>
+  <div className="imgWrapper">
 
-<img
-src={data.image}
-alt=""
-onClick={()=>setSelectedImg(data.image)}
-/>
+    <img
+      src={data.image}
+      alt=""
+      onClick={() => setSelectedImg(data.image)}
+    />
 
-{aadmin &&
+    <div className="tooltip">
+      {data.name || "College Memory"}
+    </div>
 
-<button
-onClick={()=>handleDelete(data._id)}
-className="deleteBtn"
->
-Delete
-</button>
+  </div>
 
-}
-
+  {aadmin &&
+    <button
+      onClick={() => handleDelete(data._id)}
+      className="deleteBtn"
+    >
+      Delete
+    </button>
+  }
 </div>
-
 );
 
 })}

@@ -27,9 +27,10 @@ function App() {
               <Route path='/admin' element={<ValidationForm/>} />
                <Route path='/student' element={<ValidationFormtudent/>} />
            <Route path='/auth' element={<AuthPage/>} />
+            <Route path="/ai" element={<Hero />} />
         <Route element={<ProtectedRoute />}>
         
-            <Route path="/ai" element={<Hero />} />
+           
             <Route path="/clg" element={<College />} />
           </Route>
          

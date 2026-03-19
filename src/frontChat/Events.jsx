@@ -87,10 +87,13 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
     {eventData.map((data)=>{
       return(
           <Card
-        style={{ height: "32rem" }}
+         
+        style={{ height: "32rem",
+       
+         }}
         sx={{
-          maxWidth: 860,
-          minWidth:860,
+          maxWidth: 960,
+          minWidth:300,
           borderRadius: "20px",
           marginBottom:"2rem",
           boxShadow: 6,
