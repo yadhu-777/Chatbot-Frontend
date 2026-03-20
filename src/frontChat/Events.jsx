@@ -75,14 +75,14 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
               <img id="eventImg" src="event2.png" alt="" />
             </div>
             <div className="outerEventss">
-              
+                {form && <Form />}
    <div className="Addteacher">
  {aadmin && <button onClick={()=> {
     setForm(prev=>!prev)
   }} className="btn btn-primary" >Add Event</button>}
 </div>
                   <div className="outerEventsss">
-                    {form && <Form />}
+                  
      
     {eventData.map((data)=>{
       return(

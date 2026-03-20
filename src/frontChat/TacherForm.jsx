@@ -73,7 +73,7 @@ function handleTeacherSubmit(){
     return(
 
    <div className="outerFormm">
-    <div className="innerFormm">
+    <div className="innerFormm2">
        
               <div className="cross"  onClick={ 
     ()=>setTeacher(prev=>!prev)

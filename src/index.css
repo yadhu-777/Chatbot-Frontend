@@ -382,6 +382,7 @@ margin-bottom: -19rem;
   padding: 2rem;
   position: absolute;
   top: 0rem;
+  border: 2px solid black;
 }
 .clear{
 position: absolute;
@@ -483,6 +484,7 @@ font-weight: 800;
   position: relative;
   background-color: aliceblue;
   overflow-y: scroll;
+  overflow-x: hidden;
 color: black;
  height: 100vh;
 
@@ -688,6 +690,7 @@ position: absolute;
 .outerEventss{
   width: 100%;
   height: auto;
+  position: absolute;
 }
 
 .outerEventsss{
@@ -913,10 +916,22 @@ z-index: 999;
 
 }
 .innerFormm{
-  width: 60%;
+  width: 50%;
   padding: 2rem;
   height: auto;
   position: absolute;
+  right: 30rem;
+  top: 2rem;
+ background-color:white;
+
+}
+.innerFormm2{
+  min-width: 20rem;
+  width: 50%;
+  padding: 2rem;
+  height: auto;
+  position: absolute;
+
  background-color:white;
 
 }
