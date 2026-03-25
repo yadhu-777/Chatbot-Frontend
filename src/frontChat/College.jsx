@@ -8,6 +8,7 @@ import Events from "./Events";
 import Placement from "./Placement";
 import Highlight from "./Highligt";
 import Body from "./Body";
+import News from "./News";
 import Options from "./Options";
 import OptionsShow from "./OptionsShow";
 import ShowHeaderoptions from "./ShowHeaderoptions";
@@ -99,7 +100,7 @@ export default function College() {
       {select === "college" && <Clg />}
       {select === "event" && <Events />}
       {select === "Placement" && <Placement />}
-
+{select === "news" && <News />}
       {select === "Ai" && (
         <div className="outer">
           {showOptions2 && <OptionsShow />}

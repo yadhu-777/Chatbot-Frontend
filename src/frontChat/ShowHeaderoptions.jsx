@@ -33,6 +33,11 @@ export default function ShowHeaderoptions() {
     setSelect("highlight");
     setClick2((prev) => !prev);
   }
+    function news() {
+    setSelect("news");
+    setClick2((prev) => !prev);
+  }
+
 
   function handleClick2() {
     setClick2((prev) => !prev);
@@ -47,7 +52,7 @@ export default function ShowHeaderoptions() {
 
           <li onClick={Event}>Events</li>
           <li onClick={timetable}>Placement</li>
-
+ <li onClick={news}>News</li>
           <li onClick={Complain}>Complain</li>
           <li onClick={highlight}>Highlight</li>
           <li onClick={AskAi}>Ask Ai</li>
