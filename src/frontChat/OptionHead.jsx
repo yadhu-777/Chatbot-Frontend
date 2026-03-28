@@ -47,6 +47,9 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
     setSelect("highlight");
   }
 
+    function news() {
+    setSelect("news");
+  }
   function handleClick2() {
     setClick2((prev) => !prev);
   }
@@ -66,9 +69,10 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
 
         <li onClick={Event}>Events</li>
         <li onClick={timetable}>Placement</li>
-
+ 
         <li onClick={Complain}>Complaint</li>
         <li onClick={highlight}>Highlight</li>
+         <li onClick={news}>News</li>
       {  student &&  <li onClick={AskAi}>Ask Ai</li>}
         
             
