@@ -31,7 +31,7 @@ export default function Login() {
               setId(data.email);
               setImg(data.email);
               setAuthreturn(true);
-             setAdmin(false);   // ✅ ADD THIS
+             setAdmin(false);   
   setStudent(true);  // student login
               navigate("/clg");
             })

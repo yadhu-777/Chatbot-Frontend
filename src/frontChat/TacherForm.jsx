@@ -6,6 +6,7 @@ import Mycontext from "../../Context";
 export default function TeacherForm(){
     const[teacherDetails,setTeacherDetails] = useState({
         name:"",
+        department:"",
         position:"",
         description:"",
         image:""
@@ -27,6 +28,7 @@ function handleTeacherSubmit(){
    const formData = new FormData();
 
   formData.append("name", teacherDetails.name);
+   formData.append("department", teacherDetails.department);
     formData.append("position", teacherDetails.position);
       formData.append("description", teacherDetails.description);
 
@@ -40,7 +42,7 @@ function handleTeacherSubmit(){
        credentials:"include",
       body:formData,
     })
-    // .then((res)=>res.json())
+  
     .then((data)=>{
          toast(data.message, {
                     position: "top-center",
@@ -86,6 +88,10 @@ function handleTeacherSubmit(){
    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Teacher Name</label>
   <input  name="name" value={teacherDetails.name} onChange={handleTeacher}  type="text" class="form-control" id="exampleFormControlInput1" placeholder="name"/>
+</div>
+  <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Teacher Department</label>
+  <input  name="department" value={teacherDetails.department} onChange={handleTeacher}  type="text" class="form-control" id="exampleFormControlInput1" placeholder="department"/>
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Position </label>

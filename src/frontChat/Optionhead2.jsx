@@ -7,19 +7,7 @@ import { useState } from "react";
 
 export default function OptionHead2() {
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setShowBubble(true);
 
-    // hide after 3 sec
-    setTimeout(() => {
-      setShowBubble(false);
-    }, 3000);
-
-  }, 7000); // every 10 sec
-
-  return () => clearInterval(interval);
-}, []);
 
 
   const { setSelect, setClick2, setClick3, student } = useContext(Mycontext);
@@ -31,6 +19,10 @@ useEffect(() => {
   }
   function Teacher() {
     setSelect("teacher");
+  }
+  
+    function room() {
+    setSelect("room");
   }
   
  
@@ -59,7 +51,8 @@ useEffect(() => {
         {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
         <li onClick={college}>College</li>
         <li onClick={Teacher}>Teacher</li>
-
+  <li onClick={room}>ClassRooms</li>
+  
         <li onClick={Event}>Events</li>
     
 

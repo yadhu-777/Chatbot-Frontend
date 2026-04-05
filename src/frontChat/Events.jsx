@@ -72,7 +72,7 @@ fetch ("https://chatbot-backend-0k0q.onrender.com/deleteEvent",{
     return(
         <div className="outerEvents">
             <div className="eventImg">
-              <img id="eventImg" src="event2.png" alt="" />
+              <img id="eventImg" src="https://res.cloudinary.com/dke8pn6li/image/upload/v1775212938/hbs3_lrivpf.png" alt="" />
             </div>
             <div className="outerEventss">
                 {form && <Form />}

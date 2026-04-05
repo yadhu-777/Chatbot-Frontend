@@ -15,21 +15,30 @@ export default function MycontextProvider({ children }) {
   const [tokenss, setTokennss] = useState(true);
   const [optch, setOpch] = useState(false);
   const [menu, setMenu] = useState(false);
-    const [teacher, setTeacher] = useState(false);
-        const [del, setDel] = useState(false);
+  const [teacher, setTeacher] = useState(false);
+  const [del, setDel] = useState(false);
   const [select, setSelect] = useState("college");
-    const[alert2,setAlert2] = useState(false);
-    const [data, setData] = useState(" ");
-        const [admin, setAdmin] = useState(true);
-          const[showpl,setShowpl] = useState(false);
-            const[showOptions2,setShowOptions2] = useState(false);
-                const[click2,setClick2] = useState(false);
-                  const[click3,setClick3] = useState(false);
-              const[recPl,setRcpl] = useState(false);
-              const[aadmin,setAadmin] = useState(false);
-                     const[student,setStudent] = useState(false);
-                     const[back,setBack] = useState([]);
-                         const[complain,setComplain]= useState(false);
+  const [select2, setSelect2] = useState("res");
+  const [alert2, setAlert2] = useState(false);
+  const [data, setData] = useState(" ");
+  const [admin, setAdmin] = useState(true);
+  const [showpl, setShowpl] = useState(false);
+  const [showOptions2, setShowOptions2] = useState(false);
+  const [click2, setClick2] = useState(false);
+  const [click3, setClick3] = useState(false);
+  const [recPl, setRcpl] = useState(false);
+  const [aadmin, setAadmin] = useState(false);
+  const [student, setStudent] = useState(false);
+  const [back, setBack] = useState([]);
+  const [showCourse, SetShowCourse] = useState(false);
+  const [complain, setComplain] = useState(false);
+  const [courseDetails, setCourseDetails] = useState();
+  const [classDetails, setClassDetails] = useState();
+    const [classDetails2, setClassDetails2] = useState();
+  const [select6, setSelect6] = useState(false);
+  const[showClassForm,setShowClassForm] = useState(false);
+   const[showann,setShowann] = useState(false);
+  const [panoramaUrl, setPanoramaUrl] = useState("");
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -40,19 +49,46 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
-        click3,setClick3,
-        alert2,setAlert2,
-        complain,setComplain,
-        back,setBack,
-        student,setStudent,
-        aadmin,setAadmin,
-        showOptions2,setShowOptions2,
-        click2,setClick2,
-        recPl,setRcpl,
-        showpl,setShowpl,
-        del, setDel,
-        teacher, setTeacher,
-        admin, setAdmin,
+        showann,setShowann,
+        panoramaUrl, setPanoramaUrl,
+        classDetails2, setClassDetails2,
+        showClassForm,setShowClassForm,
+        classDetails,
+        setClassDetails,
+        select6,
+        setSelect6,
+        select2,
+        setSelect2,
+        click3,
+        setClick3,
+        showCourse,
+        SetShowCourse,
+        courseDetails,
+        setCourseDetails,
+        alert2,
+        setAlert2,
+        complain,
+        setComplain,
+        back,
+        setBack,
+        student,
+        setStudent,
+        aadmin,
+        setAadmin,
+        showOptions2,
+        setShowOptions2,
+        click2,
+        setClick2,
+        recPl,
+        setRcpl,
+        showpl,
+        setShowpl,
+        del,
+        setDel,
+        teacher,
+        setTeacher,
+        admin,
+        setAdmin,
         form,
         setForm,
         authreturn,
@@ -85,7 +121,8 @@ export default function MycontextProvider({ children }) {
         setMenu,
         select,
         setSelect,
-        data, setData
+        data,
+        setData,
       }}
     >
       {children}

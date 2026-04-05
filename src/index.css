@@ -1777,3 +1777,611 @@ padding: 1rem;
   color: #0ea5e9;
   text-decoration: underline;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  height: 40vh;
+  padding: 40px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  background-color:blue;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+
+.container{
+  position: relative;
+  color: #000000;
+}
+
+
+
+
+.outerStudentRes{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+/* General Layout */
+.hub-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #bac1d4 0%, #355ebe 100%);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Typography */
+.hub-header h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin: 1rem 0;
+  letter-spacing: -1px;
+}
+
+.hub-header p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.icon-wrapper {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Button Grid */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Button Styling */
+.hub-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hub-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* Dynamic Background Shapes */
+.shape {
+  position: absolute;
+  filter: blur(80px);
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.3);
+  top: -100px;
+  left: -100px;
+}
+
+.blob-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(139, 92, 246, 0.2);
+  bottom: -50px;
+  right: -50px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .hub-header h1 { font-size: 2rem; }
+  .glass-card { padding: 2rem 1.5rem; }
+  .button-grid { grid-template-columns: 1fr; }
+}
+/* Container to give breathing room */
+.courses-wrapper {
+  padding: 150px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  
+}
+
+/* Responsive Grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* The Card Design */
+.course-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover Effects */
+.course-card:hover {
+  transform: translateY(-8px);
+  border-color: #2563eb;
+  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1), 
+              0 10px 10px -5px rgba(37, 99, 235, 0.04);
+}
+
+/* Internal Elements */
+.card-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.course-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 15px 0 5px 0;
+}
+
+.course-line {
+  width: 40px;
+  height: 4px;
+  background: #2563eb;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.course-card:hover .course-line {
+  width: 80px;
+}
+
+.card-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.course-card:hover .card-footer {
+  color: #2563eb;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .arrow {
+  transform: translateX(5px);
+}
+
+.OuterCourseShow{
+width: 100%;
+height: 100vh;
+z-index: 999;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 0rem;
+left: 0rem;
+}
+
+.innerCourseShow{
+  overflow-x: scroll;
+scrollbar-width: none;
+  width: 70%;
+  height: 65%;
+  min-width: 22rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: #000000;
+  position: absolute;
+  background-color: white;
+}
+
+@media (max-width:500px){
+.innerCourseShow{
+padding-left: 1.5rem;
+}
+}
+
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  margin-top: 3rem;
+}
+
+.classroom-scene {
+  position: relative;
+  width: 220px; /* Wider to accommodate teacher + board */
+  height: 120px;
+  display: flex;
+  align-items: flex-end; /* Ground the teacher */
+  justify-content: space-between;
+}
+
+/* 1. THE TEACHER CHARACTER */
+.teacher-character {
+  width: 60px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* subtle bounce while teaching */
+  animation: teacher-bounce 2s infinite ease-in-out;
+}
+
+.avatar {
+  font-size: 50px; /* Size of the teacher avatar */
+  margin-bottom: -5px;
+}
+
+/* The pointer/stick */
+.pointer-stick {
+  position: absolute;
+  top: 50px;
+  left: 55px; /* Adjust so it appears near hand */
+  width: 30px;
+  height: 4px;
+  background-color: #8d6e63; /* Woody brown */
+  border-radius: 2px;
+  transform-origin: left center;
+  animation: point-gesture 4s infinite linear;
+}
+
+/* 2. THE CHALKBOARD */
+.chalkboard {
+  width: 130px;
+  height: 90px;
+  background-color: #1a4d3a; /* Dark classroom green */
+  border: 5px solid #5d4037; /* Wooden frame */
+  border-radius: 6px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Important for writing effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Chalk Text Effects */
+.lesson-writing {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Chalk style */
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; /* Start hidden for type effect */
+  animation: type-lesson 4s infinite steps(10, end);
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+}
+
+.lesson-two {
+  font-size: 14px;
+  color: #a8e6cf; /* Light green chalk */
+  margin-top: 5px;
+  animation-delay: 1s; /* Start second line later */
+}
+
+/* The "Idea" popping up */
+.lightbulb {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 18px;
+  opacity: 0;
+  animation: pop-idea 4s infinite linear;
+}
+
+/* 3. ANIMATIONS */
+
+/* Teacher slight movement */
+@keyframes teacher-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Pointer gesture (synced with text) */
+@keyframes point-gesture {
+  0%, 10% { transform: rotate(-20deg); } /* Holding state */
+  15%, 35% { transform: rotate(10deg); } /* Pointing to line 1 */
+  40%, 60% { transform: rotate(30deg); } /* Pointing to line 2 */
+  70% { transform: rotate(10deg); }
+  85%, 100% { transform: rotate(-20deg); } /* Reset */
+}
+
+/* Chalk Writing Effect */
+@keyframes type-lesson {
+  0% { width: 0; opacity: 0; }
+  10%, 70% { width: 100%; opacity: 1; } /* fully revealed */
+  80%, 100% { width: 0; opacity: 0; } /* Reset/erase */
+}
+
+@keyframes pop-idea {
+  0%, 65% { opacity: 0; transform: scale(0.5); }
+  75% { opacity: 1; transform: scale(1.2); }
+  90% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; }
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-family: Helvetica, sans-serif;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Container padding to replace navbar space */
+.classroom-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.page-title {
+  text-align: center;
+  color: #111827;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Room
+/* CourseCards.css */
+.course-container {
+  min-height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+.course-grid {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 90px;
+  padding: 20px;
+}
+
+.course-card {
+  width: 220px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  border-radius: 20px;
+background-color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.showOuterClass{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  z-index: 999;
+}
+.showInnerClass{
+  min-width: 350px;
+  width: 55%;
+  height: 70vh;
+  position: absolute;
+background-color: white;
+border: 2px dotted black;
+
+}
+.btn-class{
+  position: absolute;
+  right: 3rem;
+ top: 6rem;
+}
+
+.outerClassForm{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.innerClassAddForm{
+  position: absolute;
+  width: 50%;
+  height: 50vh;
+  border: 2px dotted black;
+  border-radius: 15px;
+  background-color: white;
+  z-index: 999;
+}
+
+.outerAnnoouncement{
+  width: 100%;
+  min-height: 100vh;
+padding: 2rem;
+}
+.innerAnnouncement{
+ width: 100%;
+  min-height: 100vh;
+}
+.innershowAnnouncement{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+ 
+  position: absolute;
+}
+.outerann{
+  width: 50%;
+  border: 2px solid black;
+  height: 50vh;
+  top: 10%;
+  position: absolute;
+}
+
+.pdf-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.pdf-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e7f3ff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.pdf-card:hover {
+  transform: scale(1.02);
+}
+
+/* ICON */
+.pdf-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+/* INFO */
+.pdf-info {
+  flex: 1;
+}
+
+.pdf-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.pdf-info p {
+  margin: 0;
+  font-size: 12px;
+  color: gray;
+}
+
+/* ACTIONS */
+.pdf-actions a {
+  margin-left: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #007bff;
+  transition: 0.2s;
+}
+
+.pdf-actions a:hover {
+  color: #0056b3;
+}

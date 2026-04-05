@@ -9,7 +9,7 @@ import Placement from "./Placement";
 import Highlight from "./Highligt";
 import News from "./News";
 import ShowHeaderoptions2 from "./ShowheaderOption2";
-
+import CourseCards from "./Classroom";
 export default function College2() {
   const { form, setForm } = useContext(Mycontext);
   const {
@@ -69,6 +69,7 @@ export default function College2() {
       {select === "highlight" && <Highlight />}
       {select === "college" && <Clg />}
       {select === "event" && <Events />}
+      {select === "room" && <CourseCards />}
       {select === "Placement" && <Placement />}
  {select === "news" && <News />}
 

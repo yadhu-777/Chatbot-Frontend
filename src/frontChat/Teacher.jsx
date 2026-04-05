@@ -14,7 +14,7 @@ export default function Teacher() {
         const [teacherData,setTeacherData]= useState([]);
 
 useEffect(()=>{
-  fetch("https://chatbot-backend-0k0q.onrender.com/getTeacher", {
+  fetch("https://chatbot-backend-0k0q.onrender.com/getTeacher1", {
      
       method: "POST",
       headers: {

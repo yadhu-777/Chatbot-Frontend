@@ -8,10 +8,12 @@ import Events from "./Events";
 import Placement from "./Placement";
 import Highlight from "./Highligt";
 import Body from "./Body";
+import CourseSelection from "./Course";
 import News from "./News";
-import Options from "./Options";
+import CourseCards from "./Classroom";
 import OptionsShow from "./OptionsShow";
 import ShowHeaderoptions from "./ShowHeaderoptions";
+import Announcement from "./Announcement";
 export default function College() {
   const { form, setForm } = useContext(Mycontext);
   const {
@@ -96,7 +98,10 @@ export default function College() {
       <OptionHead />
       {click2 && <ShowHeaderoptions />}
       {select === "complain" && <Complain />}
+       {select === "course" && <CourseSelection />}
+        {select === "room" && <CourseCards />}
       {select === "highlight" && <Highlight />}
+        {select === "announcement" && <Announcement />}
       {select === "college" && <Clg />}
       {select === "event" && <Events />}
       {select === "Placement" && <Placement />}
