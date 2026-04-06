@@ -25,7 +25,11 @@ export default function ShowHeaderoptions2() {
     setSelect("news");
     setClick3((prev) => !prev);
   }
-
+ function classroomm(e) {
+    e.stopPropagation();
+    setSelect("room");
+    setClick3((prev) => !prev);
+  }
   function highlight(e) {
     e.stopPropagation();
     setSelect("highlight");
@@ -49,7 +53,7 @@ export default function ShowHeaderoptions2() {
           <li onClick={Event}>Events</li>
 
           <li onClick={news}>News</li>
-
+ <li onClick={classroomm}>Classroom</li>
           <li onClick={highlight}>Highlight</li>
         </ul>
       </div>

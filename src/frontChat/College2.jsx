@@ -9,7 +9,7 @@ import Placement from "./Placement";
 import Highlight from "./Highligt";
 import News from "./News";
 import ShowHeaderoptions2 from "./ShowheaderOption2";
-import CourseCards from "./Classroom";
+import  CourseCards from "./Classroom";
 export default function College2() {
   const { form, setForm } = useContext(Mycontext);
   const {
@@ -32,29 +32,7 @@ export default function College2() {
 
 
 
-  useEffect(() => {
-    fetch("https://chatbot-backend-0k0q.onrender.com/checkAuth", {
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setAadmin(false);
-        setStudent(false);
-        setImg("");
-
-        if (data.role === "admin") {
-          setAadmin(true);
-          setAdmin(true);
-        }
-
-        if (data.role === "student") {
-          setStudent(true);
-          setAdmin(false);
-          setImg(data.email);
-        }
-      });
-  }, []);
-
+ 
   return (
     <div className="outerCollege">
              {/* <div className="cross"  onClick={

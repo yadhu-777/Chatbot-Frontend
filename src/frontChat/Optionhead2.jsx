@@ -51,7 +51,7 @@ export default function OptionHead2() {
         {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
         <li onClick={college}>College</li>
         <li onClick={Teacher}>Teacher</li>
-  <li onClick={room}>ClassRooms</li>
+
   
         <li onClick={Event}>Events</li>
     
