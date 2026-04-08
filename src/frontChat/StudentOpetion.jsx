@@ -24,31 +24,19 @@ const [showBubble, setShowBubble] = useState(false);
 const [hasClickedAI, setHasClickedAI] = useState(true);
 
   const { select2, setSelect2, setClick2, aadmin, student } = useContext(Mycontext);
+
+
   function syllabus() {
     setSelect2("syllabus");
-  }
-  function Event() {
-    setSelect("event");
-  }
-  function Teacher() {
-    setSelect("teacher");
-  }
-  function Complain() {
-    setSelect("complain");
-  }
-  function timetable() {
-    setSelect("Placement");
   }
   function AskAi() {
    setSelect2("ai");
    setHasClickedAI(false)
   }
-  function highlight() {
-    setSelect("highlight");
-  }
 
-    function news() {
-    setSelect("news");
+
+    function annc() {
+    setSelect2("annc");
   }
   
     function home() {
@@ -78,7 +66,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
         {/* <li onClick={highlight}>Highlight</li> */}
          {/* <li onClick={news}>News</li> */}
          <li onClick={home}>home</li>
-           <li onClick={syllabus}>Announcements</li>
+           <li onClick={annc}>Announcements</li>
          <li onClick={syllabus}>Syllabus</li>
       {  student &&  <li onClick={AskAi}>Ask Ai</li>}
         

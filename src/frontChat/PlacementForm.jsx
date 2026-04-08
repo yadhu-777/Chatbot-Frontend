@@ -34,8 +34,9 @@ const [plImage, setPlImage] = useState({
   }));
 }
 
-function handleSubmit(){
+function handleSubmit(e){
 
+  e.preventDefault();
   const formData = new FormData();
 
   formData.append("name", plImage.name);

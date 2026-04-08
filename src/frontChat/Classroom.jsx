@@ -68,7 +68,10 @@ setShowClassForm(prev=>!prev);
         {classDetails?.map((course, index) => (
           <div onClick={()=>handleClass(course.course)} key={index} className="course-card">
             {course.course}
-             { aadmin && <button onClick={handleClassAdd} className="btn-class">delete</button>}
+            <div className="del">
+ { aadmin && <button onClick={handleClassAdd} style={{marginTop:"2rem"}} className="btn btn-primary">delete</button>}
+
+            </div>
           </div>
           
         ))}

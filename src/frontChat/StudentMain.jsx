@@ -22,10 +22,10 @@ const StudentHub = () => {
         </header>
 
         <nav className="button-grid">
-          <button className="hub-btn syllabus">
+          <button onClick={()=>setSelect2("syllabus")} className="hub-btn syllabus">
             <span className="btn-icon">📘</span> Syllabus
           </button>
-          <button className="hub-btn announcements">
+          <button onClick={()=>setSelect2("annc")} className="hub-btn announcements">
             <span className="btn-icon">📢</span> Announcements
           </button>
           <button onClick={()=>setSelect2("ai")} className="hub-btn ai-solver">
