@@ -47,8 +47,8 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
     setSelect("highlight");
   }
 
-    function news() {
-    setSelect("news");
+    function sylabus() {
+    setSelect("");
   }
       function classs(){
     setSelect("room");
@@ -85,7 +85,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
       {!aadmin &&  <li onClick={Complain}>Complaint</li>}
         <li onClick={highlight}>Highlight</li>
            {aadmin &&    <li onClick={announcement}>Announcement</li>}
-                   {aadmin &&    <li onClick={classs}>Syllabus</li>}
+                   {aadmin &&    <li onClick={sylabus}>Syllabus</li>}
          {/* <li onClick={news}>News</li> */}
       {/* {  student &&  <li onClick={AskAi}>Ask Ai</li>} */}
         

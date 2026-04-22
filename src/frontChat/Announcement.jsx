@@ -31,7 +31,7 @@ useEffect(() => {
       
       setLaod(prev=>!prev);
       setpdf(data)}
-    )}, []);
+    )},[]);
     
    
     return(

@@ -3,7 +3,6 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import MycontextProvider from '../Contextprovider';
 import './App.css'
 import CourseSelection from "./frontChat/Course";
-import Hero from './frontChat/Hero'
 import AuthPage from './frontChat/Auth';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
