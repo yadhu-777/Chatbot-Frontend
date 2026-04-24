@@ -33,7 +33,7 @@ export default function OptionHead2() {
          <li onClick={aboutus}>About Us</li>
         <li onClick={Teacher}>Teacher</li>
         <li onClick={Event}>Events</li>
-        <li onClick={highlight}>Highlight</li>
+        <li onClick={highlight}>Gallery</li>
     {/* <li onClick={timetable}>Placement</li> */}
         <li onClick={faq}>FAQ</li>
       </ul>

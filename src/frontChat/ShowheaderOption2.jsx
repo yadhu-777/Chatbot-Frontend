@@ -70,7 +70,7 @@ export default function ShowHeaderoptions2() {
 
           <li onClick={timetable}>Placement</li>
  <li onClick={classroomm}>Classroom</li>
-          <li onClick={highlight}>Highlight</li>
+          <li onClick={highlight}>Gallery</li>
            <li onClick={faq}>FAQ</li>
         </ul>
       </div>

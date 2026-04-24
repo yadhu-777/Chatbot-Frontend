@@ -84,7 +84,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
         <li onClick={timetable}>Placement</li>
  {!aadmin && <li onClick={()=>navigate("/stdRes")}>Student Resources</li>}
       {!aadmin &&  <li onClick={Complain}>Complaint</li>}
-        <li onClick={highlight}>Highlight</li>
+        <li onClick={highlight}>Gallery</li>
            {aadmin &&    <li onClick={announcement}>Announcement</li>}
                    {aadmin &&    <li onClick={sylabus}>Syllabus</li>}
          {/* <li onClick={news}>News</li> */}

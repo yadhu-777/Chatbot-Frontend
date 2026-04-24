@@ -56,13 +56,13 @@ export default function ShowHeaderoptions() {
         <ul className="links">
           {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
           <li onClick={college}>College</li>
-          <li onClick={Teacher}>Teacher</li>
+          <li onClick={Teacher}>Faculty</li>
 
           <li onClick={Event}>Events</li>
           <li onClick={timetable}>Placement</li>
  <li onClick={news}>News</li>
       { student &&   <li onClick={Complain}>Complain</li>}
-          <li onClick={highlight}>Highlight</li>
+          <li onClick={highlight}>Gallery</li>
            <li onClick={classroom}>classroom</li>
           {  student &&   <li onClick={announcement}>announcement</li>}
          
