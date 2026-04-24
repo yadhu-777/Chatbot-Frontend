@@ -3,13 +3,14 @@ import Mycontext from "../../Context";
 import Clg from "./Clg";
 import OptionHead2 from "./Optionhead2";
 import Teacher from "./Teacher";
-
+import FAQ from "./FAQ";
 import Events from "./Events";
 import Placement from "./Placement";
 import Highlight from "./Highligt";
 import News from "./News";
 import ShowHeaderoptions2 from "./ShowheaderOption2";
 import  CourseCards from "./Classroom";
+import CourseSelection from "./Course";
 export default function College2() {
   const { form, setForm } = useContext(Mycontext);
   const {
@@ -49,8 +50,8 @@ export default function College2() {
       {select === "event" && <Events />}
       {select === "room" && <CourseCards />}
       {select === "Placement" && <Placement />}
- {select === "news" && <News />}
-
+ {select === "course" && <CourseSelection />}
+ {select === "faq" && <FAQ />}
       {select === "teacher" && <Teacher />}
     </div>
   );

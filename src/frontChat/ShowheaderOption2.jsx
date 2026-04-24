@@ -17,7 +17,7 @@ export default function ShowHeaderoptions2() {
   }
   function Teacher(e) {
     e.stopPropagation();
-    setSelect("teacher");
+     setSelect("course"); 
     setClick3((prev) => !prev);
   }
   function news(e) {
@@ -35,6 +35,17 @@ export default function ShowHeaderoptions2() {
     setSelect("highlight");
     setClick3((prev) => !prev);
   }
+   function faq(e) {
+    e.stopPropagation();
+    setSelect("faq");
+    setClick3((prev) => !prev);
+  }
+  
+  function timetable(e) {
+     e.stopPropagation();
+    setSelect("Placement");
+      setClick3((prev) => !prev);
+  }
 
   function handleClick2() {
     setClick3((prev) => !prev);
@@ -47,14 +58,15 @@ export default function ShowHeaderoptions2() {
       <div className="innerShowHeaderoptions">
         <ul className="links">
           {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
-          <li onClick={college}>College</li>
-          <li onClick={Teacher}>Teacher</li>
+          <li onClick={college}>Home</li>
+          <li onClick={Teacher}>Faculty</li>
 
           <li onClick={Event}>Events</li>
 
-          <li onClick={news}>News</li>
+          <li onClick={timetable}>Placement</li>
  <li onClick={classroomm}>Classroom</li>
           <li onClick={highlight}>Highlight</li>
+           <li onClick={faq}>FAQ</li>
         </ul>
       </div>
     </div>

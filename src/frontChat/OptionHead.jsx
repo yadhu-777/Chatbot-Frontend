@@ -36,6 +36,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
   function Complain() {
     setSelect("complain");
   }
+  
   function timetable() {
     setSelect("Placement");
   }

@@ -18,6 +18,7 @@ import College2 from "./frontChat/College2";
 import CourseShow from "./frontChat/CourseShow";
 import CourseCards from "./frontChat/Classroom";
 import Announcement from "./frontChat/Announcement";
+import FAQ from "./frontChat/FAQ";
 function App() {
 
 
@@ -28,7 +29,7 @@ function App() {
     <MycontextProvider>
       <BrowserRouter>
     <Routes>
-           <Route path="/fresher" element={<College2 />} />
+           <Route path="/applicant" element={<College2 />} />
             <Route path="/course" element={<CourseSelection />} />
       <Route path="/news" element={<News />} />
           <Route path="/home" element={<Userform />} />
@@ -38,6 +39,7 @@ function App() {
            <Route path='/auth' element={<AuthPage/>} />
                <Route path='/courseshow' element={<CourseShow/>} />
                  <Route path='/annc' element={<Announcement/>} />
+                 <Route path='/faq' element={<FAQ/>} />
         <Route element={<ProtectedRoute />}>
           <Route path="/stdRes" element={<StudentRes />} />
           <Route path="/clg" element={<College />} />

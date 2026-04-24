@@ -9,11 +9,7 @@ export default function Clg() {
         <div className="clgBody">
           <div className="headerHero">
             <img id="clgImg" src="clg2.png" alt="" />
-            <div className="headtext">
-                <h4>
-                Enroll Now
-                </h4>
-            </div>
+           
           </div>
           <div className="headerhero2">
             <div className="headerImg">
