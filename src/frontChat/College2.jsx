@@ -11,6 +11,7 @@ import News from "./News";
 import ShowHeaderoptions2 from "./ShowheaderOption2";
 import  CourseCards from "./Classroom";
 import CourseSelection from "./Course";
+import About from "./About";
 export default function College2() {
   const { form, setForm } = useContext(Mycontext);
   const {
@@ -51,6 +52,7 @@ export default function College2() {
       {select === "room" && <CourseCards />}
       {select === "Placement" && <Placement />}
  {select === "course" && <CourseSelection />}
+  {select === "aboutus" && <About />}
  {select === "faq" && <FAQ />}
       {select === "teacher" && <Teacher />}
     </div>

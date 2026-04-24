@@ -75,7 +75,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
 
       <ul className="nav-links">
         {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
-        <li onClick={college}>College</li>
+        <li onClick={college}>Home</li>
 
      {aadmin &&    <li onClick={Teacher}>Teacher</li>}
       {aadmin &&    <li onClick={classs}>Classroom</li>}

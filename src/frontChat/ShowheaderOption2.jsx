@@ -46,7 +46,11 @@ export default function ShowHeaderoptions2() {
     setSelect("Placement");
       setClick3((prev) => !prev);
   }
-
+  function aboutus(e) {
+     e.stopPropagation();
+    setSelect("aboutus");
+      setClick3((prev) => !prev);
+  }
   function handleClick2() {
     setClick3((prev) => !prev);
   }
@@ -59,6 +63,7 @@ export default function ShowHeaderoptions2() {
         <ul className="links">
           {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
           <li onClick={college}>Home</li>
+            <li onClick={aboutus}>About Us</li>
           <li onClick={Teacher}>Faculty</li>
 
           <li onClick={Event}>Events</li>

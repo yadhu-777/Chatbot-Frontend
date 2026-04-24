@@ -14,6 +14,7 @@ export default function OptionHead2() {
   function highlight() { setSelect("highlight"); }
   function news() { setSelect("news"); }
   function faq() { setSelect("faq"); }
+    function aboutus() { setSelect("aboutus"); }
 
   function handleClick2() {
     setClick3((prev) => !prev);
@@ -29,7 +30,7 @@ export default function OptionHead2() {
 
       <ul className="nav-links">
         <li onClick={college}>Home</li>
-         <li onClick={college}>About Us</li>
+         <li onClick={aboutus}>About Us</li>
         <li onClick={Teacher}>Teacher</li>
         <li onClick={Event}>Events</li>
         <li onClick={highlight}>Highlight</li>
