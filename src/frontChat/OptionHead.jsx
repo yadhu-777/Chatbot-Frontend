@@ -60,6 +60,9 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
     function announcement() {
     setSelect("announcement");
   }
+    function dashboard() {
+    setSelect("dashboard");
+  }
   
   function handleClick2() {
     setClick2((prev) => !prev);
@@ -83,7 +86,8 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
         <li onClick={Event}>Events</li>
         <li onClick={timetable}>Placement</li>
  {!aadmin && <li onClick={()=>navigate("/stdRes")}>Student Resources</li>}
-      {!aadmin &&  <li onClick={Complain}>Complaint</li>}
+      {!aadmin &&  <li onClick={Complain}>Suggestion</li>}
+        {aadmin &&  <li onClick={dashboard}>Dashboard</li>}
         <li onClick={highlight}>Gallery</li>
            {aadmin &&    <li onClick={announcement}>Announcement</li>}
                    {aadmin &&    <li onClick={sylabus}>Syllabus</li>}

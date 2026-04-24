@@ -61,7 +61,7 @@ export default function ShowHeaderoptions() {
           <li onClick={Event}>Events</li>
           <li onClick={timetable}>Placement</li>
  <li onClick={news}>News</li>
-      { student &&   <li onClick={Complain}>Complain</li>}
+      { student &&   <li onClick={Complain}>Suggestion</li>}
           <li onClick={highlight}>Gallery</li>
            <li onClick={classroom}>classroom</li>
           {  student &&   <li onClick={announcement}>announcement</li>}

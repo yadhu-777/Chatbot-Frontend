@@ -8,6 +8,7 @@ import Events from "./Events";
 import Placement from "./Placement";
 import Highlight from "./Highligt";
 import Body from "./Body";
+import UserAnalytics from "./Analysis";
 import CourseSelection from "./Course";
 import News from "./News";
 import CourseCards from "./Classroom";
@@ -99,6 +100,7 @@ export default function College() {
       {click2 && <ShowHeaderoptions />}
       {select === "complain" && <Complain />}
        {select === "course" && <CourseSelection />}
+          {select === "dashboard" && <UserAnalytics />}
         {select === "room" && <CourseCards />}
       {select === "highlight" && <Highlight />}
         {select === "announcement" && <Announcement />}

@@ -50,15 +50,12 @@ const faqs = [
     ],
   },
   {
-    category: "Fees & Scholarships",
+    category: "Scholarships & Loan",
     icon: "💰",
     color: "#f06292",
     colorDim: "rgba(240,98,146,0.1)",
     questions: [
-      {
-        q: "What is the approximate fee structure for these courses?",
-        a: "Fees vary by institution. Government colleges charge ₹5,000–₹30,000 per year, while private colleges range from ₹40,000–₹2,00,000 per year. Deemed universities or autonomous institutions may charge higher fees. Contact the admissions office for the exact fee breakup.",
-      },
+     
       {
         q: "Are scholarships available for students?",
         a: "Yes! Scholarships are available through the National Scholarship Portal (NSP), state government schemes, and institutional merit-based scholarships. SC/ST/OBC students can avail post-matric scholarships. Merit scholarships are given to top-performing students in every semester.",
@@ -293,13 +290,8 @@ export default function FAQ() {
           <p className="faq-cta-text">Still have questions?</p>
           <p className="faq-cta-sub">For more information,feel free to contact our office.</p>
         
-          <button
-            className="faq-cta-btn"
-            
-           onClick="window.location.href='tel:+919876543210'">
-           Contact us
-          </button>
-          <a href="tel:+919876543210" className="faq-cta-btn">
+         
+          <a href="tel:+18004258650" className="faq-cta-btn">
   Contact Us
 </a>
         </div>
