@@ -295,7 +295,8 @@ export default function FAQ() {
         
           <button
             className="faq-cta-btn"
-           onclick="window.location.href='tel:+919876543210'">
+            
+           onClick="window.location.href='tel:+919876543210'">
            Contact us
           </button>
         </div>
