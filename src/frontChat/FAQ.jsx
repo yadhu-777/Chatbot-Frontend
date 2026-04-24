@@ -299,6 +299,9 @@ export default function FAQ() {
            onClick="window.location.href='tel:+919876543210'">
            Contact us
           </button>
+          <a href="tel:+919876543210" className="faq-cta-btn">
+  Contact Us
+</a>
         </div>
       </div>
     </div>
