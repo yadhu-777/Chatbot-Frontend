@@ -49,7 +49,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
   }
 
     function sylabus() {
-    setSelect("");
+    setSelect("syllabus");
   }
       function classs(){
     setSelect("room");

@@ -53,24 +53,8 @@ export default function UserAnalytics() {
             <p className="ua-stat-value">{data.totalUsers}</p>
           </div>
         </div>
-        <div className="ua-stat-card">
-          <span className="ua-stat-icon">💬</span>
-          <div>
-            <p className="ua-stat-label">Total Threads</p>
-            <p className="ua-stat-value">{data.totalThreads}</p>
-          </div>
-        </div>
-        <div className="ua-stat-card">
-          <span className="ua-stat-icon">📊</span>
-          <div>
-            <p className="ua-stat-label">Avg Threads / User</p>
-            <p className="ua-stat-value">
-              {data.totalUsers > 0
-                ? (data.totalThreads / data.totalUsers).toFixed(1)
-                : 0}
-            </p>
-          </div>
-        </div>
+       
+       
         <div className="ua-stat-card">
           <span className="ua-stat-icon">🏆</span>
           <div>

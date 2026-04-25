@@ -50,6 +50,7 @@ export default function College2() {
       {select === "college" && <Clg />}
       {select === "event" && <Events />}
       {select === "room" && <CourseCards />}
+      
       {select === "Placement" && <Placement />}
  {select === "course" && <CourseSelection />}
   {select === "aboutus" && <About />}

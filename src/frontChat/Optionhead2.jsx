@@ -31,7 +31,7 @@ export default function OptionHead2() {
       <ul className="nav-links">
         <li onClick={college}>Home</li>
          <li onClick={aboutus}>About Us</li>
-        <li onClick={Teacher}>Teacher</li>
+        <li onClick={Teacher}>Faculty</li>
         <li onClick={Event}>Events</li>
         <li onClick={highlight}>Gallery</li>
     {/* <li onClick={timetable}>Placement</li> */}

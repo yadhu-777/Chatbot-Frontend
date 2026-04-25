@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 
 import { toast } from "react-toastify";
 import Mycontext from "../../Context";
+import ShowSyllabus from "./SyllabusAdd";
 export default function ShowAnnouncement(){
     const {showann,setShowann}  = useContext(Mycontext);
    const[pdf,setPdf] = useState("");
@@ -42,7 +43,7 @@ setPdf(file);
             <div className="outerann">
              <form onSubmit={handleUpload}>
    <div className="mb-3">
-  <label for="exampleFormControlInput1" className="form-label">Teacher Name</label>
+  <label for="exampleFormControlInput1" className="form-label"> File</label>
   <input type="file" accept="application/pdf" onChange={handleChnage} />
 </div>
  

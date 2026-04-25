@@ -6,6 +6,7 @@ import Teacher from "./Teacher";
 import Complain from "./Complain";
 import Events from "./Events";
 import Placement from "./Placement";
+import Syllabus from "./Syllabus";
 import Highlight from "./Highligt";
 import Body from "./Body";
 import UserAnalytics from "./Analysis";
@@ -106,6 +107,7 @@ export default function College() {
         {select === "announcement" && <Announcement />}
       {select === "college" && <Clg />}
       {select === "event" && <Events />}
+         {select === "syllabus" && <Syllabus />}
       {select === "Placement" && <Placement />}
 {select === "news" && <News />}
       {select === "Ai" && (

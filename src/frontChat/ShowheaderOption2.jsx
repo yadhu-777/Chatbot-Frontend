@@ -51,6 +51,7 @@ export default function ShowHeaderoptions2() {
     setSelect("aboutus");
       setClick3((prev) => !prev);
   }
+  
   function handleClick2() {
     setClick3((prev) => !prev);
   }

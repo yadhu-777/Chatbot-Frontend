@@ -381,8 +381,9 @@ margin-bottom: -19rem;
   background-color:white;
   position: relative;
   padding: 2rem;
+
   position: absolute;
-  top: 0rem;
+  top: 6rem;
   border: 2px solid black;
 }
 .clear{

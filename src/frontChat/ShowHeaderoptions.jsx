@@ -45,6 +45,11 @@ export default function ShowHeaderoptions() {
     setSelect("news");
     setClick2((prev) => !prev);
   }
+   function stres() {
+   navigate("/stdres")
+    setClick2((prev) => !prev);
+  }
+  
 
 
   function handleClick2() {
@@ -57,13 +62,14 @@ export default function ShowHeaderoptions() {
           {/* <li onClick={() => setForm((prev) => !prev)}>Register</li> */}
           <li onClick={college}>College</li>
           <li onClick={Teacher}>Faculty</li>
-
+   { student &&  <li onClick={stres}>Student Resource</li>}
           <li onClick={Event}>Events</li>
           <li onClick={timetable}>Placement</li>
- <li onClick={news}>News</li>
+
       { student &&   <li onClick={Complain}>Suggestion</li>}
           <li onClick={highlight}>Gallery</li>
-           <li onClick={classroom}>classroom</li>
+         
+
           {  student &&   <li onClick={announcement}>announcement</li>}
          
         </ul>

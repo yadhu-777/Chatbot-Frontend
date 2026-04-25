@@ -1,26 +1,89 @@
-import { useState } from "react";
+import ShowAnnouncement from "./AshowAnnouncement"
+import Mycontext from "../../Context";
+import { useContext, useEffect, useState } from "react";
+import Loader from "./Loader";
 import ShowSyllabus from "./SyllabusAdd";
-export default function Syllabus() {
-  const departments = ["BCA", "BBA", "BCom", "BSc"];
-  const[set,setSet] = useState(false);
+export default function Syllabus(){
+  const[load,setLaod]= useState(false);
+     const {showann,setShowann,aadmin}  = useContext(Mycontext);
+     const[pdf,setpdf] = useState(null);
 function handleclick(){
-setSet(prev =>!prev)
+setShowann(prev=>!prev);
 }
-  return (
-    <div className="outerSyllabus">
-{  <ShowSyllabus/>}
-   <div className="addBtn3">
-       <button onClick={handleclick} className="btn btn-primary">add</button>
-   </div>
-      <div className="cardContainer">
-        {departments.map((dept, index) => (
-          <div className="card" key={index}>
-            <h2>{dept}</h2>
-            <div className="underline"></div>
-            <p>View Syllabus →</p>
-          </div>
-        ))}
+const handleDelete = async (id) => {
+  try {
+    await fetch(`https://chatbot-backend-0k0q.onrender.com/pdf2/${id}`, {
+      method: "DELETE",
+    });
+
+    setpdf((prev) => prev.filter((item) => item._id !== id));
+
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+
+useEffect(() => {
+  setLaod(prev=>!prev)
+  fetch("https://chatbot-backend-0k0q.onrender.com/syllabus")
+    .then(res => res.json())
+    .then(data => {
+      
+      setLaod(prev=>!prev);
+      setpdf(data)}
+    )},[]);
+    
+   
+    return(
+<div className="outerAnnoouncement">
+  { aadmin && <button onClick={handleclick}>add</button>}
+    <div className="innerAnnouncement">
+    
+ { showann &&   <ShowSyllabus/>}
+   {load && <Loader/>}
+<div className="pdf-container">
+  {pdf?.map((item, i) => (
+    <div className="pdf-card" key={i}>
+      
+      {/* LEFT ICON */}
+      <div className="pdf-icon">
+        📄
       </div>
+
+      {/* FILE INFO */}
+      <div className="pdf-info">
+        <h4>{item.originalname}</h4>
+        <p>PDF Document</p>
+      </div>
+
+      {/* ACTIONS */}
+    <div className="pdf-actions">
+<a
+  href={`https://docs.google.com/gview?url=${item.url}&embedded=true`}
+  target="_blank"
+  rel="noreferrer"
+>
+  👁️
+</a>
+
+  <a
+    href={item.url}
+    download
+  >
+    ⬇️
+  </a>
+{aadmin &&<button onClick={() => handleDelete(item._id)}>
+  🗑️
+</button>}
+</div>
     </div>
-  );
+  ))}
+</div>
+
+    </div>
+</div>
+
+
+    )
 }
