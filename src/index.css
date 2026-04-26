@@ -551,6 +551,7 @@ height: 100%;
   list-style: none;
   display: flex;
   gap: 35px;
+  margin-top:1rem;
 }
 
 .nav-links li {

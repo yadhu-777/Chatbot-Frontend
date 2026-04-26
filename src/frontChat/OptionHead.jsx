@@ -71,7 +71,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
   return (
     <nav className="navbar">
       <div className="logo">
-        <div className="headerImg2">
+        <div onClick={college} className="headerImg2">
           <img src="4.png" alt="" />
         </div>
       </div>
