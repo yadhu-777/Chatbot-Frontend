@@ -674,7 +674,7 @@ position: absolute;
 }
 .innerForm2{
   width: 80%;
-  height: 80%;
+  height: auto;
    border: 2px solid #b9bad5;
    color: #0d0e23;
   display: flex;
