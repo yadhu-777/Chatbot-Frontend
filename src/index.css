@@ -5327,3 +5327,865 @@ body {
   .ua-charts-row { grid-template-columns: 1fr; }
   .ua-stats      { grid-template-columns: repeat(2, 1fr); }
 }
+/* ============================================================
+   PREMIUM ANIMATIONS — Paste at the bottom of index.css
+   College Chatbot Frontend
+   ============================================================ */
+
+/* ─────────────────────────────────────────────
+   1. SMOOTH SCROLL + SCROLL BEHAVIOUR
+──────────────────────────────────────────────*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─────────────────────────────────────────────
+   2. GLOBAL KEYFRAMES
+──────────────────────────────────────────────*/
+
+/* Fade up — cards, sections, text blocks */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in — overlays, modals, images */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale pop — badges, stat numbers, buttons */
+@keyframes scalePop {
+  0%   { opacity: 0; transform: scale(0.7); }
+  70%  { transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Shimmer loading skeleton */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+/* Pulse glow — online dot, active badges */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(49, 104, 181, 0.7); }
+  50%       { box-shadow: 0 0 0 10px rgba(49, 104, 181, 0); }
+}
+
+/* Float — hero orbs / decorative blobs */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-18px) rotate(1deg); }
+  66%       { transform: translateY(-8px) rotate(-1deg); }
+}
+
+/* Spin — loaders */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Counter count-up visual bounce */
+@keyframes countUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  60%  { transform: translateY(-4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Gradient background shift */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Marquee (recruiter tags / ticker) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Typing cursor blink */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Ripple on click */
+@keyframes ripple {
+  0%   { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* Underline grow — nav links */
+@keyframes underlineGrow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* Wobble — error states */
+@keyframes wobble {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+
+/* ─────────────────────────────────────────────
+   3. SCROLL-DRIVEN APPEAR (Intersection Observer helper)
+   Add class "anim-on-scroll" via JS or use directly
+──────────────────────────────────────────────*/
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-fade-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-fade-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delay helpers */
+.anim-delay-1 { transition-delay: 0.1s !important; }
+.anim-delay-2 { transition-delay: 0.2s !important; }
+.anim-delay-3 { transition-delay: 0.3s !important; }
+.anim-delay-4 { transition-delay: 0.4s !important; }
+.anim-delay-5 { transition-delay: 0.5s !important; }
+.anim-delay-6 { transition-delay: 0.6s !important; }
+
+/* ─────────────────────────────────────────────
+   4. HERO / CLG PAGE ANIMATIONS
+──────────────────────────────────────────────*/
+
+/* Hero image — gentle Ken Burns zoom */
+.clg-hero-img {
+  animation: heroBgZoom 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes heroBgZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* Hero overlay — fade in on load */
+.clg-hero-overlay {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Hero badge — pop in with delay */
+.clg-hero-badge {
+  animation: scalePop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+}
+
+/* Intro strip — slide in from left */
+.clg-intro-strip {
+  animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+/* College name — fade up */
+.clg-name {
+  animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+/* Tagline — fade up with longer delay */
+.clg-tagline {
+  animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+}
+
+/* Stats bar — count-up stagger */
+.clg-stat:nth-child(1) { animation: countUp 0.6s ease 0.3s both; }
+.clg-stat:nth-child(2) { animation: countUp 0.6s ease 0.45s both; }
+.clg-stat:nth-child(3) { animation: countUp 0.6s ease 0.6s both; }
+.clg-stat:nth-child(4) { animation: countUp 0.6s ease 0.75s both; }
+
+/* Stat value — shiny number feel */
+.clg-stat-value {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.clg-stat:hover .clg-stat-value {
+  transform: scale(1.15);
+  color: #60a5fa;
+}
+
+/* Course cards — stagger fade up */
+.clg-course-card {
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              background 0.3s ease;
+}
+.clg-course-card:nth-child(1) { animation-delay: 0.1s; }
+.clg-course-card:nth-child(2) { animation-delay: 0.2s; }
+.clg-course-card:nth-child(3) { animation-delay: 0.3s; }
+.clg-course-card:nth-child(4) { animation-delay: 0.4s; }
+.clg-course-card:nth-child(5) { animation-delay: 0.5s; }
+
+.clg-course-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(49, 104, 181, 0.35);
+}
+
+/* Course arrow — slide right on hover */
+.clg-course-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.clg-course-card:hover .clg-course-arrow {
+  transform: translateX(8px);
+}
+
+/* Campus cards */
+.clg-campus-card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease;
+}
+.clg-campus-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Campus icon — spin on hover */
+.clg-campus-icon {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.clg-campus-card:hover .clg-campus-icon {
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* Recruiter tags — marquee scroll */
+.clg-recruiter-tags {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.clg-recruiter-tags-inner {
+  display: flex;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+.clg-recruiter-tags-inner:hover {
+  animation-play-state: paused;
+}
+.clg-recruiter-tag {
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.clg-recruiter-tag:hover {
+  transform: scale(1.08);
+  background: #3168b5;
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────────
+   5. ABOUT PAGE ANIMATIONS
+──────────────────────────────────────────────*/
+
+/* Top bar — slide down */
+.top-bar {
+  animation: slideInFromTop 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes slideInFromTop {
+  from { opacity: 0; transform: translateY(-100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Welcome section */
+.welcome-title {
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.welcome-text {
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+.welcome-divider {
+  animation: expandWidth 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  transform-origin: left;
+}
+@keyframes expandWidth {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Chairman section */
+.chairman-photo-frame {
+  animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  transition: box-shadow 0.4s ease;
+}
+.chairman-photo-frame:hover {
+  box-shadow: 0 0 0 6px rgba(49, 104, 181, 0.5);
+}
+.chairman-img {
+  transition: transform 0.5s ease;
+}
+.chairman-photo-frame:hover .chairman-img {
+  transform: scale(1.04);
+}
+.chairman-msg-col {
+  animation: slideInRight 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.chairman-quote {
+  animation: fadeUp 0.7s ease 0.55s both;
+  position: relative;
+}
+
+/* Team cards */
+.team-card {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease;
+  animation: fadeUp 0.6s ease both;
+}
+.team-grid .team-card:nth-child(1)  { animation-delay: 0.05s; }
+.team-grid .team-card:nth-child(2)  { animation-delay: 0.1s; }
+.team-grid .team-card:nth-child(3)  { animation-delay: 0.15s; }
+.team-grid .team-card:nth-child(4)  { animation-delay: 0.2s; }
+.team-grid .team-card:nth-child(5)  { animation-delay: 0.25s; }
+.team-grid .team-card:nth-child(6)  { animation-delay: 0.3s; }
+.team-grid .team-card:nth-child(7)  { animation-delay: 0.35s; }
+
+.team-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+}
+.team-img {
+  transition: transform 0.5s ease;
+}
+.team-card:hover .team-img {
+  transform: scale(1.07);
+}
+.team-card-name {
+  transition: color 0.3s ease;
+}
+.team-card:hover .team-card-name {
+  color: #60a5fa;
+}
+
+/* Vision cards */
+.vision-card {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease,
+              background 0.3s ease;
+  animation: scalePop 0.6s ease both;
+}
+.vision-cards .vision-card:nth-child(1) { animation-delay: 0.1s; }
+.vision-cards .vision-card:nth-child(2) { animation-delay: 0.2s; }
+.vision-cards .vision-card:nth-child(3) { animation-delay: 0.3s; }
+.vision-cards .vision-card:nth-child(4) { animation-delay: 0.4s; }
+
+.vision-card:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 16px 40px rgba(49, 104, 181, 0.3);
+}
+
+/* Section headings — line slide in */
+.team-title,
+.chairman-title,
+.clg-section-title,
+.vision-heading {
+  position: relative;
+  display: inline-block;
+}
+.team-title::after,
+.chairman-title::after,
+.clg-section-title::after,
+.vision-heading::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #3168b5, #60a5fa);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.team-title:hover::after,
+.chairman-title:hover::after,
+.clg-section-title:hover::after,
+.vision-heading:hover::after {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────
+   6. NAVIGATION / HEADER
+──────────────────────────────────────────────*/
+.head {
+  animation: slideInFromTop 0.5s ease both;
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Sticky header drop-shadow on scroll — add class "scrolled" via JS */
+.head.scrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.nav-links li {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  height: 2px; width: 0;
+  background: #3168b5;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.nav-links li:hover::after { width: 100%; }
+
+/* ─────────────────────────────────────────────
+   7. BUTTONS — Global Premium Feel
+──────────────────────────────────────────────*/
+button,
+.submit-btn,
+.btn,
+.btn-class,
+.read-btn,
+.reg-btn,
+.add-event-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              background 0.3s ease !important;
+}
+
+/* Ripple on click */
+button::after,
+.submit-btn::after,
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 20px; height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0) translate(-50%, -50%);
+  transform-origin: 0 0;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+button:active::after,
+.submit-btn:active::after {
+  transform: scale(8) translate(-50%, -50%);
+  opacity: 0;
+  transition: 0s;
+}
+
+button:hover,
+.submit-btn:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(49, 104, 181, 0.35);
+}
+button:active,
+.submit-btn:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   8. CARDS — Universal hover lift
+──────────────────────────────────────────────*/
+.card-main,
+.news-card,
+.sh-card,
+.chart-card,
+.ua-stat-card,
+.ua-chart-card,
+.stat-box,
+.role-card,
+.admin-card,
+.student-card {
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.38s ease !important;
+}
+.card-main:hover,
+.news-card:hover,
+.sh-card:hover,
+.chart-card:hover,
+.ua-stat-card:hover,
+.stat-box:hover,
+.role-card:hover,
+.admin-card:hover,
+.student-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Card image zoom on hover */
+.card-img-wrap img,
+.card-img-wrap {
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+.card-main:hover .card-img-wrap img {
+  transform: scale(1.07);
+}
+
+/* ─────────────────────────────────────────────
+   9. PLACEMENT HIGHLIGHTS PAGE
+──────────────────────────────────────────────*/
+.hl-orb-1 {
+  animation: float 8s ease-in-out infinite;
+}
+.hl-orb-2 {
+  animation: float 10s ease-in-out 2s infinite;
+}
+.sh-orb-1,
+.sh-orb-2 {
+  animation: float 9s ease-in-out infinite alternate;
+}
+
+/* ─────────────────────────────────────────────
+   10. PLACEMENT / TEACHER / STUDENT CARDS
+──────────────────────────────────────────────*/
+.plDiv {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease !important;
+}
+.plDiv:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+.plDiv img {
+  transition: transform 0.5s ease !important;
+}
+.plDiv:hover img {
+  transform: scale(1.08) !important;
+}
+
+/* ─────────────────────────────────────────────
+   11. FAQ PAGE
+──────────────────────────────────────────────*/
+.faq-item {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.5s ease both;
+}
+.faq-item:nth-child(odd)  { animation-delay: 0.1s; }
+.faq-item:nth-child(even) { animation-delay: 0.2s; }
+.faq-item:hover {
+  box-shadow: 0 8px 24px rgba(49, 104, 181, 0.2);
+}
+
+/* FAQ answer — smooth expand */
+.faq-answer,
+.faq-body {
+  transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.35s ease;
+  overflow: hidden;
+}
+
+/* FAQ arrow rotate */
+.arrow,
+.faq-arrow {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.faq-open .arrow,
+.faq-open .faq-arrow {
+  transform: rotate(180deg) !important;
+}
+
+/* ─────────────────────────────────────────────
+   12. CHAT INTERFACE ANIMATIONS
+──────────────────────────────────────────────*/
+
+/* Message bubble — pop in */
+.User {
+  animation: slideInRight 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.Chatbot,
+.ai-bubble {
+  animation: slideInLeft 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Typing indicator */
+.typing-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #3168b5;
+  animation: typingBounce 1.2s ease-in-out infinite;
+}
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50%       { transform: translateY(-6px); opacity: 1; }
+}
+
+/* Input box — focus ring glow */
+input,
+textarea {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(49, 104, 181, 0.4);
+  outline: none;
+  transform: scale(1.01);
+}
+
+/* ─────────────────────────────────────────────
+   13. FORM INPUTS — Floating label feel
+──────────────────────────────────────────────*/
+.validation-form input,
+.validation-form select,
+.validation-form textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.validation-form input:hover,
+.validation-form select:hover {
+  border-color: #3168b5;
+}
+
+/* ─────────────────────────────────────────────
+   14. PAGE ROUTE TRANSITIONS
+   Wrap page roots with .page-enter for fade-in on route change
+──────────────────────────────────────────────*/
+.clg-page,
+.ua-page,
+.hl-root,
+.sh-root,
+.page,
+.outerBody,
+.authOuter {
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─────────────────────────────────────────────
+   15. LOADER / SPINNER
+──────────────────────────────────────────────*/
+.ua-spinner {
+  animation: spin 0.8s linear infinite !important;
+}
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.05) 25%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0.05) 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+/* ─────────────────────────────────────────────
+   16. STATUS DOTS (online / offline indicator)
+──────────────────────────────────────────────*/
+.sh-status-dot {
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
+   17. STAT CARDS — Analysis / UA page
+──────────────────────────────────────────────*/
+.ua-stat-card:nth-child(1) { animation: fadeUp 0.5s ease 0.1s both; }
+.ua-stat-card:nth-child(2) { animation: fadeUp 0.5s ease 0.2s both; }
+.ua-stat-card:nth-child(3) { animation: fadeUp 0.5s ease 0.3s both; }
+.ua-stat-card:nth-child(4) { animation: fadeUp 0.5s ease 0.4s both; }
+
+.ua-stat-icon {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ua-stat-card:hover .ua-stat-icon {
+  transform: scale(1.25) rotate(-5deg);
+}
+
+/* Bar fill — animated on load */
+.ua-bar-fill {
+  animation: barGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  transform-origin: left;
+}
+@keyframes barGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ─────────────────────────────────────────────
+   18. TABLE ROWS — Hover highlight slide
+──────────────────────────────────────────────*/
+.ua-table tr,
+.company-table tr {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.ua-table tr:hover,
+.company-table tr:hover {
+  background: rgba(49, 104, 181, 0.12);
+  transform: translateX(4px);
+}
+
+/* ─────────────────────────────────────────────
+   19. ANNOUNCEMENTS / NEWS CARDS
+──────────────────────────────────────────────*/
+.news-card {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* ─────────────────────────────────────────────
+   20. EVENTS PAGE — Card grid entrance
+──────────────────────────────────────────────*/
+.event-card,
+.box {
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.38s ease;
+}
+.event-card:hover,
+.box:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35) !important;
+}
+
+/* ─────────────────────────────────────────────
+   21. SCROLLBAR CUSTOM STYLING — Premium feel
+──────────────────────────────────────────────*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3168b5, #2b2d77);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa, #3168b5);
+}
+
+/* ─────────────────────────────────────────────
+   22. SELECTION COLOR
+──────────────────────────────────────────────*/
+::selection {
+  background: rgba(49, 104, 181, 0.5);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────────
+   23. MODAL / OVERLAY — fade + scale in
+──────────────────────────────────────────────*/
+.modal,
+.imgWrapper > img,
+.selectedImg {
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ─────────────────────────────────────────────
+   24. ALERT TOAST — slide in top
+──────────────────────────────────────────────*/
+.Toastify__toast {
+  animation: toastSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+}
+@keyframes toastSlide {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─────────────────────────────────────────────
+   25. AUTH PAGE — smooth slide in
+──────────────────────────────────────────────*/
+.authInner {
+  animation: scalePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+/* ─────────────────────────────────────────────
+   26. REDUCE MOTION — Accessibility
+──────────────────────────────────────────────*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   27. SMOOTH SCROLL OBSERVER SCRIPT NOTE
+   Add this tiny script in your App.jsx or index.html
+   to activate scroll-triggered animations:
+
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+       (entries) => entries.forEach(e => {
+         if (e.isIntersecting) e.target.classList.add('visible');
+       }),
+       { threshold: 0.15 }
+     );
+     document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right')
+       .forEach(el => observer.observe(el));
+     return () => observer.disconnect();
+   }, []);
+
+   Then add className="anim-fade-up" to any section/element
+   you want to animate on scroll.
+──────────────────────────────────────────────*/

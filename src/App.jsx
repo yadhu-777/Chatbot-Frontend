@@ -1,7 +1,8 @@
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import MycontextProvider from '../Contextprovider';
-import './App.css'
+import './App.css';
+
 import CourseSelection from "./frontChat/Course";
 import AuthPage from './frontChat/Auth';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
@@ -19,9 +20,21 @@ import CourseShow from "./frontChat/CourseShow";
 import CourseCards from "./frontChat/Classroom";
 import Announcement from "./frontChat/Announcement";
 import FAQ from "./frontChat/FAQ";
+import { useEffect } from "react";
+
 function App() {
 
-
+ useEffect(() => {
+     const observer = new IntersectionObserver(
+       (entries) => entries.forEach(e => {
+         if (e.isIntersecting) e.target.classList.add('visible');
+       }),
+       { threshold: 0.15 }
+     );
+     document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right')
+       .forEach(el => observer.observe(el));
+     return () => observer.disconnect();
+   }, []);
 
 
   return (

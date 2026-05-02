@@ -68,7 +68,7 @@ export default function Clg() {
           <div className="clg-section-tag">About Us</div>
           <h2 className="clg-section-title">A Legacy of Academic Excellence</h2>
           <div className="clg-about-divider" />
-          <div className="clg-about-body">
+          <div className="clg-about-body ">
             <p>
               Hindustan Business School (HBS) is managed by EveHans Academy, a registered society
               founded in 1994 by Dr K C Samuel. HBS is affiliated with Bengaluru North University,
