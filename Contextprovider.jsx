@@ -39,6 +39,8 @@ export default function MycontextProvider({ children }) {
   const[showClassForm,setShowClassForm] = useState(false);
    const[showann,setShowann] = useState(false);
   const [panoramaUrl, setPanoramaUrl] = useState("");
+    const [notice, SetNotice] = useState(false);
+
   const [Convo, setConvo] = useState([
     {
       User: " ",
@@ -49,6 +51,7 @@ export default function MycontextProvider({ children }) {
   return (
     <Mycontext.Provider
       value={{
+        notice, SetNotice,
         showann,setShowann,
         panoramaUrl, setPanoramaUrl,
         classDetails2, setClassDetails2,

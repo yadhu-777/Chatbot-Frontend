@@ -5923,7 +5923,7 @@ button:active,
   box-shadow: 0 8px 24px rgba(49, 104, 181, 0.2);
 }
 
-/* FAQ answer — smooth expand */
+
 .faq-answer,
 .faq-body {
   transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
@@ -5931,7 +5931,7 @@ button:active,
   overflow: hidden;
 }
 
-/* FAQ arrow rotate */
+
 .arrow,
 .faq-arrow {
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
@@ -5941,11 +5941,9 @@ button:active,
   transform: rotate(180deg) !important;
 }
 
-/* ─────────────────────────────────────────────
-   12. CHAT INTERFACE ANIMATIONS
-──────────────────────────────────────────────*/
 
-/* Message bubble — pop in */
+
+
 .User {
   animation: slideInRight 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
@@ -5954,7 +5952,7 @@ button:active,
   animation: slideInLeft 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* Typing indicator */
+
 .typing-dot {
   display: inline-block;
   width: 8px; height: 8px;
@@ -5970,7 +5968,7 @@ button:active,
   50%       { transform: translateY(-6px); opacity: 1; }
 }
 
-/* Input box — focus ring glow */
+
 input,
 textarea {
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
@@ -5982,9 +5980,6 @@ textarea:focus {
   transform: scale(1.01);
 }
 
-/* ─────────────────────────────────────────────
-   13. FORM INPUTS — Floating label feel
-──────────────────────────────────────────────*/
 .validation-form input,
 .validation-form select,
 .validation-form textarea {
@@ -5995,10 +5990,7 @@ textarea:focus {
   border-color: #3168b5;
 }
 
-/* ─────────────────────────────────────────────
-   14. PAGE ROUTE TRANSITIONS
-   Wrap page roots with .page-enter for fade-in on route change
-──────────────────────────────────────────────*/
+
 .clg-page,
 .ua-page,
 .hl-root,
@@ -6009,14 +6001,11 @@ textarea:focus {
   animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* ─────────────────────────────────────────────
-   15. LOADER / SPINNER
-──────────────────────────────────────────────*/
 .ua-spinner {
   animation: spin 0.8s linear infinite !important;
 }
 
-/* Skeleton loader */
+
 .skeleton {
   background: linear-gradient(
     90deg,
@@ -6029,16 +6018,12 @@ textarea:focus {
   border-radius: 8px;
 }
 
-/* ─────────────────────────────────────────────
-   16. STATUS DOTS (online / offline indicator)
-──────────────────────────────────────────────*/
+
 .sh-status-dot {
   animation: pulseGlow 1.8s ease-in-out infinite;
 }
 
-/* ─────────────────────────────────────────────
-   17. STAT CARDS — Analysis / UA page
-──────────────────────────────────────────────*/
+
 .ua-stat-card:nth-child(1) { animation: fadeUp 0.5s ease 0.1s both; }
 .ua-stat-card:nth-child(2) { animation: fadeUp 0.5s ease 0.2s both; }
 .ua-stat-card:nth-child(3) { animation: fadeUp 0.5s ease 0.3s both; }
@@ -6052,7 +6037,7 @@ textarea:focus {
   transform: scale(1.25) rotate(-5deg);
 }
 
-/* Bar fill — animated on load */
+
 .ua-bar-fill {
   animation: barGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
   transform-origin: left;
@@ -6062,9 +6047,7 @@ textarea:focus {
   to   { transform: scaleX(1); }
 }
 
-/* ─────────────────────────────────────────────
-   18. TABLE ROWS — Hover highlight slide
-──────────────────────────────────────────────*/
+
 .ua-table tr,
 .company-table tr {
   transition: background 0.2s ease, transform 0.2s ease;
@@ -6075,16 +6058,11 @@ textarea:focus {
   transform: translateX(4px);
 }
 
-/* ─────────────────────────────────────────────
-   19. ANNOUNCEMENTS / NEWS CARDS
-──────────────────────────────────────────────*/
 .news-card {
   animation: fadeUp 0.5s ease both;
 }
 
-/* ─────────────────────────────────────────────
-   20. EVENTS PAGE — Card grid entrance
-──────────────────────────────────────────────*/
+
 .event-card,
 .box {
   animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -6097,9 +6075,6 @@ textarea:focus {
   box-shadow: 0 18px 45px rgba(0,0,0,0.35) !important;
 }
 
-/* ─────────────────────────────────────────────
-   21. SCROLLBAR CUSTOM STYLING — Premium feel
-──────────────────────────────────────────────*/
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -6117,17 +6092,15 @@ textarea:focus {
   background: linear-gradient(180deg, #60a5fa, #3168b5);
 }
 
-/* ─────────────────────────────────────────────
-   22. SELECTION COLOR
-──────────────────────────────────────────────*/
+
+
 ::selection {
   background: rgba(49, 104, 181, 0.5);
   color: #fff;
 }
 
-/* ─────────────────────────────────────────────
-   23. MODAL / OVERLAY — fade + scale in
-──────────────────────────────────────────────*/
+
+
 .modal,
 .imgWrapper > img,
 .selectedImg {
@@ -6138,27 +6111,14 @@ textarea:focus {
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* ─────────────────────────────────────────────
-   24. ALERT TOAST — slide in top
-──────────────────────────────────────────────*/
-.Toastify__toast {
-  animation: toastSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
-}
-@keyframes toastSlide {
-  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
 
-/* ─────────────────────────────────────────────
-   25. AUTH PAGE — smooth slide in
-──────────────────────────────────────────────*/
+
+
 .authInner {
   animation: scalePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
 }
 
-/* ─────────────────────────────────────────────
-   26. REDUCE MOTION — Accessibility
-──────────────────────────────────────────────*/
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -6169,23 +6129,374 @@ textarea:focus {
   }
 }
 
-/* ─────────────────────────────────────────────
-   27. SMOOTH SCROLL OBSERVER SCRIPT NOTE
-   Add this tiny script in your App.jsx or index.html
-   to activate scroll-triggered animations:
 
-   useEffect(() => {
-     const observer = new IntersectionObserver(
-       (entries) => entries.forEach(e => {
-         if (e.isIntersecting) e.target.classList.add('visible');
-       }),
-       { threshold: 0.15 }
-     );
-     document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right')
-       .forEach(el => observer.observe(el));
-     return () => observer.disconnect();
-   }, []);
+:root {
+  --cork:        #c8935a;
+  --cork-dark:   #a0723e;
+  --frame:       #5c3a1e;
+  --frame-dark:  #3b2210;
+  --cream:       #fdf6e3;
+  --paper:       #fffef8;
+  --shadow:      rgba(0,0,0,0.35);
+  --pin-default: #e74c3c;
+}
+ 
 
-   Then add className="anim-fade-up" to any section/element
-   you want to animate on scroll.
-──────────────────────────────────────────────*/
+* { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+.board-room {
+  min-height: 110vh;
+ 
+  background:
+    radial-gradient(ellipse at 20% 10%, #4a2800 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, #2a1500 0%, transparent 55%),
+    #1a0d00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Raleway', sans-serif;
+  gap: 28px;
+overflow-y: scroll;
+}
+ 
+
+.board-header {
+  text-align: center;
+}
+ 
+.board-tag {
+  display: inline-block;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  vertical-align: middle;
+}
+ 
+.board-title {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #f5deb3;
+  text-shadow: 2px 3px 8px rgba(0,0,0,0.5);
+  line-height: 1;
+}
+ 
+.board-subtitle {
+  font-size: 0.8rem;
+  color: #a07850;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+ 
+
+.corkboard {
+  position: relative;
+  width: min(860px, 95vw);
+  padding: 36px 32px;
+  border-radius: 6px;
+  background-color: var(--cork);
+  box-shadow:
+    0 0 0 14px var(--frame),
+    0 0 0 18px var(--frame-dark),
+    0 30px 80px rgba(0,0,0,0.7),
+    inset 0 2px 6px rgba(255,255,255,0.12);
+}
+ 
+
+.cork-texture {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='80' height='80' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+}
+
+.corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8b6033, #3b2210);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255,255,255,0.1);
+  z-index: 10;
+}
+.corner-tl { top: -5px;  left: -5px; }
+.corner-tr { top: -5px;  right: -5px; }
+.corner-bl { bottom: -5px; left: -5px; }
+.corner-br { bottom: -5px; right: -5px; }
+ 
+
+.board-frame {
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.06), transparent);
+  pointer-events: none;
+}
+.board-frame.top    { top: 0; left: 0; right: 0; height: 3px; }
+.board-frame.bottom { bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent); }
+.board-frame.left   { left: 0; top: 0; bottom: 0; width: 3px; }
+.board-frame.right  { right: 0; top: 0; bottom: 0; width: 3px; }
+ 
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 28px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-slot {
+  position: relative;
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow 0.25s ease;
+  will-change: transform;
+}
+ 
+.photo-slot:hover {
+  transform: rotate(0deg) scale(1.04);
+  z-index: 5;
+}
+ 
+.photo-slot.drag-over .photo-paper {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px #f39c12, 0 14px 36px rgba(0,0,0,0.45);
+}
+ 
+
+.photo-paper {
+  background: var(--paper);
+  border-radius: 2px;
+  padding: 8px 8px 30px 8px;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.3),
+    0 12px 28px rgba(0,0,0,0.35);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s;
+}
+ 
+
+.photo-paper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: var(--cream);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+ 
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+  display: block;
+}
+
+.pin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.4));
+  pointer-events: none;
+}
+ 
+.pin-head {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%,
+    color-mix(in srgb, var(--pin-color) 80%, white),
+    var(--pin-color)
+  );
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.3);
+}
+ 
+.pin-needle {
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(to bottom, #c0c0c0, #808080);
+  border-radius: 0 0 2px 2px;
+  margin-top: -1px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+ 
+
+.tape {
+  position: absolute;
+  background: rgba(220, 210, 170, 0.55);
+  border: 1px solid rgba(180,160,100,0.25);
+  backdrop-filter: blur(1px);
+  z-index: 4;
+  pointer-events: none;
+}
+ 
+.tape-top {
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 18px;
+  border-radius: 2px;
+}
+ 
+.tape-left {
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  width: 36px;
+  height: 14px;
+  border-radius: 2px;
+}
+ 
+.tape-right {
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  width: 36px;
+  height: 14px;
+  border-radius: 2px;
+}
+ 
+
+.upload-btn {
+  all: unset;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+  border-radius: 1px;
+  position: relative;
+  z-index: 1;
+}
+ 
+.upload-btn:hover {
+  background: rgba(200, 147, 90, 0.12);
+}
+ 
+.upload-icon {
+  font-size: 1.8rem;
+  opacity: 0.5;
+}
+ 
+.upload-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #7a5c3a;
+}
+ 
+.upload-hint {
+  font-size: 0.65rem;
+  color: #b09070;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+ 
+
+.photo-slot:not(.has-image) .photo-paper {
+  border: 2px dashed rgba(160, 120, 60, 0.35);
+}
+ 
+
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.65rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
+  transition: background 0.15s;
+}
+ 
+.photo-slot:hover .remove-btn {
+  display: flex;
+}
+ 
+.remove-btn:hover {
+  background: #e74c3c;
+}
+ 
+
+.board-footer {
+  font-size: 0.78rem;
+  color: #a07850;
+  letter-spacing: 0.08em;
+}
+ 
+
+.hidden-input {
+  display: none;
+}
+ 
+
+@media (max-width: 600px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 22px 18px;
+  }
+ 
+  .corkboard {
+    padding: 24px 18px;
+  }
+}
+
+.NoticeOuterForm{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.NoticeInnerForm{
+    background-color: var(--white);
+    padding: 3rem;
+  position: absolute;
+  width: 50%;
+  height: auto;
+  border: 2px solid black;
+
+}

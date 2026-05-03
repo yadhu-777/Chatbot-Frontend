@@ -9,6 +9,7 @@ import Placement from "./Placement";
 import Syllabus from "./Syllabus";
 import Highlight from "./Highligt";
 import Body from "./Body";
+import NoticeBoard from "./Notice";
 import UserAnalytics from "./Analysis";
 import CourseSelection from "./Course";
 import News from "./News";
@@ -105,6 +106,7 @@ export default function College() {
         {select === "room" && <CourseCards />}
       {select === "highlight" && <Highlight />}
         {select === "announcement" && <Announcement />}
+          {select === "notice" && <NoticeBoard />}
       {select === "college" && <Clg />}
       {select === "event" && <Events />}
          {select === "syllabus" && <Syllabus />}

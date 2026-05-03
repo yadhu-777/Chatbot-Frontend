@@ -2,7 +2,7 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import MycontextProvider from '../Contextprovider';
 import './App.css';
-
+import NoticeBoard from "./frontChat/Notice";
 import CourseSelection from "./frontChat/Course";
 import AuthPage from './frontChat/Auth';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
@@ -43,6 +43,7 @@ function App() {
       <BrowserRouter>
     <Routes>
            <Route path="/applicant" element={<College2 />} />
+           
             <Route path="/course" element={<CourseSelection />} />
       <Route path="/news" element={<News />} />
           <Route path="/home" element={<Userform />} />

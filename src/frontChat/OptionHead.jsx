@@ -63,10 +63,14 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
     function dashboard() {
     setSelect("dashboard");
   }
+    function Notice() {
+    setSelect("notice");
+  }
   
   function handleClick2() {
     setClick2((prev) => !prev);
   }
+  
 
   return (
     <nav className="navbar">
@@ -84,11 +88,13 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
       {aadmin &&    <li onClick={classs}>Classroom</li>}
   <li onClick={course}>Course</li>
         <li onClick={Event}>Events</li>
+           <li onClick={Notice}>Notice Board</li>
         <li onClick={timetable}>Placement</li>
  {!aadmin && <li onClick={()=>navigate("/stdRes")}>Student Resources</li>}
       {!aadmin &&  <li onClick={Complain}>Suggestion</li>}
         {aadmin &&  <li onClick={dashboard}>Dashboard</li>}
         <li onClick={highlight}>Gallery</li>
+         
            {aadmin &&    <li onClick={announcement}>Announcement</li>}
                    {aadmin &&    <li onClick={sylabus}>Syllabus</li>}
          {/* <li onClick={news}>News</li> */}
