@@ -217,70 +217,9 @@ setShowOptions2(prev=>!prev);
       <div className="head">
  <h2 className="jarvis-title">Chat with Jarvis Jr 🤖</h2>
 
-        <div className="authOptions">
-          {/* {tokenss && (
-            <>
-              <button
-                onClick={() => handleauth()}
-                style={{
-                  borderRadius: "15px",
-                  padding: "0.5rem",
-                  width: "6rem",
-                  backgroundColor: "black",
-                  color: "white",
-                }}
-              >
-                login
-              </button>
-
-              <button
-                onClick={() => handleauth()}
-                style={{
-                  borderRadius: "15px",
-                  padding: "0.5rem",
-                  width: "6rem",
-                  backgroundColor: "black",
-                  color: "white",
-                }}
-              >
-                signup
-              </button>
-            </>
-          )}
-     <button
-onClick={
- ()=> navigate("/clg")
-}
-      style={{
-                  borderRadius: "15px",
-                  padding: "0.5rem",
-                  width: "6rem",
-                  border:"0px",
-                  backgroundColor: "black",
-                  color: "white",
-                }}
-     >
-      college
-     </button> */}
-       {/* <button
- onClick={() => {
-    window.location.href = "/";
-  }
-}
-      style={{
-                  borderRadius: "15px",
-                  padding: "0.5rem",
-                  width: "6rem",
-                  border:"0px",
-                  backgroundColor: "black",
-                  color: "white",
-                }}
-     >
-      close
-     </button> */}
-        </div>
+       
            <div onClick={ShowOption} className="menuu">
-            <i class="fa-solid fa-bars"></i>d
+            <i class="fa-solid fa-bars"></i>
           </div>
       </div>
 
@@ -311,7 +250,7 @@ onClick={
         <div ref={chatEndRef} />
       </div>
 
-      <div className={data || Convo ? "inputboxdown" : "inputbox"}>
+      <div className={data || Convo ? "inputboxdown" : ""}>
         <input style={{padding:"1.3rem"}}
           onKeyDown={(e) => {
             if (e.key === "Enter") {

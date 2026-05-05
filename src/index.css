@@ -176,8 +176,9 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 3rem;
+  bottom: -2rem;
   margin: auto;
+  z-index: 999;
 }
 .inputbox input {
   width: 45%;
@@ -5789,13 +5790,11 @@ html {
 }
 .nav-links li:hover::after { width: 100%; }
 
-/* ─────────────────────────────────────────────
-   7. BUTTONS — Global Premium Feel
-──────────────────────────────────────────────*/
+
 button,
 .submit-btn,
 .btn,
-.btn-class,
+
 .read-btn,
 .reg-btn,
 .add-event-btn {
@@ -5944,13 +5943,6 @@ button:active,
 
 
 
-.User {
-  animation: slideInRight 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-.Chatbot,
-.ai-bubble {
-  animation: slideInLeft 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
 
 
 .typing-dot {
@@ -6500,3 +6492,4 @@ overflow-y: scroll;
   border: 2px solid black;
 
 }
+
