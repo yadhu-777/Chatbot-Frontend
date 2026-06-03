@@ -5805,7 +5805,7 @@ button,
               background 0.3s ease !important;
 }
 
-/* Ripple on click */
+
 button::after,
 .submit-btn::after,
 .btn::after {
@@ -6493,3 +6493,251 @@ overflow-y: scroll;
 
 }
 
+/* ─── Complain.css ──────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
+/* ── Page shell ── */
+.complain-page {
+  font-family: 'Sora', sans-serif;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  color: #1a1a1a;
+}
+
+/* ── Hero ── */
+.complain-hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+
+.complain-hero__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.complain-hero__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.complain-hero__sub {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.65;
+  max-width: 340px;
+}
+
+.complain-hero__art {
+  width: 84px;
+  height: 84px;
+  background: #f5f4f1;
+  border-radius: 12px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.complain-hero__img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* ── CTA button ── */
+.complain-cta {
+  margin-bottom: 2rem;
+}
+
+.complain-btn-register {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.complain-btn-register:hover {
+  opacity: 0.8;
+}
+
+.complain-btn-register__icon {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ── Inline form card ── */
+.complain-form-card {
+  background: #f9f8f6;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Alert banner ── */
+.complain-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #edf7f1;
+  border: 0.5px solid #a3d9b8;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 13px;
+  color: #1d6e44;
+}
+
+.complain-alert__icon {
+  font-size: 15px;
+}
+
+/* ── Section label ── */
+.complain-section-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Cards grid ── */
+.complain-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ── Individual card ── */
+.complain-card {
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.complain-card:hover {
+  border-color: rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+.complain-card__tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #f2f1ee;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.complain-card__subject {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+.complain-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.complain-card__date {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.complain-card__status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #1d6e44;
+}
+
+.complain-card__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4caf82;
+  border: 1px solid #a3d9b8;
+  flex-shrink: 0;
+}
+
+/* ── Empty state ── */
+.complain-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #bbb;
+}
+
+.complain-empty__icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.complain-empty p {
+  font-size: 13px;
+}
+
+/* ── Dark mode ── */
+@media (prefers-color-scheme: dark) {
+  .complain-page { color: #e8e6e1; }
+
+  .complain-hero { border-color: rgba(255,255,255,0.1); }
+  .complain-hero__eyebrow { color: #666; }
+  .complain-hero__title { color: #f0ede8; }
+  .complain-hero__sub { color: #999; }
+  .complain-hero__art { background: #2a2926; border-color: rgba(255,255,255,0.08); }
+
+  .complain-btn-register { background: #f0ede8; color: #111; }
+
+  .complain-form-card { background: #1e1d1b; border-color: rgba(255,255,255,0.08); }
+
+  .complain-alert { background: #132b1e; border-color: #2a6644; color: #6fcf97; }
+
+  .complain-section-label { color: #555; }
+
+  .complain-card { background: #1a1917; border-color: rgba(255,255,255,0.08); }
+  .complain-card:hover { border-color: rgba(255,255,255,0.18); }
+  .complain-card__tag { background: #2a2926; color: #888; }
+  .complain-card__subject { color: #e8e6e1; }
+  .complain-card__date { color: #555; }
+  .complain-card__status { color: #6fcf97; }
+  .complain-card__dot { background: #2a6644; border-color: #1d4d32; }
+
+  .complain-empty { color: #444; }
+}

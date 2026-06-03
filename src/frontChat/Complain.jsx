@@ -1,69 +1,84 @@
-import { useContext } from "react"
+import { useContext, useState } from "react";
 import Form2 from "./Form2";
-import Card from "@mui/material/Card";
-import Alert from '@mui/material/Alert';
-import Typography from "@mui/material/Typography";
 import Mycontext from "../../Context";
- 
+import "./Complain.css";
+
 export default function Complain() {
   const { back, complain, setComplain, alert2 } = useContext(Mycontext);
- 
+  const [showForm, setShowForm] = useState(false);
+
   function handlecomplain() {
-    setComplain(prev => !prev);
+    setComplain((prev) => !prev);
+    setShowForm((prev) => !prev);
   }
- 
+
   return (
-    <div className="outerEvents2">
-      <div className="headerHero4">
-        <img id="clgImg3" src="complain.png" alt="" />
-        {complain && <Form2 />}
+    <div className="complain-page">
+
+      {/* Hero */}
+      <div className="complain-hero">
+        <div className="complain-hero__left">
+          <p className="complain-hero__eyebrow">Support portal</p>
+          <h1 className="complain-hero__title">
+            Complaint<br />Registration
+          </h1>
+          <p className="complain-hero__sub">
+            Submit a complaint and track its resolution status. We aim to
+            respond within 2 business days.
+          </p>
+        </div>
+        <div className="complain-hero__art">
+          <img src="complain.png" alt="Complaints" className="complain-hero__img" />
+        </div>
       </div>
- 
-      <div className="complainBtn">
-        <button onClick={handlecomplain} type="button" className="btn btn-primary">
-          Register Complaint
+
+      {/* CTA */}
+      <div className="complain-cta">
+        <button className="complain-btn-register" onClick={handlecomplain} type="button">
+          <span className="complain-btn-register__icon">{showForm ? "✕" : "+"}</span>
+          {showForm ? "Cancel" : "Register complaint"}
         </button>
       </div>
- 
-      <div className="showComplaintPuter">
-        {Object.entries(back)?.map(([key, value]) => {
-          return (
-            <Card
-              sx={{
-                maxWidth: 410,
-                minWidth: 300,
-                borderRadius: "20px",
-                marginBottom: "2rem",
-                padding: "2rem",
-                boxShadow: 6,
-                transition: "all 0.3s ease",
-                marginRight: "4rem",
-                "&:hover": {
-                  boxShadow: 12,
-                  transform: "translateY(-8px)",
-                },
-              }}
-              key={key}
-            >
-              {/* ✅ Alert is now OUTSIDE Typography — fixes the hydration error */}
-              {alert2 && (
-                <Alert style={{ marginBottom: "1rem" }} severity="success">
-                  Registered successfully!
-                </Alert>
-              )}
- 
-              <Typography
-                sx={{
-                  wordWrap: "break-word",
-                  overflowWrap: "break-word",
-                  whiteSpace: "normal",
-                }}
-              >
-                {value.subject}
-              </Typography>
-            </Card>
-          );
-        })}
+
+      {/* Inline Form */}
+      {complain && (
+        <div className="complain-form-card">
+          {alert2 && (
+            <div className="complain-alert">
+              <span className="complain-alert__icon">✓</span>
+              Complaint registered successfully.
+            </div>
+          )}
+          <Form2 />
+        </div>
+      )}
+
+      {/* Cards Grid */}
+      <div className="complain-cards-section">
+        <p className="complain-section-label">Your complaints</p>
+
+        {Object.keys(back ?? {}).length === 0 ? (
+          <div className="complain-empty">
+            <span className="complain-empty__icon">📭</span>
+            <p>No complaints filed yet.</p>
+          </div>
+        ) : (
+          <div className="complain-cards-grid">
+            {Object.entries(back).map(([key, value]) => (
+              <div className="complain-card" key={key}>
+                <span className="complain-card__tag">Open</span>
+                <p className="complain-card__subject">{value.subject}</p>
+                <div className="complain-card__footer">
+                  <span className="complain-card__date">{value.date ?? "—"}</span>
+                  <span className="complain-card__status">
+                    <span className="complain-card__dot" />
+                    Registered
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

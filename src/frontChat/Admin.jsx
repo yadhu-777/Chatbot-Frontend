@@ -6,7 +6,7 @@ import Mycontext from "../../Context";
 const ValidationForm = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
-  const{setAdmin} = useContext(Mycontext);
+  const { setAdmin } = useContext(Mycontext);
   const navigate = useNavigate();
   const validate = () => {
     let newErrors = {};
@@ -33,25 +33,23 @@ const ValidationForm = () => {
   function handlePassClick(e) {
     e.preventDefault();
     fetch("https://chatbot-backend-0k0q.onrender.com/data", {
-     
       method: "POST",
-      
+
       headers: {
         "Content-Type": "application/json",
       },
-       credentials:"include",
+      credentials: "include",
       body: JSON.stringify({ content: formData }),
     })
       .then((data) => data.json())
       .then((res) => {
-        
         if (res.message === "Authentication Success") {
           toast(res.message, {
             position: "top-center",
             autoClose: 1000,
             theme: "dark",
           });
-setAdmin(true);
+          setAdmin(true);
           navigate("/clg");
         } else {
           toast(res.message, {
