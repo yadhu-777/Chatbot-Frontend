@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Form2 from "./Form2";
 import Mycontext from "../../Context";
-import "./Complain.css";
+
 
 export default function Complain() {
   const { back, complain, setComplain, alert2 } = useContext(Mycontext);
