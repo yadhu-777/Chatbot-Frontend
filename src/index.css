@@ -6493,11 +6493,7 @@ overflow-y: scroll;
 
 }
 
-/* ─── Complain.css ──────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=DM+Serif+Display&display=swap');
-
-/* ── Page shell ── */
 .complain-page {
   font-family: 'Sora', sans-serif;
   max-width: 860px;
