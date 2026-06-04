@@ -6511,6 +6511,8 @@ overflow-y: scroll;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+  background-color: #dcdcdc;
+    padding: 1rem;
 }
 
 .complain-hero__eyebrow {
