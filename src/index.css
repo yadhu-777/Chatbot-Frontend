@@ -6739,3 +6739,12 @@ overflow-y: scroll;
 
   .complain-empty { color: #444; }
 }
+body {
+  overflow-y: auto;  /* was hidden */
+}
+
+@media (max-width:700px) {
+  body {
+    overflow-y: auto;  /* was hidden */
+  }
+}
