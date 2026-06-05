@@ -2,9 +2,10 @@ import { useContext } from "react";
 import Mycontext from "../../Context";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function OptionHead2() {
-
+const navigate = useNavigate();
   const { setSelect, setClick2, setClick3, student } = useContext(Mycontext);
   
   function college() { setSelect("college"); }
@@ -23,7 +24,7 @@ export default function OptionHead2() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <div className="headerImg2">
+        <div onClick={navigate("/applicant")} className="headerImg2">
           <img src="4.png" alt="" />
         </div>
       </div>
