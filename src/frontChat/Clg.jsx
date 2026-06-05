@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Mycontext from '../../Context';
 
 const courses = [
   { code: '01', name: 'BCA', desc: 'Bachelor of Computer Applications' },
@@ -25,6 +26,7 @@ const stats = [
 ];
 
 export default function Clg() {
+    const { setSelect, setClick2, aadmin, student } = useContext(Mycontext);
   const navigate = useNavigate();
   return (
     <div className="clg-page">
@@ -106,7 +108,7 @@ export default function Clg() {
           <p className="clg-courses-sub">Undergraduate Programmes</p>
           <div className="clg-course-grid">
             {courses.map((c) => (
-              <div onClick={()=>navigate("/faq")} className="clg-course-card" key={c.code}>
+              <div onClick={()=>  !student ? navigate("/faq"): ""} className="clg-course-card" key={c.code}>
                 <span className="clg-course-code">{c.code}</span>
                 <div className="clg-course-info">
                   <span className="clg-course-name">{c.name}</span>
