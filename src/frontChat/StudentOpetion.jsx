@@ -49,7 +49,7 @@ const [hasClickedAI, setHasClickedAI] = useState(true);
   return (
     <nav className="navbar">
       <div className="logo">
-        <div onClick={()=>navigate("/home")} className="headerImg2">
+        <div onClick={()=>navigate("/clg")} className="headerImg2">
           <img src="4.png" alt="" />
         </div>
       </div>
