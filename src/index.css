@@ -6748,3 +6748,30 @@ body {
     overflow-y: auto;  /* was hidden */
   }
 }
+
+/* The overlay/wrapper in Form2 */
+.outerForms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* The form card in Complain.jsx */
+.complain-form-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* The inner form box */
+.innerForm2 {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  background: #fff;         /* or your preferred bg */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
