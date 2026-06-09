@@ -24,7 +24,7 @@ export default function OptionHead2() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <div onClick={} className="headerImg2">
+        <div  className="headerImg2">
           <img src="4.png" alt="" />
         </div>
       </div>
